@@ -5,7 +5,6 @@ body {
 }
 
 hr {
-  border: dotted;
   border-color: white;
   border-style: none;
   border-top-style: inset;

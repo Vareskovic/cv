@@ -1,17 +1,108 @@
 <!DOCTYPE html>
+<html lang="de">
 
 <head>
-  <meta charset="utf-8">
-  <title>Meine Hobbys</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meine Hobbys – Boris Vareskovic</title>
+  <style>
+    :root {
+      --main-color: #2c3e50;
+      --accent-color: #2980b9;
+      --light-bg: #f9fafb;
+      --section-bg: #ffffff;
+      --text-color: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: auto;
+      background: var(--section-bg);
+      padding: 40px 50px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: var(--main-color);
+      border-bottom: 3px solid var(--accent-color);
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    ol {
+      padding-left: 25px;
+      font-size: 1.1rem;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 20px;
+      background-color: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1c6391;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      ol {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h3>Meine Hobbys</h3>
-  <ol>
-    <li><strong><a href="https://www.fupa.net/player/boris-vareskovic-955599">Fußball</a></strong></li>
-    <li><strong><a href="https://de-de.facebook.com/borisvareskovicfit/">Fitness</a></strong></li>
-  </ol>
+  <div class="content">
+    <h1>Meine Hobbys</h1>
+    <ol>
+      <li><a href="https://www.fupa.net/player/boris-vareskovic-955599" target="_blank">Fußball</a></li>
+      <li><a href="https://de-de.facebook.com/borisvareskovicfit/" target="_blank">Fitness</a></li>
+    </ol>
+
+    <a href="index.html" class="btn">Zurück zur Hauptseite</a>
+  </div>
 </body>
 
 </html>

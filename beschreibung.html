@@ -6,46 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Beschreibung der Arbeitsplätze – Boris Vareskovic</title>
   <style>
+    :root {
+      --main-color: #2c3e50;
+      --accent-color: #2980b9;
+      --light-bg: #f9fafb;
+      --section-bg: #ffffff;
+      --section-highlight: #eaf2f8;
+      --text-color: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafb;
-      color: #333;
-      margin: 20px;
-      line-height: 1.6;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.7;
     }
 
     .content {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 30px 40px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-      border-radius: 10px;
+      max-width: 960px;
+      margin: auto;
+      background: var(--section-bg);
+      padding: 40px 50px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
     }
 
     h1 {
-      color: #2c3e50;
-      border-bottom: 3px solid #2980b9;
+      color: var(--main-color);
+      border-bottom: 3px solid var(--accent-color);
       padding-bottom: 10px;
       margin-bottom: 30px;
     }
 
     h2 {
-      color: #34495e;
-      background-color: #eaf2f8;
-      padding: 10px 15px;
-      border-left: 5px solid #2980b9;
+      color: var(--main-color);
+      background-color: var(--section-highlight);
+      padding: 12px 18px;
+      border-left: 5px solid var(--accent-color);
       margin-top: 40px;
       margin-bottom: 20px;
-      border-radius: 4px;
-      font-weight: 600;
+      border-radius: 5px;
     }
 
     ul {
-      list-style-type: disc;
-      padding-left: 30px;
+      padding-left: 25px;
       margin-bottom: 30px;
-      color: #555;
     }
 
     ul li {
@@ -53,12 +64,52 @@
     }
 
     a {
-      color: #2980b9;
+      color: var(--accent-color);
       text-decoration: none;
+      font-weight: 500;
     }
 
     a:hover {
       text-decoration: underline;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1c6391;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      ul li {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+      }
     }
   </style>
 </head>
@@ -69,65 +120,56 @@
 
     <h2>Buchhaltung und Finanzkontrolle</h2>
     <ul>
-      <li>Verantwortlich für die Überwachung und Verwaltung von Eingangs- und Ausgangsrechnungen, um die finanzielle Integrität und zeitgerechte Erfassung aller Transaktionen zu gewährleisten.</li>
-      <li>Durchführung nationaler und internationaler Zahlungen unter Einhaltung der gesetzlichen Vorschriften und Unternehmensrichtlinien.</li>
-      <li>Erstellung der monatlichen Endabrechnung und Sicherstellung der Genauigkeit aller finanziellen Aufzeichnungen.</li>
-      <li>Überwachung der Steuerangelegenheiten, einschließlich fristgerechter Abgabe von Steuererklärungen und Optimierung der Steuerlast.</li>
-      <li>Zuständig für den Mahnversand an Kunden, um die Einhaltung der Zahlungsfristen zu fördern und die Liquidität zu sichern.</li>
-      <li>Effizientes Herunterladen von Daten aus verschiedenen Systemen über Download-Links für nahtlose Buchhaltung und Finanzberichterstattung.</li>
-      <li>Erfahrung mit Buchhaltungssystemen wie <strong>Luftsystem</strong>, <strong>Wolf Int</strong>, <strong>Wolf OHG</strong> und <strong>Wolf Logistics</strong> für präzise Verwaltung von Kunden- und Lieferantenkonten.</li>
+      <li>Verwaltung und Überwachung von Eingangs- und Ausgangsrechnungen zur Sicherstellung korrekter Buchung aller Geschäftsvorfälle.</li>
+      <li>Abwicklung nationaler und internationaler Zahlungen unter Einhaltung gesetzlicher und interner Richtlinien.</li>
+      <li>Monatliche Endabrechnungen und regelmäßige Prüfung der Finanzdaten auf Vollständigkeit und Richtigkeit.</li>
+      <li>Steuerliches Berichtswesen inklusive fristgerechter Erklärungen und Optimierungspotenzialanalyse.</li>
+      <li>Mahnwesen zur Sicherung der Liquidität und Einhaltung von Zahlungszielen.</li>
+      <li>Nutzung unternehmensspezifischer Systeme</li>
     </ul>
 
     <h2>Vertrieb und Preisgestaltung</h2>
     <ul>
-      <li>Durchführung unterschiedlicher Kalkulationen zur Festlegung von Verkaufspreisen, um Wettbewerbsfähigkeit und Profitabilität zu sichern.</li>
-      <li>Entwicklung von Strategien zur Vereinfachung der Kalkulationsprozesse für eine schnelle und effiziente Preisfindung.</li>
-      <li>Förderung der Automatisierung im Vertriebsbereich zur Steigerung der Effizienz und Reduzierung des administrativen Aufwands.</li>
+      <li>Kalkulation und Pflege von Preisstrukturen zur Sicherung von Wettbewerbsfähigkeit und Rentabilität.</li>
+      <li>Optimierung und Digitalisierung der Kalkulationsprozesse.</li>
+      <li>Mitgestaltung von Automatisierungslösungen zur Effizienzsteigerung im Angebots- und Vertriebsprozess.</li>
     </ul>
 
-    <h2>Rechnungsabteilung – Abteilungsleiter</h2>
+    <h2>Leitung Rechnungsabteilung</h2>
     <ul>
-      <li>Zuständig für Konditionierung und Eintragung von Tarifen in das Buchhaltungsprogramm zur genauen Abrechnung.</li>
-      <li>Koordination internationaler und nationaler Transporte inklusive Ausstellung und Kontrolle von Ausgangsrechnungen.</li>
-      <li>Bereitstellung von Links für den Dateneingang in der Buchhaltung zur effizienten Datenverarbeitung.</li>
-      <li>Durchführung von Kalkulationen und Kostenkontrollen zur Sicherstellung der Wirtschaftlichkeit von Projekten und Transporten.</li>
-      <li>Organisation der Abteilungsarbeit für reibungslosen Ablauf und hohe Produktivität.</li>
-      <li>Bewertung der Projektrentabilität und Durchführung von Kosten-Nutzen-Analysen für fundierte Entscheidungen.</li>
-      <li>Überwachung von Transporten und Systemen, inklusive Kalkulation und Bewertung von Partnern wie 24Plus und Online.</li>
-      <li>Förderung der Prozessautomatisierung zur Steigerung der Effizienz und Reduzierung manueller Fehler.</li>
+      <li>Pflege von Tarifen und Abrechnungssätzen im ERP-System.</li>
+      <li>Verantwortung für die korrekte Fakturierung nationaler und internationaler Transporte.</li>
+      <li>Aufbau effizienter Datenflüsse und Reportingprozesse.</li>
+      <li>Wirtschaftlichkeitsanalysen und Projektkalkulationen.</li>
+      <li>Abteilungsorganisation und Teamkoordination zur Sicherstellung produktiver Abläufe.</li>
+      <li>Überwachung externer Partner und Systeme (z. B. 24Plus, Online) mit Fokus auf Performance und Kosten.</li>
     </ul>
 
-    <h2>IT-Automatisierung und Systemadministration</h2>
+    <h2>IT-Automatisierung & Systemadministration</h2>
     <ul>
-      <li>Implementierung von IT-Automatisierungslösungen für eine papierlose Spedition zur Steigerung von Effizienz und Genauigkeit.</li>
-      <li>Durchführung von Fahrerschulungen für den effizienten Einsatz von Scannern und digitalen Geräten.</li>
-      <li>Administration der Microsoft Office Suite im Unternehmen inklusive Wartung und Fehlerbehebung.</li>
-      <li>Grundschulausbildung neuer Mitarbeiter in Softwareprogrammen für schnelle Einarbeitung.</li>
-      <li>Verwaltung von Servern, Systemüberwachung und Sicherstellung der Datensicherheit.</li>
-      <li>Aktivierung und Installation von PCs für Mitarbeiter inklusive Konfiguration und Netzwerkanbindung.</li>
-      <li>Sichere Datenarchivierung und regelmäßige Backups zur Vermeidung von Datenverlust.</li>
-      <li>Unterstützung bei Datenfernübertragung (DFÜ) und Behebung von Verbindungsproblemen.</li>
-      <li>Suche und Implementierung von Lösungen zur Automatisierung von Geschäftsprozessen.</li>
+      <li>Umsetzung papierloser Prozesse durch gezielte Automatisierungslösungen.</li>
+      <li>Technische Schulungen für Fahrer zur Nutzung digitaler Endgeräte.</li>
+      <li>Unternehmensweite Betreuung von Microsoft Office, Netzwerk- und Clientstrukturen.</li>
+      <li>Einrichtung und Wartung von Arbeitsplatzrechnern und Servern.</li>
+      <li>Datenmanagement, inklusive Backup-Strategien und DFÜ-Unterstützung.</li>
+      <li>Projektarbeit im Bereich Automatisierung, Schnittstellen und Digitalisierung.</li>
     </ul>
 
-    <h2>Disposition und Fahrerbetreuung</h2>
+    <h2>Disposition & Fahrerbetreuung</h2>
     <ul>
-      <li>Unterstützung ausländischer Fahrer zur reibungslosen Integration ins Unternehmen.</li>
-      <li>Persönliche Betreuung bei Visa-Angelegenheiten und Anpassung an lokale Gegebenheiten.</li>
-      <li>Förderung der Automatisierung im Nahverkehr und organisatorische Hilfestellung für bessere Zusammenarbeit.</li>
+      <li>Integration und Betreuung internationaler Fahrer, inklusive Hilfe bei behördlichen Angelegenheiten.</li>
+      <li>Mitwirkung an Automatisierung im Nahverkehr sowie organisatorische Unterstützung der Disposition.</li>
     </ul>
 
     <h2>Task Force</h2>
     <ul>
-      <li>Einarbeitung neuer Mitarbeiter in verschiedenen Bereichen (Sonderfahrt, International, Disposition, Abrechnung).</li>
-      <li>Mitarbeiterschulungen zur Verbesserung der Qualifikation und Prozesse.</li>
-      <li>Führung von Projekten zur Optimierung von Arbeitsplätzen, Automatisierung und Ablaufverbesserung.</li>
-      <li>Leitung des Task-Force-Teams mit Fokus auf Effizienzsteigerung und Innovation.</li>
+      <li>Einarbeitung neuer Mitarbeiter in operative Kernbereiche wie Sonderfahrten, International, Abrechnung und Disposition.</li>
+      <li>Durchführung interner Schulungen und Qualitätsworkshops.</li>
+      <li>Projektleitung im Rahmen von Prozessoptimierung und Arbeitsplatzgestaltung.</li>
+      <li>Koordination eines spezialisierten Task-Force-Teams zur Umsetzung strategischer Ziele.</li>
     </ul>
 
-    <br />
     <a href="index.html" class="btn">Zurück zur Hauptseite</a>
-    
   </div>
 </body>
 

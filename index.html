@@ -1,181 +1,215 @@
 <!DOCTYPE html>
-
+<html lang="de">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Boris Vareskovic</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    h1, h3 {
+      color: #2c3e50;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .profile, .ausbildung, .laufbahn, .kuf, .huc {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 900px;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 150px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 40px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    thead th {
+      background-color: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+
+    .footer-link {
+      color: #2980b9;
+    }
+
+    .copyright {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 
 <body>
   <div class="profile">
     <table cellspacing="20">
-      <td>
-        <img src="Images/Boris Profile Picture-modified.png" alt="Boris profile picture">
-      </td>
-      <td>
-        <h1>Boris Vareskovic</h1>
-        <h3>Master der BWL</h3>
-        <p><strong><a href="https://ef.sum.ba/en">Faculty of Economics, University of Mostar</a></strong></p>
-      </td>
+      <tr>
+        <td>
+          <img src="Images/Boris Profile Picture-modified.png" alt="Boris profile picture">
+        </td>
+        <td>
+          <h1>Boris Vareskovic</h1>
+          <h3>Master der BWL</h3>
+          <p><strong><a href="https://ef.sum.ba/en" target="_blank">Faculty of Economics, University of Mostar</a></strong></p>
+        </td>
+      </tr>
     </table>
   </div>
 
-  <hr>
   <div class="ausbildung">
-
-  <table cellspacing="15">
-    <td>
-      <h3>Ausbildung</h3>
-      </td>
-    <tr>
-      <td><strong>2018</strong></td>
-      <td><a href="PDF\Fachkraft Finanzbuchhaltung.pdf">Fachkraft <strong>Finanzbuchhaltung mit SAP und Lexware (BFZ Landshut)</strong></a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <ul class="SAP">
-          <li><a href="PDF\SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-          <li><a href="PDF\SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>2013-2016</strong></td>
-      <td><a href="PDF\Master-Diplom-1.pdf">Master der <strong>BWL (Betriebswirtschaftslehre)</strong></a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <ul class="SAP">
-          <li><a href="PDF\Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung für ausländische Hochschulqualifikationen</a></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>2010-2013</strong></td>
-      <td><a href="PDF\Bachelor-Diplom-1.pdf">Bachelor der <strong>BWL (Betriebswirtschaftslehre)</strong></a></td>
-    </tr>
-
-  </table>
+    <h3>Ausbildung</h3>
+    <table>
+      <tr>
+        <td><strong>2018</strong></td>
+        <td><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP und Lexware (BFZ Landshut)</a>
+          <ul>
+            <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+            <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>2013–2016</strong></td>
+        <td><a href="PDF/Master-Diplom-1.pdf">Master der BWL</a>
+          <ul>
+            <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>2010–2013</strong></td>
+        <td><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor der BWL</a></td>
+      </tr>
+    </table>
   </div>
-  <hr>
+
   <div class="laufbahn">
-  <table cellspacing="15">
-    <thead>
-      <td><h3>Berufliche Laufbahn</h3>
-      </td>
-    </thead>
-
-    <thead>
-      <tr>
-        <th>Datum</th>
-        <th>Arbeitgeber</th>
-        <th>Arbeitsstelle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>06/2019-../....</td>
-        <td>Michael Wolf OHG/Wolf Spedition GmbH & Co. KG</td>
-        <td>Task-Force Koordinator <br> 
-          Abrechnung (Kommissarische Leitung der Abteilung seit [01/24]; geplante Übernahme der offiziellen Position ab [2026] <br>
-          IT/EDV <br>
-          Finanzbuchhaltung</td>
-      </tr>
-      <tr>
-        <td>04/2018-07/2018</td>
-        <td>Riedl Raumkonzepte</td>
-        <td>Kaufmännischer Leiter</td>
-      </tr>
-      <tr>
-        <td>10/2016-04/2018</td>
-        <td>Deutsche Post AG</td>
-        <td>Postzusteller</td>
-      </tr>
-      <tr>
-        <td>06/2016-09/2016</td>
-        <td>MR Montagen Straubing</td>
-        <td>Montagenhelfer</td>
-      </tr>
-      <tr>
-        <td>01/2012-03/2016</td>
-        <td>Bosnisch-Herzegowinische Streitkräfte</td>
-        <td>Soldat</td>
-      </tr>
-    </tbody>
-  </table>
+    <h3>Berufliche Laufbahn</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Arbeitgeber</th>
+          <th>Arbeitsstelle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>06/2019 – heute</td>
+          <td>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
+          <td>
+            Task-Force Koordinator <br>
+            Abrechnung (kommissarische Leitung seit 01/2024; geplante Übernahme ab 2026) <br>
+            IT/EDV <br>
+            Finanzbuchhaltung
+          </td>
+        </tr>
+        <tr>
+          <td>04/2018 – 07/2018</td>
+          <td>Riedl Raumkonzepte</td>
+          <td>Kaufmännischer Leiter</td>
+        </tr>
+        <tr>
+          <td>10/2016 – 04/2018</td>
+          <td>Deutsche Post AG</td>
+          <td>Postzusteller</td>
+        </tr>
+        <tr>
+          <td>06/2016 – 09/2016</td>
+          <td>MR Montagen Straubing</td>
+          <td>Montagenhelfer</td>
+        </tr>
+        <tr>
+          <td>01/2012 – 03/2016</td>
+          <td>Bosnisch-Herzegowinische Streitkräfte</td>
+          <td>Soldat</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <hr>
-  <div class="kuf">
 
-  <Table>
-    <td><h3>Kenntnisse und Fähigkeiten</h3></td>
-    <tr>
-      <td>
-        <table>
-          <tr>
-            <td>Deutsch</td>
-            <td>⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Englisch</td>
-            <td>⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Kroatisch, Serbisch, Bosnisch</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-        </table>
-      </td>
-      <td>
-        <table>
-          <tr>
-            <td>MS Office (Excel/Word/Outlook/PowerPoint) </td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Buchhaltung</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Abrechnung</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Komalog/Addison/SAP/PowerBI/Powerautomate/SQL</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </Table>
-</div>
-  <hr>
+  <div class="kuf">
+    <h3>Kenntnisse und Fähigkeiten</h3>
+    <table>
+      <tr>
+        <td>
+          <strong>Sprachen:</strong>
+          <table>
+            <tr><td>Deutsch</td><td>⭐⭐⭐⭐</td></tr>
+            <tr><td>Englisch</td><td>⭐⭐⭐</td></tr>
+            <tr><td>Kroatisch, Serbisch, Bosnisch</td><td>⭐⭐⭐⭐⭐</td></tr>
+          </table>
+        </td>
+        <td>
+          <strong>Fachkenntnisse:</strong>
+          <table>
+            <tr><td>MS Office (Excel/Word/Outlook/PowerPoint)</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>Buchhaltung & Abrechnung</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>Komalog / Addison / SAP / PowerBI / Power Automate / SQL</td><td>⭐⭐⭐⭐⭐</td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
   <div class="huc">
-  <a href="beschreibung.html">Arbeitsplatz-Beschreibung</a>
-  <br>
-  <a href="hobbies.html">Meine Hobbys</a>
-  <br>
-  <a class="footer-link" href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a>
-  <br>
-  <br>
-  <a class ="btn" href="contact.html">Kontakt</a>
-  <br>
+    <a href="beschreibung.html" class="btn">Arbeitsplatz-Beschreibung</a><br><br>
+    <a href="hobbies.html">Meine Hobbys</a><br>
+    <a class="footer-link" href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank">LinkedIn</a><br><br>
+    <a class="btn" href="contact.html">Kontakt</a>
     <p class="copyright">© Vareskovic Boris</p>
   </div>
-
-
-
 </body>
-
-
 </html>
-
-
-
-
-
-
-

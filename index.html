@@ -2,327 +2,287 @@
 <html lang="de">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten." />
-  <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf" />
-  <title>Boris Vareskovic</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
+  <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, Controlling, Spedition, Finance, IT, Power Automate">
+  <meta name="author" content="Boris Vareskovic">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Boris Vareskovic – Lebenslauf & Profil">
+  <meta property="og:description" content="Master der BWL, Abrechnung, Controlling, IT & Speditionserfahrung.">
+  <meta property="og:image" content="Images/Boris Profile Picture-modified.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Images/favicon.png">
+
+  <title>Boris Vareskovic – Persönliche Webseite</title>
+
   <style>
-    /* Basis */
-    :root {
-      --bg: #f5f7fa;
-      --card: #ffffff;
-      --text: #2c3e50;
-      --muted: #7a838b;
-      --accent: #6b7280; /* grauer Akzent */
-      --shadow: 0 6px 18px rgba(44,62,80,0.08);
-      --radius: 10px;
-      --max-width: 1000px;
-    }
-
-    * { box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    header, footer, .container {
-      max-width: var(--max-width);
-      margin: 16px auto;
-      padding: 16px;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background-color: var(--card);
-      border-radius: var(--radius);
-      padding: 24px;
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px 0;
       text-align: center;
-      box-shadow: var(--shadow);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    header img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 12px;
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
     }
 
-    h1 { margin: 6px 0; font-size: 1.4rem; }
-    h3 { margin: 0; font-weight: normal; color: var(--muted); }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.1em;
+      color: #ddd;
+    }
 
     nav {
-      background: #2c3e50;
-      text-align: center;
-      border-radius: 6px;
-      overflow: hidden;
-      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      background: #34495e;
+      padding: 10px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      display: inline-block;
-      padding: 10px 14px;
-      color: white;
+      color: #fff;
       text-decoration: none;
-      font-size: 0.95rem;
+      margin: 5px 15px;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
-    nav a:hover { background: #1f2d3a; }
+    nav a:hover {
+      color: #1abc9c;
+    }
+
+    /* Hamburger Menü */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+      }
+    }
 
     .container {
-      padding: 0 8px 40px;
-    }
-
-    .section-title {
-      border-left: 5px solid var(--accent);
-      padding-left: 10px;
-      margin-top: 28px;
-      margin-bottom: 12px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 18px;
-      background: var(--card);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
       overflow: hidden;
+      padding: 20px 0;
     }
 
-    td, th {
-      padding: 10px 12px;
-      text-align: left;
-      border-bottom: 1px solid #eceff1;
+    section {
+      background: #fff;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    thead th {
-      background: #f7f9fb;
-      font-weight: 700;
-      color: var(--muted);
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #1abc9c;
+      display: inline-block;
+      padding-bottom: 5px;
     }
 
-    ul { padding-left: 18px; margin: 6px 0 0 0; }
+    .profile-pic {
+      display: block;
+      margin: 10px auto;
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-    /* Skills als Balken (keine Sterne) */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 5px 0;
+    }
+
+    /* Skill-Kreise */
     .skills {
-      width: 100%;
-      background: var(--card);
-      padding: 12px;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
     }
 
-    .skill-row {
+    .skill {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(#1abc9c 0deg, #1abc9c var(--percent), #ddd var(--percent));
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f2f4;
+      justify-content: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin: auto;
+      transition: background 1s ease-in-out;
     }
 
-    .skill-row:last-child { border-bottom: none; }
-
-    .skill-name {
-      flex: 0 0 42%;
-      font-weight: 600;
-      color: var(--text);
+    .contact {
+      text-align: center;
     }
 
-    .skill-bar {
-      flex: 1;
-      height: 12px;
-      background: linear-gradient(90deg, rgba(15,23,36,0.03), rgba(15,23,36,0.02));
-      border-radius: 999px;
-      overflow: hidden;
-      box-shadow: inset 0 -1px 0 rgba(255,255,255,0.02);
-    }
-
-    .skill-fill {
-      height: 100%;
-      width: 0%; /* ersetze inline mit dem Prozentwert */
-      background: linear-gradient(90deg, #c0c4c9, #9fa6ad); /* graue Füllung */
-      border-radius: 999px;
-    }
-
-    .skill-percent {
-      flex: 0 0 60px;
-      text-align: right;
-      color: var(--muted);
-      font-weight: 700;
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
     }
 
     footer {
-      background: #2c3e50;
-      color: white;
       text-align: center;
-      padding: 14px;
-      margin-top: 18px;
-      border-radius: 6px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .skill-name { flex: 0 0 40%; font-size: 0.95rem; }
-      .skill-percent { flex: 0 0 50px; font-size: 0.9rem; }
-      header img { width: 96px; height: 96px; }
-      header, footer, .container { padding: 12px; }
-      nav a { padding: 8px 10px; font-size: 0.9rem; }
-      table td, table th { padding: 8px; }
+      padding: 15px;
+      background: #2c3e50;
+      color: #fff;
+      margin-top: 20px;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="Images/Boris Profile Picture-modified.png" alt="Porträtfoto von Boris Vareskovic">
     <h1>Boris Vareskovic</h1>
-    <h3>Master der Betriebswirtschaftslehre</h3>
-    <p><a href="https://ef.sum.ba/en" style="color:#2c3e50; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
+    <p>Master der BWL | Abrechnung · Controlling · IT · Spedition</p>
   </header>
 
+  <!-- Hamburger -->
+  <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
   <nav>
-    <a href="#ausbildung">🎓 Ausbildung</a>
-    <a href="#laufbahn">💼 Laufbahn</a>
-    <a href="#skills">🧠 Fähigkeiten</a>
-    <a href="beschreibung.html">🧾 Arbeitsplatz</a>
-    <a href="hobbies.html">🎯 Hobbys</a>
-    <a href="contact.html">📩 Kontakt</a>
+    <a href="#profil">Profil</a>
+    <a href="#ausbildung">Ausbildung</a>
+    <a href="#erfahrung">Erfahrung</a>
+    <a href="#skills">Fähigkeiten</a>
+    <a href="#kontakt">Kontakt</a>
   </nav>
 
   <div class="container">
-    <section id="ausbildung">
-      <h2 class="section-title">Ausbildung</h2>
-      <table>
-        <tr>
-          <td><strong>2018</strong></td>
-          <td>
-            <a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
-            <ul>
-              <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-              <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td><strong>2013-2016</strong></td>
-          <td>
-            <a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
-            <ul>
-              <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td><strong>2010-2013</strong></td>
-          <td><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a></td>
-        </tr>
-      </table>
+    <section id="profil">
+      <h2>Profil</h2>
+      <img src="Images/Boris Profile Picture-modified.png" alt="Profilbild Boris Vareskovic" class="profile-pic">
+      <p>Ich bin Master of Science in Betriebswirtschaftslehre (Schwerpunkt Rechnungswesen & Finanzen) mit umfassender
+        Erfahrung in Abrechnung, Controlling, IT-Automatisierung und Spedition. Zielstrebig, lösungsorientiert und
+        mit Fokus auf moderne Unternehmensführung.</p>
     </section>
 
-    <section id="laufbahn">
-      <h2 class="section-title">Berufliche Laufbahn</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Zeitraum</th>
-            <th>Arbeitgeber</th>
-            <th>Position</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>06/2019 - heute</td>
-            <td>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
-            <td>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
-          </tr>
-          <tr>
-            <td>04/2018 - 07/2018</td>
-            <td>Riedl Raumkonzepte</td>
-            <td>Kaufmännischer Leiter</td>
-          </tr>
-          <tr>
-            <td>10/2016 - 04/2018</td>
-            <td>Deutsche Post AG</td>
-            <td>Postzusteller</td>
-          </tr>
-          <tr>
-            <td>06/2016 - 09/2016</td>
-            <td>MR Montagen Straubing</td>
-            <td>Montagehelfer</td>
-          </tr>
-          <tr>
-            <td>01/2012 - 03/2016</td>
-            <td>Bosnisch-Herzegowinische Streitkräfte</td>
-            <td>Soldat</td>
-          </tr>
-        </tbody>
-      </table>
+    <section id="ausbildung">
+      <h2>Ausbildung</h2>
+      <ul>
+        <li>Master of Science in Betriebswirtschaftslehre (Rechnungswesen & Finanzen)</li>
+        <li>Bürokauffrau – Srednja skola Busovaca</li>
+        <li>Grundschule – Osnovna skola Vitez</li>
+      </ul>
+    </section>
+
+    <section id="erfahrung">
+      <h2>Berufserfahrung</h2>
+      <ul>
+        <li>Abrechnung, Controlling, IT & Vertrieb – Spedition Wolf Logistics</li>
+        <li>Medizinische Fahrkraft – Gemeinschaftspraxis Dr. Koch</li>
+        <li>Postbotin – Deutsche Post</li>
+        <li>Bürokauffrau – FIS Vitez, Bosnien und Herzegowina</li>
+      </ul>
     </section>
 
     <section id="skills">
-      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
-
+      <h2>Fähigkeiten</h2>
       <div class="skills">
-        <div class="skill-row">
-          <div class="skill-name">Deutsch</div>
-          <div class="skill-bar" aria-hidden="true">
-            <div class="skill-fill" style="width:95%;"></div>
-          </div>
-          <div class="skill-percent">95%</div>
+        <div class="skill">
+          <div class="circle" data-percent="0.95">95%</div>
+          <p>Deutsch</p>
         </div>
-
-        <div class="skill-row">
-          <div class="skill-name">Englisch</div>
-          <div class="skill-bar" aria-hidden="true">
-            <div class="skill-fill" style="width:70%;"></div>
-          </div>
-          <div class="skill-percent">70%</div>
+        <div class="skill">
+          <div class="circle" data-percent="0.90">90%</div>
+          <p>Excel & MS Office</p>
         </div>
-
-        <div class="skill-row">
-          <div class="skill-name">Kroatisch / Serbisch / Bosnisch</div>
-          <div class="skill-bar" aria-hidden="true">
-            <div class="skill-fill" style="width:100%;"></div>
-          </div>
-          <div class="skill-percent">100%</div>
+        <div class="skill">
+          <div class="circle" data-percent="0.85">85%</div>
+          <p>Controlling</p>
         </div>
-
-        <div class="skill-row">
-          <div class="skill-name">MS Office (Excel, Word, Outlook, PowerPoint)</div>
-          <div class="skill-bar" aria-hidden="true">
-            <div class="skill-fill" style="width:98%;"></div>
-          </div>
-          <div class="skill-percent">98%</div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-name">Buchhaltung / Abrechnung</div>
-          <div class="skill-bar" aria-hidden="true">
-            <div class="skill-fill" style="width:96%;"></div>
-          </div>
-          <div class="skill-percent">96%</div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-name">Komalog, Addison, SAP, PowerBI, PowerAutomate, SQL</div>
-          <div class="skill-bar" aria-hidden="true">
-            <div class="skill-fill" style="width:88%;"></div>
-          </div>
-          <div class="skill-percent">88%</div>
+        <div class="skill">
+          <div class="circle" data-percent="0.80">80%</div>
+          <p>Power Automate</p>
         </div>
       </div>
+    </section>
+
+    <section id="kontakt" class="contact">
+      <h2>Kontakt</h2>
+      <p>Ich freue mich über Ihre Nachricht.</p>
+      <a href="mailto:sanda_kristo@hotmail.com">📧 E-Mail</a>
+      <a href="tel:+491742023476">📞 Telefon</a>
+      <a href="https://www.linkedin.com/in/boris-vareskovic" target="_blank">💼 LinkedIn</a>
     </section>
   </div>
 
   <footer>
-    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" style="color:white; text-decoration: underline;">LinkedIn</a></p>
-    <p>&copy; Boris Vareskovic</p>
+    <p>&copy; 2025 Boris Vareskovic</p>
   </footer>
-</body>
 
+  <script>
+    // Skills animieren
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".circle").forEach(circle => {
+        let percent = parseFloat(circle.getAttribute("data-percent"));
+        let deg = percent * 360;
+        circle.style.setProperty("--percent", deg + "deg");
+      });
+    });
+  </script>
+</body>
 </html>

@@ -11,7 +11,7 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(160deg, #e0f0ff, #f4f7fb);
+      background: #f2f4f8;
       color: #2c3e50;
       margin: 0;
       padding: 0;
@@ -33,6 +33,7 @@
       padding: 50px 15px 30px 15px;
       border-bottom-left-radius: 30px;
       border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     header img {
@@ -41,6 +42,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     header h1 {
@@ -71,17 +73,21 @@
     }
 
     nav a {
-      background: rgba(52, 152, 219, 0.9);
+      background: #3498db;
       color: white;
       padding: 10px 18px;
       border-radius: 25px;
       text-decoration: none;
       font-size: 0.95rem;
-      transition: 0.3s;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     nav a:hover {
       background: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     }
 
     /* Abschnittstitel */
@@ -93,21 +99,30 @@
       border-left: 5px solid #3498db;
     }
 
-    /* Tabellen mobilfreundlich */
+    /* Tabellen modern mit hellgrau und Schatten */
     table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
       margin-bottom: 30px;
-      background: rgba(255, 255, 255, 0.95);
+      background: #f8f9fa;
       border-radius: 15px;
       overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    th, td {
-      padding: 12px 15px;
+    table:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    th,
+    td {
+      padding: 14px 18px;
       text-align: left;
       font-size: 0.95rem;
+      color: #2c3e50;
     }
 
     th {
@@ -117,7 +132,7 @@
     }
 
     tr:nth-child(even) {
-      background-color: rgba(236, 240, 241, 0.5);
+      background-color: #e9ecef;
     }
 
     tr td a {
@@ -127,6 +142,7 @@
 
     tr td a:hover {
       color: #1f618d;
+      text-decoration: underline;
     }
 
     .skills td {
@@ -155,7 +171,12 @@
         flex-direction: column;
       }
 
-      table, thead, tbody, th, td, tr {
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
         display: block;
         width: 100%;
       }
@@ -172,6 +193,7 @@
         content: attr(data-label);
         font-weight: 600;
         display: block;
+        margin-bottom: 4px;
       }
 
       header h1 {
@@ -207,6 +229,7 @@
   </nav>
 
   <div class="container">
+    <!-- Ausbildung -->
     <section id="ausbildung">
       <h2 class="section-title">Ausbildung</h2>
       <table>
@@ -234,6 +257,7 @@
       </table>
     </section>
 
+    <!-- Laufbahn -->
     <section id="laufbahn">
       <h2 class="section-title">Berufliche Laufbahn</h2>
       <table>
@@ -270,6 +294,7 @@
       </table>
     </section>
 
+    <!-- Skills -->
     <section id="skills">
       <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
       <table class="skills">
@@ -301,6 +326,7 @@
     </section>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
     <p>&copy; 2025 Boris Vareskovic</p>

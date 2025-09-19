@@ -70,6 +70,11 @@
       justify-content: center;
       gap: 10px;
       padding: 10px 0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     }
 
     nav a {
@@ -148,6 +153,25 @@
     .skills td {
       border: none;
       padding: 10px 0;
+    }
+
+    button {
+      margin: 15px 0;
+      padding: 8px 20px;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 25px;
+      background: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    button:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     }
 
     /* Footer */
@@ -297,7 +321,8 @@
     <!-- Skills -->
     <section id="skills">
       <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
-      <table class="skills">
+      <button id="toggleSkills">Fähigkeiten ein-/ausblenden</button>
+      <table class="skills" id="skillsTable">
         <tr>
           <td>Deutsch</td>
           <td>⭐⭐⭐⭐</td>
@@ -329,8 +354,40 @@
   <!-- Footer -->
   <footer>
     <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
-    <p>&copy; 2025 Boris Vareskovic</p>
+    <p>&copy; <span id="year"></span> Boris Vareskovic</p>
   </footer>
+
+  <script>
+    // Smooth Scroll
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Toggle Skills
+    const btn = document.getElementById('toggleSkills');
+    const skillsTable = document.getElementById('skillsTable');
+    btn.addEventListener('click', () => {
+      skillsTable.style.display = (skillsTable.style.display === 'none') ? 'table' : 'none';
+    });
+
+    // Automatisches Jahr im Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Table Hover Shadow Effect
+    document.querySelectorAll('table').forEach(tbl => {
+      tbl.addEventListener('mouseenter', () => {
+        tbl.style.boxShadow = '0 12px 28px rgba(0,0,0,0.25)';
+      });
+      tbl.addEventListener('mouseleave', () => {
+        tbl.style.boxShadow = '0 6px 20px rgba(0,0,0,0.1)';
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -4,161 +4,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
-  <meta name="keywords"
-    content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
+  <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
   <title>Boris Vareskovic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
-    /* Grundlayout */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #eceff1;
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
       color: #2c3e50;
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Container */
-    .container {
+    header, footer, .container {
       max-width: 1000px;
       margin: auto;
       padding: 20px;
     }
 
-    /* Header */
     header {
-      background-color: #607d8b;
+      background-color: #3498db;
       color: white;
+      padding: 40px 20px;
       text-align: center;
-      padding: 50px 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     header img {
-      width: 130px;
+      width: 120px;
       border-radius: 50%;
-      margin-bottom: 15px;
-      border: 3px solid white;
     }
 
-    header h1 {
-      margin: 10px 0 5px 0;
-      font-size: 2rem;
+    h1, h3 {
+      margin: 10px 0;
     }
 
-    header h3 {
-      margin: 5px 0 15px 0;
-      font-weight: 400;
-    }
-
-    header p a {
-      color: #ffeb3b;
-      font-weight: bold;
-    }
-
-    /* Navigation */
     nav {
-      background-color: #455a64;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      background: #2c3e50;
+      text-align: center;
     }
 
     nav a {
-      padding: 15px 20px;
+      display: inline-block;
+      padding: 14px 20px;
       color: white;
-      transition: 0.3s;
+      text-decoration: none;
     }
 
     nav a:hover {
-      background-color: #1c313a;
-    }
-
-    /* Sektionen */
-    .section-title {
-      border-left: 6px solid #607d8b;
-      padding-left: 12px;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      font-size: 1.5rem;
+      background-color: #2980b9;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
+      margin-bottom: 20px;
     }
 
-    th, td {
-      padding: 12px 15px;
+    td, th {
+      padding: 10px;
       text-align: left;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #ccc;
     }
 
-    th {
-      background-color: #607d8b;
-      color: white;
-    }
-
-    td ul {
-      margin: 5px 0 0 0;
+    ul {
       padding-left: 20px;
+    }
+
+    .section-title {
+      border-left: 5px solid #3498db;
+      padding-left: 10px;
+      margin-top: 40px;
     }
 
     .skills td {
       border: none;
     }
 
-    /* Footer */
     footer {
-      background: #455a64;
+      background: #2c3e50;
       color: white;
       text-align: center;
-      padding: 25px 20px;
-      margin-top: 40px;
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
     }
 
-    footer a {
-      color: #ffeb3b;
-      font-weight: bold;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
       table, thead, tbody, th, td, tr {
         display: block;
         width: 100%;
       }
 
-      th {
-        display: none;
-      }
-
       td {
         padding: 10px 0;
-        position: relative;
-      }
-
-      td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
       }
     }
   </style>
@@ -169,10 +107,10 @@
     <img src="Images/Boris Profile Picture-modified.png" alt="Porträtfoto von Boris Vareskovic">
     <h1>Boris Vareskovic</h1>
     <h3>Master der Betriebswirtschaftslehre</h3>
-    <p><a href="https://ef.sum.ba/en" target="_blank">Faculty of Economics, University of Mostar</a></p>
+    <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
   </header>
 
-  <nav id="navbar">
+  <nav>
     <a href="#ausbildung">🎓 Ausbildung</a>
     <a href="#laufbahn">💼 Laufbahn</a>
     <a href="#skills">🧠 Fähigkeiten</a>
@@ -182,13 +120,12 @@
   </nav>
 
   <div class="container">
-    <!-- Ausbildung -->
     <section id="ausbildung">
       <h2 class="section-title">Ausbildung</h2>
       <table>
         <tr>
-          <td data-label="Jahr"><strong>2018</strong></td>
-          <td data-label="Beschreibung"><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
+          <td><strong>2018</strong></td>
+          <td><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
             <ul>
               <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
               <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
@@ -196,21 +133,20 @@
           </td>
         </tr>
         <tr>
-          <td data-label="Jahr"><strong>2013-2016</strong></td>
-          <td data-label="Beschreibung"><a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
+          <td><strong>2013-2016</strong></td>
+          <td><a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
             <ul>
               <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
             </ul>
           </td>
         </tr>
         <tr>
-          <td data-label="Jahr"><strong>2010-2013</strong></td>
-          <td data-label="Beschreibung"><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a></td>
+          <td><strong>2010-2013</strong></td>
+          <td><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a></td>
         </tr>
       </table>
     </section>
 
-    <!-- Berufliche Laufbahn -->
     <section id="laufbahn">
       <h2 class="section-title">Berufliche Laufbahn</h2>
       <table>
@@ -223,35 +159,34 @@
         </thead>
         <tbody>
           <tr>
-            <td data-label="Zeitraum">06/2019 - heute</td>
-            <td data-label="Arbeitgeber">Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
-            <td data-label="Position">Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
+            <td>06/2019 - heute</td>
+            <td>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
+            <td>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
           </tr>
           <tr>
-            <td data-label="Zeitraum">04/2018 - 07/2018</td>
-            <td data-label="Arbeitgeber">Riedl Raumkonzepte</td>
-            <td data-label="Position">Kaufmännischer Leiter</td>
+            <td>04/2018 - 07/2018</td>
+            <td>Riedl Raumkonzepte</td>
+            <td>Kaufmännischer Leiter</td>
           </tr>
           <tr>
-            <td data-label="Zeitraum">10/2016 - 04/2018</td>
-            <td data-label="Arbeitgeber">Deutsche Post AG</td>
-            <td data-label="Position">Postzusteller</td>
+            <td>10/2016 - 04/2018</td>
+            <td>Deutsche Post AG</td>
+            <td>Postzusteller</td>
           </tr>
           <tr>
-            <td data-label="Zeitraum">06/2016 - 09/2016</td>
-            <td data-label="Arbeitgeber">MR Montagen Straubing</td>
-            <td data-label="Position">Montagehelfer</td>
+            <td>06/2016 - 09/2016</td>
+            <td>MR Montagen Straubing</td>
+            <td>Montagehelfer</td>
           </tr>
           <tr>
-            <td data-label="Zeitraum">01/2012 - 03/2016</td>
-            <td data-label="Arbeitgeber">Bosnisch-Herzegowinische Streitkräfte</td>
-            <td data-label="Position">Soldat</td>
+            <td>01/2012 - 03/2016</td>
+            <td>Bosnisch-Herzegowinische Streitkräfte</td>
+            <td>Soldat</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- Fähigkeiten -->
     <section id="skills">
       <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
       <table class="skills">
@@ -283,36 +218,8 @@
     </section>
   </div>
 
-  <!-- Footer -->
   <footer>
-    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank">LinkedIn</a></p>
+    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" style="color: white; text-decoration: underline;">LinkedIn</a></p>
     <p>&copy; Boris Vareskovic</p>
   </footer>
-
-  <!-- JavaScript für Scroll und Mobile Menü -->
-  <script>
-    // Smooth Scroll zu Sektionen
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // Sticky Navigation bei Scroll
-    window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.style.position = 'fixed';
-        navbar.style.top = '0';
-        navbar.style.width = '100%';
-        navbar.style.zIndex = '100';
-      } else {
-        navbar.style.position = 'static';
-      }
-    });
-  </script>
 </body>
-
-</html>

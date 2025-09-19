@@ -1,317 +1,104 @@
-<!DOCTYPE html>
-<html lang="de">
+<section id="laufbahn">
+  <h2 class="section-title">Berufliche Laufbahn</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">06/2019 - heute</div>
+      <div class="timeline-content">
+        <h3>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</h3>
+        <p>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</p>
+      </div>
+    </div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
-  <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
-  <title>Boris Vareskovic</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #3498db;
-      --dark: #2c3e50;
-      --light: #f5f7fa;
-      --text: #333;
-      --radius: 10px;
-      --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
+    <div class="timeline-item">
+      <div class="timeline-date">04/2018 - 07/2018</div>
+      <div class="timeline-content">
+        <h3>Riedl Raumkonzepte</h3>
+        <p>Kaufmännischer Leiter</p>
+      </div>
+    </div>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <div class="timeline-item">
+      <div class="timeline-date">10/2016 - 04/2018</div>
+      <div class="timeline-content">
+        <h3>Deutsche Post AG</h3>
+        <p>Postzusteller</p>
+      </div>
+    </div>
 
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
+    <div class="timeline-item">
+      <div class="timeline-date">06/2016 - 09/2016</div>
+      <div class="timeline-content">
+        <h3>MR Montagen Straubing</h3>
+        <p>Montagehelfer</p>
+      </div>
+    </div>
 
-    header {
-      background: linear-gradient(135deg, var(--primary), #2980b9);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header img {
-      width: 130px;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: var(--shadow);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 15px 0 5px;
-    }
-
-    header h3 {
-      font-weight: 400;
-      opacity: 0.9;
-    }
-
-    nav {
-      background: white;
-      box-shadow: var(--shadow);
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 10px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: var(--dark);
-      font-weight: 600;
-      text-decoration: none;
-      margin: 5px 15px;
-      padding: 10px 15px;
-      border-radius: var(--radius);
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      padding-left: 12px;
-      border-left: 6px solid var(--primary);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-      background: white;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    th, td {
-      padding: 14px 18px;
-      text-align: left;
-    }
-
-    thead {
-      background: var(--primary);
-      color: white;
-    }
-
-    tbody tr:nth-child(even) {
-      background: #f9fbfd;
-    }
-
-    ul {
-      margin-top: 8px;
-      margin-left: 20px;
-    }
-
-    .skills td {
-      border: none;
-    }
-
-    .skills tr td:last-child {
-      font-size: 1.2rem;
-      color: var(--primary);
-    }
-
-    footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #fff;
-      font-weight: 600;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      nav {
-        flex-direction: column;
-      }
-
-      nav a {
-        margin: 8px 0;
-      }
-
-      table, thead, tbody, tr, th, td {
-        display: block;
-        width: 100%;
-      }
-
-      thead {
-        display: none;
-      }
-
-      td {
-        padding: 12px;
-        border-bottom: 1px solid #eee;
-      }
-
-      td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: block;
-        color: var(--dark);
-        margin-bottom: 4px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <img src="Images/Boris Profile Picture-modified.png" alt="Porträtfoto von Boris Vareskovic">
-    <h1>Boris Vareskovic</h1>
-    <h3>Master der Betriebswirtschaftslehre</h3>
-    <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
-  </header>
-
-  <nav>
-    <a href="#ausbildung"><i class="fa-solid fa-graduation-cap"></i> Ausbildung</a>
-    <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Laufbahn</a>
-    <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Fähigkeiten</a>
-    <a href="beschreibung.html"><i class="fa-solid fa-building"></i> Arbeitsplatz</a>
-    <a href="hobbies.html"><i class="fa-solid fa-basketball"></i> Hobbys</a>
-    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakt</a>
-  </nav>
-
-  <div class="container">
-    <section id="ausbildung">
-      <h2 class="section-title">Ausbildung</h2>
-      <table>
-        <tbody>
-          <tr>
-            <td data-label="Jahr"><strong>2018</strong></td>
-            <td data-label="Details">
-              <a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
-              <ul>
-                <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-                <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>2013-2016</strong></td>
-            <td>
-              <a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
-              <ul>
-                <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>2010-2013</strong></td>
-            <td><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="laufbahn">
-      <h2 class="section-title">Berufliche Laufbahn</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Zeitraum</th>
-            <th>Arbeitgeber</th>
-            <th>Position</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Zeitraum">06/2019 - heute</td>
-            <td data-label="Arbeitgeber">Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
-            <td data-label="Position">Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
-          </tr>
-          <tr>
-            <td>04/2018 - 07/2018</td>
-            <td>Riedl Raumkonzepte</td>
-            <td>Kaufmännischer Leiter</td>
-          </tr>
-          <tr>
-            <td>10/2016 - 04/2018</td>
-            <td>Deutsche Post AG</td>
-            <td>Postzusteller</td>
-          </tr>
-          <tr>
-            <td>06/2016 - 09/2016</td>
-            <td>MR Montagen Straubing</td>
-            <td>Montagehelfer</td>
-          </tr>
-          <tr>
-            <td>01/2012 - 03/2016</td>
-            <td>Bosnisch-Herzegowinische Streitkräfte</td>
-            <td>Soldat</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="skills">
-      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
-      <table class="skills">
-        <tbody>
-          <tr>
-            <td>Deutsch</td>
-            <td>⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Englisch</td>
-            <td>⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Kroatisch / Serbisch / Bosnisch</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>MS Office (Excel, Word, Outlook, PowerPoint)</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Buchhaltung / Abrechnung</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Komalog, Addison, SAP, PowerBI, PowerAutomate, SQL</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <div class="timeline-item">
+      <div class="timeline-date">01/2012 - 03/2016</div>
+      <div class="timeline-content">
+        <h3>Bosnisch-Herzegowinische Streitkräfte</h3>
+        <p>Soldat</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <footer>
-    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
-    <p>&copy; 2025 Boris Vareskovic</p>
-  </footer>
-</body>
+<style>
+  .timeline {
+    position: relative;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 3px solid var(--primary);
+  }
 
-</html>
+  .timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #fff;
+  }
+
+  .timeline-date {
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+
+  .timeline-content {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .timeline-content h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--dark);
+  }
+
+  .timeline-content p {
+    margin: 8px 0 0;
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 20px;
+    }
+
+    .timeline-item::before {
+      left: -14px;
+    }
+  }
+</style>

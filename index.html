@@ -2,256 +2,224 @@
 <html lang="de">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boris Vareskovic</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-  :root {
-    --primary: #1976d2;
-    --background: #f7f9fc;
-    --card-bg: #ffffff;
-    --text-dark: #1f2d3d;
-    --text-light: #555;
-    --radius: 12px;
-    --shadow: 0 6px 15px rgba(0,0,0,0.08);
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
+  <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
+  <title>Boris Vareskovic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
 
-  * {margin:0; padding:0; box-sizing:border-box;}
+    header, footer, .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--background);
-    color: var(--text-dark);
-    line-height: 1.6;
-  }
+    header {
+      background-color: #3498db;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-  header {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    box-shadow: var(--shadow);
-  }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+    }
 
-  header img {
-    width: 120px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: var(--shadow);
-    margin-bottom: 15px;
-  }
+    h1, h3 {
+      margin: 10px 0;
+    }
 
-  header h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-  }
+    nav {
+      background: #2c3e50;
+      text-align: center;
+    }
 
-  header h3 {
-    font-weight: 400;
-    color: #e3f2fd;
-  }
+    nav a {
+      display: inline-block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+    }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    background: white;
-    box-shadow: var(--shadow);
-    padding: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+    nav a:hover {
+      background-color: #2980b9;
+    }
 
-  nav a {
-    padding: 10px 16px;
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 600;
-    border-radius: var(--radius);
-    background: var(--background);
-    transition: 0.3s;
-    text-align: center;
-    flex: 1 1 45%;
-  }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
 
-  nav a:hover {
-    background: var(--primary);
-    color: white;
-  }
+    td, th {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
 
-  .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-  }
+    ul {
+      padding-left: 20px;
+    }
 
-  .section-title {
-    font-size: 1.5rem;
-    margin: 30px 0 15px;
-    color: var(--primary);
-    font-weight: 700;
-  }
+    .section-title {
+      border-left: 5px solid #3498db;
+      padding-left: 10px;
+      margin-top: 40px;
+    }
 
-  /* Card Styles */
-  .card {
-    background: var(--card-bg);
-    padding: 18px 20px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 20px;
-    transition: 0.3s;
-  }
+    .skills td {
+      border: none;
+    }
 
-  .card:hover {
-    transform: translateY(-3px);
-  }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
 
-  .card h3 {
-    margin-bottom: 6px;
-    color: var(--primary);
-  }
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
 
-  .card p, .card ul {
-    margin-left: 0;
-    font-size: 0.95rem;
-    color: var(--text-light);
-  }
-
-  /* Skills Grid */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-  }
-
-  .skill-card {
-    background: var(--card-bg);
-    padding: 16px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: 0.3s;
-    font-weight: 600;
-  }
-
-  .skill-card span {
-    display: block;
-    margin-top: 6px;
-    color: var(--primary);
-    font-weight: 700;
-  }
-
-  .skill-card:hover {
-    transform: translateY(-3px);
-  }
-
-  footer {
-    background: #1f2d3d;
-    color: #bbb;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-  }
-
-  footer a {
-    color: var(--primary);
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 768px) {
-    nav a {flex: 1 1 100%;}
-  }
-</style>
+      td {
+        padding: 10px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <img src="Images/Boris Profile Picture-modified.png" alt="Boris Vareskovic">
-  <h1>Boris Vareskovic</h1>
-  <h3>Master der Betriebswirtschaftslehre</h3>
-</header>
+  <header>
+    <img src="Images/Boris Profile Picture-modified.png" alt="Porträtfoto von Boris Vareskovic">
+    <h1>Boris Vareskovic</h1>
+    <h3>Master der Betriebswirtschaftslehre</h3>
+    <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
+  </header>
 
-<nav>
-  <a href="#ausbildung"><i class="fa-solid fa-graduation-cap"></i> Ausbildung</a>
-  <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Laufbahn</a>
-  <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Skills</a>
-  <a href="beschreibung.html"><i class="fa-solid fa-building"></i> Arbeitsplatz</a>
-  <a href="hobbies.html"><i class="fa-solid fa-futbol"></i> Hobbys</a>
-  <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakt</a>
-</nav>
+  <nav>
+    <a href="#ausbildung">🎓 Ausbildung</a>
+    <a href="#laufbahn">💼 Laufbahn</a>
+    <a href="#skills">🧠 Fähigkeiten</a>
+    <a href="beschreibung.html">🧾 Arbeitsplatz</a>
+    <a href="hobbies.html">🎯 Hobbys</a>
+    <a href="contact.html">📩 Kontakt</a>
+  </nav>
 
-<div class="container">
+  <div class="container">
+    <section id="ausbildung">
+      <h2 class="section-title">Ausbildung</h2>
+      <table>
+        <tr>
+          <td><strong>2018</strong></td>
+          <td><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
+            <ul>
+              <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+              <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>2013-2016</strong></td>
+          <td><a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
+            <ul>
+              <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>2010-2013</strong></td>
+          <td><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a></td>
+        </tr>
+      </table>
+    </section>
 
-  <section id="ausbildung">
-    <h2 class="section-title">Ausbildung</h2>
+    <section id="laufbahn">
+      <h2 class="section-title">Berufliche Laufbahn</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Zeitraum</th>
+            <th>Arbeitgeber</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>06/2019 - heute</td>
+            <td>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
+            <td>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
+          </tr>
+          <tr>
+            <td>04/2018 - 07/2018</td>
+            <td>Riedl Raumkonzepte</td>
+            <td>Kaufmännischer Leiter</td>
+          </tr>
+          <tr>
+            <td>10/2016 - 04/2018</td>
+            <td>Deutsche Post AG</td>
+            <td>Postzusteller</td>
+          </tr>
+          <tr>
+            <td>06/2016 - 09/2016</td>
+            <td>MR Montagen Straubing</td>
+            <td>Montagehelfer</td>
+          </tr>
+          <tr>
+            <td>01/2012 - 03/2016</td>
+            <td>Bosnisch-Herzegowinische Streitkräfte</td>
+            <td>Soldat</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <div class="card">
-      <h3>2018 - BFZ Landshut</h3>
-      <p>Fachkraft Finanzbuchhaltung (SAP & Lexware)</p>
-      <ul>
-        <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-        <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-      </ul>
-    </div>
+    <section id="skills">
+      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
+      <table class="skills">
+        <tr>
+          <td>Deutsch</td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Englisch</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Kroatisch / Serbisch / Bosnisch</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>MS Office (Excel, Word, Outlook, PowerPoint)</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Buchhaltung / Abrechnung</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Komalog, Addison, SAP, PowerBI, PowerAutomate, SQL</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+      </table>
+    </section>
+  </div>
 
-    <div class="card">
-      <h3>2013-2016 - University of Mostar</h3>
-      <p>Master in Betriebswirtschaftslehre</p>
-    </div>
-
-    <div class="card">
-      <h3>2010-2013 - University of Mostar</h3>
-      <p>Bachelor in Betriebswirtschaftslehre</p>
-    </div>
-  </section>
-
-  <section id="laufbahn">
-    <h2 class="section-title">Berufliche Laufbahn</h2>
-
-    <div class="card">
-      <h3>06/2019 – heute</h3>
-      <p>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</p>
-      <p>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</p>
-    </div>
-
-    <div class="card">
-      <h3>04/2018 – 07/2018</h3>
-      <p>Riedl Raumkonzepte</p>
-      <p>Kaufmännischer Leiter</p>
-    </div>
-
-    <div class="card">
-      <h3>10/2016 – 04/2018</h3>
-      <p>Deutsche Post AG</p>
-      <p>Postzusteller</p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Deutsch <span>⭐⭐⭐⭐</span></div>
-      <div class="skill-card">Englisch <span>⭐⭐⭐</span></div>
-      <div class="skill-card">Kroatisch/Serbisch/Bosnisch <span>⭐⭐⭐⭐⭐</span></div>
-      <div class="skill-card">MS Office <span>⭐⭐⭐⭐⭐</span></div>
-      <div class="skill-card">Buchhaltung/Abrechnung <span>⭐⭐⭐⭐⭐</span></div>
-      <div class="skill-card">SAP, PowerBI, PowerAutomate, SQL <span>⭐⭐⭐⭐⭐</span></div>
-    </div>
-  </section>
-
-</div>
-
-<footer>
-  <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
-  <p>&copy; 2025 Boris Vareskovic</p>
-</footer>
-
+  <footer>
+    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" style="color: white; text-decoration: underline;">LinkedIn</a></p>
+    <p>&copy; Boris Vareskovic</p>
+  </footer>
 </body>
-</html>

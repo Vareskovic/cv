@@ -10,19 +10,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* Grundlayout */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(160deg, #e0f0ff, #f4f7fb);
       color: #2c3e50;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 1.05rem;
     }
 
     .container {
       max-width: 1100px;
-      margin: auto;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     /* Header */
@@ -30,38 +35,39 @@
       background: linear-gradient(135deg, #3498db, #5dade2);
       color: white;
       text-align: center;
-      padding: 60px 20px;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      position: relative;
+      padding: 80px 20px 60px 20px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
       overflow: hidden;
+      position: relative;
     }
 
     header img {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s;
+      border: 5px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.5s, box-shadow 0.5s;
     }
 
     header img:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
 
     header h1 {
-      margin: 15px 0 5px 0;
-      font-size: 2.8rem;
+      margin: 25px 0 10px 0;
+      font-size: 3.2rem;
       letter-spacing: 1px;
     }
 
     header h3 {
-      margin: 5px 0 15px 0;
+      margin: 5px 0 25px 0;
       font-weight: 400;
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       letter-spacing: 0.5px;
     }
 
@@ -69,6 +75,7 @@
       color: white;
       text-decoration: underline;
       font-weight: 500;
+      font-size: 1.15rem;
     }
 
     /* Navigation */
@@ -76,39 +83,70 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
-      padding: 15px;
-      margin-top: -20px;
-      z-index: 10;
+      gap: 14px;
+      padding: 22px;
+      margin-top: -30px;
       position: relative;
+      z-index: 10;
     }
 
     nav a {
-      background: rgba(52, 152, 219, 0.9);
+      background: rgba(52, 152, 219, 0.95);
       color: white;
-      padding: 12px 20px;
+      padding: 14px 26px;
       text-decoration: none;
       font-weight: 500;
-      border-radius: 20px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 30px;
+      transition: all 0.4s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      background: #fff;
+      bottom: 0;
+      left: 0;
+      transition: 0.4s;
+      border-radius: 2px;
     }
 
     nav a:hover {
       background: #2980b9;
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* Abschnittstitel */
     .section-title {
-      font-size: 2rem;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      padding-left: 12px;
-      border-left: 6px solid #3498db;
+      font-size: 2.4rem;
+      margin-top: 70px;
+      margin-bottom: 30px;
+      padding-left: 18px;
+      border-left: 8px solid #3498db;
       color: #34495e;
       letter-spacing: 0.5px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 50px;
+      background: #3498db;
+      bottom: -8px;
+      left: 0;
+      border-radius: 2px;
+      transition: width 0.4s;
     }
 
     /* Tabellen modern */
@@ -116,34 +154,37 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      margin-bottom: 30px;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
+      margin-bottom: 50px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s, box-shadow 0.4s;
     }
 
     table:hover {
-      transform: translateY(-2px);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
     }
 
-    th, td {
-      padding: 15px 20px;
+    th,
+    td {
+      padding: 20px 28px;
       text-align: left;
       color: #2c3e50;
+      font-size: 1.1rem;
     }
 
     th {
       background-color: #3498db;
       color: white;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.15rem;
     }
 
     tr:nth-child(even) {
-      background-color: rgba(236, 240, 241, 0.5);
+      background-color: rgba(236, 240, 241, 0.55);
     }
 
     tr td a {
@@ -155,11 +196,13 @@
 
     tr td a:hover {
       color: #1f618d;
+      text-decoration: underline;
     }
 
     .skills td {
       border: none;
-      padding: 12px;
+      padding: 16px 0;
+      font-size: 1.1rem;
     }
 
     /* Footer */
@@ -167,9 +210,9 @@
       background: #2c3e50;
       color: white;
       text-align: center;
-      padding: 30px 10px;
-      margin-top: 50px;
-      font-size: 1rem;
+      padding: 40px 20px;
+      margin-top: 70px;
+      font-size: 1.05rem;
     }
 
     footer a {
@@ -178,23 +221,52 @@
       font-weight: 500;
     }
 
+    /* Scroll-Effekte */
+    section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
       }
 
-      table, thead, tbody, th, td, tr {
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
         display: block;
         width: 100%;
       }
 
       td {
-        padding: 12px 0;
+        padding: 16px 0;
       }
 
       th {
         display: none;
+      }
+
+      header h1 {
+        font-size: 2.6rem;
+      }
+
+      header h3 {
+        font-size: 1.4rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
       }
     }
   </style>
@@ -218,8 +290,8 @@
   </nav>
 
   <div class="container">
-    <section id="ausbildung">
-      <h2 class="section-title">Ausbildung</h2>
+    <section id="ausbildung" class="scroll-section">
+      <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Ausbildung</h2>
       <table>
         <tr>
           <td><strong>2018</strong></td>
@@ -234,88 +306,4 @@
           <td><strong>2013-2016</strong></td>
           <td><a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
             <ul>
-              <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td><strong>2010-2013</strong></td>
-          <td><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a></td>
-        </tr>
-      </table>
-    </section>
-
-    <section id="laufbahn">
-      <h2 class="section-title">Berufliche Laufbahn</h2>
-      <table>
-        <tr>
-          <th>Zeitraum</th>
-          <th>Arbeitgeber</th>
-          <th>Position</th>
-        </tr>
-        <tr>
-          <td>06/2019 - heute</td>
-          <td>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
-          <td>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
-        </tr>
-        <tr>
-          <td>04/2018 - 07/2018</td>
-          <td>Riedl Raumkonzepte</td>
-          <td>Kaufmännischer Leiter</td>
-        </tr>
-        <tr>
-          <td>10/2016 - 04/2018</td>
-          <td>Deutsche Post AG</td>
-          <td>Postzusteller</td>
-        </tr>
-        <tr>
-          <td>06/2016 - 09/2016</td>
-          <td>MR Montagen Straubing</td>
-          <td>Montagehelfer</td>
-        </tr>
-        <tr>
-          <td>01/2012 - 03/2016</td>
-          <td>Bosnisch-Herzegowinische Streitkräfte</td>
-          <td>Soldat</td>
-        </tr>
-      </table>
-    </section>
-
-    <section id="skills">
-      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
-      <table class="skills">
-        <tr>
-          <td>Deutsch</td>
-          <td>⭐⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>Englisch</td>
-          <td>⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>Kroatisch / Serbisch / Bosnisch</td>
-          <td>⭐⭐⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>MS Office (Excel, Word, Outlook, PowerPoint)</td>
-          <td>⭐⭐⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>Buchhaltung / Abrechnung</td>
-          <td>⭐⭐⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>Komalog, Addison, SAP, PowerBI, PowerAutomate, SQL</td>
-          <td>⭐⭐⭐⭐⭐</td>
-        </tr>
-      </table>
-    </section>
-  </div>
-
-  <footer>
-    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
-    <p>&copy; 2025 Boris Vareskovic</p>
-  </footer>
-</body>
-
-</html>
+              <li><

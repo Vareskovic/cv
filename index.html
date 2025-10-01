@@ -1,269 +1,347 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lebenslauf – Boris Vareskovic</title>
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
+  <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
+  <title>Boris Vareskovic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
-      font-family: "Segoe UI", Tahoma, sans-serif;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(120deg, #f5f7fa, #e9eff5);
+      color: #2c3e50;
       margin: 0;
       padding: 0;
-      background: #f4f7fb;
-      color: #2c3e50;
       line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #2980b9, #2c3e50);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    header p {
-      margin: 5px 0;
-      font-size: 16px;
-    }
-
+    header,
+    footer,
     .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 40px auto;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
     }
 
-    h2.section-title {
-      font-size: 22px;
-      color: #2980b9;
-      border-bottom: 2px solid #2980b9;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
+    header {
+      background: linear-gradient(120deg, #2980b9, #6dd5fa, #3498db);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
     }
 
-    /* Timeline */
-    .timeline {
-      position: relative;
-      margin-left: 20px;
-      padding-left: 20px;
-      border-left: 3px solid #2980b9;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: -2px;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: #2980b9;
-    }
-
-    .entry {
-      position: relative;
-      margin-bottom: 30px;
-      padding-left: 20px;
-    }
-
-    .entry::before {
-      content: "";
-      position: absolute;
-      left: -11px;
-      top: 5px;
-      width: 18px;
-      height: 18px;
+    header img {
+      width: 140px;
       border-radius: 50%;
-      background: white;
-      border: 4px solid #2980b9;
+      border: 4px solid white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .entry h3 {
-      margin: 0;
-      font-size: 18px;
-      color: #2c3e50;
+    h1 {
+      margin: 20px 0 5px;
+      font-size: 2.2em;
     }
 
-    .entry span {
-      font-size: 14px;
-      color: #7f8c8d;
+    h3 {
+      margin: 5px 0 15px;
+      font-weight: 400;
     }
 
-    .entry p {
-      margin: 5px 0 0;
+    nav {
+      background: #2c3e50;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 15px 22px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #3498db;
+    }
+
+    .section-title {
+      font-size: 1.6em;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      border-left: 6px solid #3498db;
+      padding-left: 12px;
+      font-weight: bold;
       color: #34495e;
     }
 
-    /* Skills / Sprachen */
-    .skills, .languages {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
+    /* Ausbildung Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+      border-left: 3px solid #3498db;
     }
 
-    .skill, .lang {
-      background: #fff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .timeline-item {
+      margin-bottom: 30px;
+      position: relative;
     }
 
-    .skill h4, .lang h4 {
-      margin: 0 0 5px;
-      font-size: 16px;
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3498db;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #3498db;
+    }
+
+    .timeline-item strong {
+      display: inline-block;
+      margin-bottom: 5px;
+      color: #2980b9;
+    }
+
+    .timeline-item a {
+      color: #2c3e50;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .timeline-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Laufbahn Tabelle */
+    .career {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .career th,
+    .career td {
+      padding: 14px 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .career th {
+      background: #ecf0f1;
+      font-weight: 600;
+    }
+
+    /* Skills Balken */
+    .skill {
+      margin: 15px 0;
+    }
+
+    .skill-name {
+      margin-bottom: 5px;
+      font-weight: 500;
     }
 
     .progress {
-      height: 8px;
       background: #ecf0f1;
-      border-radius: 4px;
+      border-radius: 20px;
       overflow: hidden;
+      height: 18px;
     }
 
-    .progress span {
-      display: block;
+    .progress-bar {
       height: 100%;
-      background: #2980b9;
+      line-height: 18px;
+      text-align: right;
+      padding-right: 6px;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #3498db, #2ecc71);
+      width: 0;
+      transition: width 2s ease;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
       background: #2c3e50;
       color: white;
-      margin-top: 40px;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #6dd5fa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
   <header>
+    <img src="Images/Boris Profile Picture-modified.png" alt="Porträtfoto von Boris Vareskovic">
     <h1>Boris Vareskovic</h1>
-    <p>Abrechnung • Controlling • IT • Finance</p>
-    <p>📍 Aiterhofen | 📞 +49 174 202 3476 | ✉️ sanda_kristo@hotmail.com</p>
+    <h3>Master der Betriebswirtschaftslehre</h3>
+    <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
   </header>
 
+  <nav>
+    <a href="#ausbildung">🎓 Ausbildung</a>
+    <a href="#laufbahn">💼 Laufbahn</a>
+    <a href="#skills">🧠 Fähigkeiten</a>
+    <a href="beschreibung.html">🧾 Arbeitsplatz</a>
+    <a href="hobbies.html">🎯 Hobbys</a>
+    <a href="contact.html">📩 Kontakt</a>
+  </nav>
+
   <div class="container">
-
-    <!-- Berufserfahrung -->
-    <section>
-      <h2 class="section-title">Berufliche Laufbahn</h2>
-      <div class="timeline">
-        
-        <div class="entry">
-          <h3>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</h3>
-          <span>Juni 2019 – heute</span>
-          <p><strong>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</strong></p>
-        </div>
-
-        <div class="entry">
-          <h3>Kaufmännischer Leiter</h3>
-          <span>April 2018 – Juli 2018</span>
-          <p><strong>Riedl Raumkonzepte</strong></p>
-        </div>
-
-        <div class="entry">
-          <h3>Postzusteller</h3>
-          <span>Oktober 2016 – April 2018</span>
-          <p><strong>Deutsche Post AG</strong></p>
-        </div>
-
-        <div class="entry">
-          <h3>Montagehelfer</h3>
-          <span>Juni 2016 – September 2016</span>
-          <p><strong>MR Montagen Straubing</strong></p>
-        </div>
-
-        <div class="entry">
-          <h3>Soldat</h3>
-          <span>Januar 2012 – März 2016</span>
-          <p><strong>Bosnisch-Herzegowinische Streitkräfte</strong></p>
-        </div>
-      </div>
-    </section>
-
     <!-- Ausbildung -->
-    <section>
+    <section id="ausbildung">
       <h2 class="section-title">Ausbildung</h2>
       <div class="timeline">
-
-        <div class="entry">
-          <h3>Mr.Sc. Betriebswirtschaftslehre (Rechnungswesen & Finanzwesen)</h3>
-          <span>2016</span>
-          <p><strong>Universität, Bosnien und Herzegowina</strong></p>
+        <div class="timeline-item">
+          <strong>2018</strong>  
+          <a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
+          <ul>
+            <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+            <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+          </ul>
         </div>
-
-        <div class="entry">
-          <h3>Mittelschule – Bürokaufmann</h3>
-          <span>2009</span>
-          <p><strong>Srednja skola Busovaca</strong></p>
+        <div class="timeline-item">
+          <strong>Oktober 2013 – Juli 2016</strong>  
+          <a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
+          <ul>
+            <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
+          </ul>
         </div>
-
-        <div class="entry">
-          <h3>Grundschule</h3>
-          <span>2005</span>
-          <p><strong>Osnovna skola Vitez</strong></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Fähigkeiten -->
-    <section>
-      <h2 class="section-title">Fähigkeiten</h2>
-      <div class="skills">
-        <div class="skill">
-          <h4>Rechnungsprüfung</h4>
-          <div class="progress"><span style="width:90%"></span></div>
-        </div>
-        <div class="skill">
-          <h4>Zahlungsabwicklung</h4>
-          <div class="progress"><span style="width:85%"></span></div>
-        </div>
-        <div class="skill">
-          <h4>Büroorganisation</h4>
-          <div class="progress"><span style="width:80%"></span></div>
-        </div>
-        <div class="skill">
-          <h4>Kundenservice</h4>
-          <div class="progress"><span style="width:75%"></span></div>
-        </div>
-        <div class="skill">
-          <h4>MS Office</h4>
-          <div class="progress"><span style="width:95%"></span></div>
+        <div class="timeline-item">
+          <strong>September 2010 – Juli 2013</strong>  
+          <a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a>
         </div>
       </div>
     </section>
 
-    <!-- Sprachen -->
-    <section>
-      <h2 class="section-title">Sprachkenntnisse</h2>
-      <div class="languages">
-        <div class="lang">
-          <h4>Deutsch</h4>
-          <div class="progress"><span style="width:90%"></span></div>
-        </div>
-        <div class="lang">
-          <h4>Kroatisch</h4>
-          <div class="progress"><span style="width:100%"></span></div>
-        </div>
-        <div class="lang">
-          <h4>Englisch</h4>
-          <div class="progress"><span style="width:70%"></span></div>
-        </div>
-        <div class="lang">
-          <h4>Bosnisch / Serbisch</h4>
-          <div class="progress"><span style="width:95%"></span></div>
-        </div>
-      </div>
+    <!-- Laufbahn -->
+    <section id="laufbahn">
+      <h2 class="section-title">Berufliche Laufbahn</h2>
+      <table class="career">
+        <thead>
+          <tr>
+            <th>Zeitraum</th>
+            <th>Arbeitgeber</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juni 2019 – Heute</td>
+            <td>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
+            <td>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
+          </tr>
+          <tr>
+            <td>April 2018 – Juli 2018</td>
+            <td>Riedl Raumkonzepte</td>
+            <td>Kaufmännischer Leiter</td>
+          </tr>
+          <tr>
+            <td>Oktober 2016 – April 2018</td>
+            <td>Deutsche Post AG</td>
+            <td>Postzusteller</td>
+          </tr>
+          <tr>
+            <td>Juni 2016 – September 2016</td>
+            <td>MR Montagen Straubing</td>
+            <td>Montagehelfer</td>
+          </tr>
+          <tr>
+            <td>Januar 2012 – März 2016</td>
+            <td>Bosnisch-Herzegowinische Streitkräfte</td>
+            <td>Soldat</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
+
+      <div class="skill">
+        <div class="skill-name">Deutsch</div>
+        <div class="progress">
+          <div class="progress-bar" data-skill="90%">90%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Englisch</div>
+        <div class="progress">
+          <div class="progress-bar" data-skill="70%">70%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Kroatisch / Serbisch / Bosnisch</div>
+        <div class="progress">
+          <div class="progress-bar" data-skill="100%">100%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">MS Office (Excel, Word, Outlook, PowerPoint)</div>
+        <div class="progress">
+          <div class="progress-bar" data-skill="100%">100%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Buchhaltung / Abrechnung</div>
+        <div class="progress">
+          <div class="progress-bar" data-skill="95%">95%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Komalog, Addison, SAP, PowerBI, PowerAutomate, SQL</div>
+        <div class="progress">
+          <div class="progress-bar" data-skill="95%">95%</div>
+        </div>
+      </div>
+
+    </section>
   </div>
 
   <footer>
-    © 2025 Boris Vareskovic – Zukunftsorientierter Lebenslauf
+    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
+    <p>&copy; 2025 Boris Vareskovic</p>
   </footer>
+
+  <!-- JavaScript: Skills Animation -->
+  <script>
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".progress-bar").forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight && bar.style.width === "0px") {
+          bar.style.width = bar.dataset.skill;
+        }
+      });
+    });
+  </script>
+
 </body>
+
 </html>

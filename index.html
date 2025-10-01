@@ -4,53 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boris Vareskovic – Portfolio</title>
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
+  <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
+  <title>Boris Vareskovic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    :root {
-      --main-color: #2c3e50;
-      --accent-color: #3498db;
-      --light-bg: #f5f7fa;
-      --section-bg: #ffffff;
-      --text-color: #2c3e50;
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--light-bg);
-      color: var(--text-color);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #2c3e50;
       margin: 0;
+      padding: 0;
       line-height: 1.6;
     }
 
+    header,
+    footer,
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
     header {
-      background-color: var(--accent-color);
+      background: linear-gradient(135deg, #3498db, #2c3e50);
       color: white;
+      padding: 50px 20px;
       text-align: center;
-      padding: 40px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     header img {
       width: 120px;
       border-radius: 50%;
-      margin-bottom: 10px;
+      border: 4px solid white;
     }
 
-    header h1 {
+    h1,
+    h3 {
       margin: 10px 0;
     }
 
     nav {
-      background-color: var(--main-color);
+      background: #2c3e50;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
@@ -62,178 +62,108 @@
     }
 
     nav a:hover {
-      background-color: var(--accent-color);
+      background-color: #2980b9;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
+    .section-title {
+      border-left: 5px solid #3498db;
+      padding-left: 10px;
+      margin: 40px 0 20px;
+      font-size: 1.6em;
     }
 
-    h2 {
-      color: var(--main-color);
-      background-color: #eaf2f8;
-      padding: 12px 18px;
-      border-left: 5px solid var(--accent-color);
-      margin-top: 40px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    h2::before {
-      content: "💼";
-      font-size: 1.3rem;
-    }
-
-    /* Timeline */
+    /* ==== Timeline ohne Punkte + Icons ==== */
     .timeline {
-      position: relative;
-      margin: 40px 0;
-      padding-left: 40px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 20px;
-      width: 4px;
-      height: 100%;
-      background-color: var(--accent-color);
-      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
     }
 
     .timeline-item {
-      margin-bottom: 30px;
-      position: relative;
-    }
-
-    .timeline-item h3 {
-      margin: 0 0 5px 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .timeline-item span {
       font-weight: bold;
-      color: var(--accent-color);
+      color: #2980b9;
+      font-size: 1.1em;
+      margin-bottom: 6px;
     }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 12px;
-      top: 5px;
-      width: 16px;
-      height: 16px;
-      background-color: var(--main-color);
-      border-radius: 50%;
+    .timeline-item a {
+      color: #2c3e50;
+      font-weight: 500;
+      text-decoration: none;
     }
 
-    /* Skills */
-    .skills {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .timeline-item a:hover {
+      text-decoration: underline;
     }
 
+    /* ==== Tabelle Laufbahn ==== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    thead {
+      background: #3498db;
+      color: white;
+    }
+
+    /* ==== Skills Balken ==== */
     .skill {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      margin: 15px 0;
     }
 
     .skill-name {
-      font-weight: 600;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
 
-    .skill-bar {
-      flex: 1;
-      height: 16px;
-      background-color: #dcdcdc;
-      border-radius: 8px;
-      margin-left: 15px;
+    .progress {
+      background: #ddd;
+      border-radius: 30px;
       overflow: hidden;
+      height: 20px;
     }
 
-    .skill-bar-inner {
+    .progress-bar {
       height: 100%;
       width: 0;
-      background-color: var(--accent-color);
-      border-radius: 8px;
-      transition: width 1.5s ease-in-out;
+      background: linear-gradient(90deg, #3498db, #2c3e50);
+      text-align: right;
+      padding-right: 8px;
+      color: white;
+      font-size: 12px;
+      line-height: 20px;
+      transition: width 2s ease-in-out;
     }
 
-    /* Sections */
-    section {
-      margin-bottom: 50px;
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
-    ul, ol {
-      padding-left: 25px;
+    footer a {
+      color: #6dd5fa;
+      text-decoration: underline;
     }
 
-    ul li, ol li {
-      margin-bottom: 12px;
-      position: relative;
-      padding-left: 25px;
-    }
-
-    ul li::before, ol li::before {
-      content: "⭐";
-      position: absolute;
-      left: 0;
-    }
-
-    a.btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background-color: var(--accent-color);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-
-    a.btn:hover {
-      background-color: #1c6391;
-    }
-
-    input[type="text"], input[type="email"], textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-      margin-top: 5px;
-    }
-
-    input[type="submit"] {
-      background-color: var(--accent-color);
-      color: #fff;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: 0.3s;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #1c6391;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .container {
-        padding: 20px 15px;
-      }
-
-      h2 {
-        font-size: 1.2rem;
+      .timeline-item {
+        flex-direction: column;
       }
     }
   </style>
@@ -241,146 +171,129 @@
 
 <body>
   <header>
-    <img src="Images/Boris Profile Picture-modified.png" alt="Boris Vareskovic">
+    <img src="Images/Boris Profile Picture-modified.png" alt="Porträtfoto von Boris Vareskovic">
     <h1>Boris Vareskovic</h1>
     <h3>Master der Betriebswirtschaftslehre</h3>
+    <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
   </header>
 
   <nav>
     <a href="#ausbildung">🎓 Ausbildung</a>
     <a href="#laufbahn">💼 Laufbahn</a>
     <a href="#skills">🧠 Fähigkeiten</a>
-    <a href="#arbeitsplatz">📝 Arbeitsplatz</a>
-    <a href="#hobbys">🎯 Hobbys</a>
-    <a href="#kontakt">📩 Kontakt</a>
+    <a href="beschreibung.html">🧾 Arbeitsplatz</a>
+    <a href="hobbies.html">🎯 Hobbys</a>
+    <a href="contact.html">📩 Kontakt</a>
   </nav>
 
   <div class="container">
 
     <!-- Ausbildung -->
     <section id="ausbildung">
-      <h2>Ausbildung</h2>
+      <h2 class="section-title">Ausbildung</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <h3>Master BWL</h3>
-          <span>2013–2016</span>
-          <p>University of Mostar – <a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung</a></p>
+          <span>🎓 2018</span>
+          <a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
+          <ul>
+            <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+            <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+          </ul>
         </div>
         <div class="timeline-item">
-          <h3>Bachelor BWL</h3>
-          <span>2010–2013</span>
-          <p>University of Mostar</p>
+          <span>🎓 Oktober 2013 – Juli 2016</span>
+          <a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
+          <ul>
+            <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
+          </ul>
         </div>
         <div class="timeline-item">
-          <h3>Fachkraft Finanzbuchhaltung</h3>
-          <span>2018</span>
-          <p><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">SAP & Lexware</a></p>
+          <span>🎓 September 2010 – Juli 2013</span>
+          <a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a>
         </div>
       </div>
     </section>
 
     <!-- Laufbahn -->
     <section id="laufbahn">
-      <h2>Berufliche Laufbahn</h2>
+      <h2 class="section-title">Berufliche Laufbahn</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <h3>Task-Force Koordinator</h3>
-          <span>06/2019 – heute</span>
-          <p>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</p>
+          <span>💼 Juni 2019 – Heute</span>
+          Michael Wolf OHG / Wolf Spedition GmbH & Co. KG – Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung
         </div>
         <div class="timeline-item">
-          <h3>Kaufmännischer Leiter</h3>
-          <span>04/2018 – 07/2018</span>
-          <p>Riedl Raumkonzepte</p>
+          <span>💼 April 2018 – Juli 2018</span>
+          Riedl Raumkonzepte – Kaufmännischer Leiter
         </div>
         <div class="timeline-item">
-          <h3>Postzusteller</h3>
-          <span>10/2016 – 04/2018</span>
-          <p>Deutsche Post AG</p>
+          <span>💼 Oktober 2016 – April 2018</span>
+          Deutsche Post AG – Postzusteller
+        </div>
+        <div class="timeline-item">
+          <span>💼 Juni 2016 – September 2016</span>
+          MR Montagen Straubing – Montagehelfer
+        </div>
+        <div class="timeline-item">
+          <span>💼 Januar 2012 – März 2016</span>
+          Bosnisch-Herzegowinische Streitkräfte – Soldat
         </div>
       </div>
     </section>
 
     <!-- Skills -->
     <section id="skills">
-      <h2>Kenntnisse & Fähigkeiten</h2>
-      <div class="skills">
-        <div class="skill">
-          <span class="skill-name">Deutsch</span>
-          <div class="skill-bar"><div class="skill-bar-inner" data-width="90%"></div></div>
-        </div>
-        <div class="skill">
-          <span class="skill-name">Englisch</span>
-          <div class="skill-bar"><div class="skill-bar-inner" data-width="70%"></div></div>
-        </div>
-        <div class="skill">
-          <span class="skill-name">Kroatisch / Serbisch / Bosnisch</span>
-          <div class="skill-bar"><div class="skill-bar-inner" data-width="100%"></div></div>
-        </div>
-        <div class="skill">
-          <span class="skill-name">MS Office</span>
-          <div class="skill-bar"><div class="skill-bar-inner" data-width="95%"></div></div>
-        </div>
-        <div class="skill">
-          <span class="skill-name">Buchhaltung / Abrechnung</span>
-          <div class="skill-bar"><div class="skill-bar-inner" data-width="95%"></div></div>
-        </div>
+      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
+
+      <div class="skill">
+        <div class="skill-name">Deutsch</div>
+        <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
       </div>
+
+      <div class="skill">
+        <div class="skill-name">Englisch</div>
+        <div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Kroatisch / Serbisch / Bosnisch</div>
+        <div class="progress"><div class="progress-bar" style="width: 100%;">100%</div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">MS Office (Excel, Word, Outlook, PowerPoint)</div>
+        <div class="progress"><div class="progress-bar" style="width: 95%;">95%</div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Buchhaltung / Abrechnung</div>
+        <div class="progress"><div class="progress-bar" style="width: 95%;">95%</div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Komalog, Addison, SAP, PowerBI, PowerAutomate, SQL</div>
+        <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
+      </div>
+
     </section>
-
-    <!-- Arbeitsplatz -->
-    <section id="arbeitsplatz">
-      <h2>Arbeitsplätze</h2>
-      <ul>
-        <li>Buchhaltung & Finanzkontrolle – Rechnungen, Zahlungen, Endabrechnungen, Mahnwesen</li>
-        <li>Vertrieb & Preisgestaltung – Kalkulation, Optimierung, Automatisierung</li>
-        <li>Leitung Rechnungsabteilung – Tarife, Fakturierung, Reporting</li>
-        <li>IT-Automatisierung & Systemadministration – papierlose Prozesse, Schulungen, Wartung</li>
-        <li>Disposition & Fahrerbetreuung – Integration, Unterstützung, Automatisierung</li>
-        <li>Task Force – Einarbeitung, Schulungen, Projektleitung, Teamkoordination</li>
-      </ul>
-    </section>
-
-    <!-- Hobbys -->
-    <section id="hobbys">
-      <h2>Hobbys</h2>
-      <ol>
-        <li><a href="https://www.fupa.net/player/boris-vareskovic-955599" target="_blank">Fußball</a></li>
-        <li><a href="https://de-de.facebook.com/borisvareskovicfit/" target="_blank">Fitness</a></li>
-      </ol>
-    </section>
-
-    <!-- Kontakt -->
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-      <form action="mailto:borisvareskovic@outlook.de" method="post" enctype="text/plain">
-        <label for="name">Ihr Name</label>
-        <input type="text" name="name" id="name" placeholder="Max Mustermann" required>
-
-        <label for="email">Ihre E-Mail</label>
-        <input type="email" name="email" id="email" placeholder="max@example.com" required>
-
-        <label for="message">Ihre Nachricht</label>
-        <textarea name="message" id="message" placeholder="Was möchten Sie mitteilen?" required></textarea>
-
-        <input type="submit" value="Nachricht senden">
-      </form>
-    </section>
-
   </div>
+
+  <footer>
+    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
+    <p>&copy; 2025 Boris Vareskovic</p>
+  </footer>
 
   <script>
     // Skills Animation
-    const skillBars = document.querySelectorAll('.skill-bar-inner');
-    window.addEventListener('scroll', () => {
-      skillBars.forEach(bar => {
-        const rect = bar.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50) {
-          bar.style.width = bar.getAttribute('data-width');
-        }
+    document.addEventListener("DOMContentLoaded", function () {
+      let bars = document.querySelectorAll(".progress-bar");
+      bars.forEach(bar => {
+        let width = bar.style.width;
+        bar.style.width = "0";
+        setTimeout(() => { bar.style.width = width; }, 200);
       });
     });
   </script>
-</body>
 
+</body>
 </html>

@@ -18,7 +18,9 @@
       line-height: 1.6;
     }
 
-    header, footer, .container {
+    header,
+    footer,
+    .container {
       max-width: 1000px;
       margin: auto;
       padding: 20px;
@@ -36,7 +38,8 @@
       border-radius: 50%;
     }
 
-    h1, h3 {
+    h1,
+    h3 {
       margin: 10px 0;
     }
 
@@ -62,7 +65,8 @@
       margin-bottom: 20px;
     }
 
-    td, th {
+    td,
+    th {
       padding: 10px;
       text-align: left;
       border-bottom: 1px solid #ccc;
@@ -89,8 +93,69 @@
       padding: 20px;
     }
 
+    /* Timeline Styles */
+    .timeline {
+      position: relative;
+      margin: 20px 0;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #3498db;
+    }
+
+    .job {
+      position: relative;
+      margin-bottom: 30px;
+      padding: 10px 20px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: 15px;
+      width: 15px;
+      height: 15px;
+      background: #fff;
+      border: 3px solid #3498db;
+      border-radius: 50%;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .job-header h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #2c3e50;
+    }
+
+    .job-header .date {
+      font-size: 14px;
+      color: #7f8c8d;
+    }
+
     @media (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
         display: block;
         width: 100%;
       }
@@ -149,42 +214,49 @@
 
     <section id="laufbahn">
       <h2 class="section-title">Berufliche Laufbahn</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Zeitraum</th>
-            <th>Arbeitgeber</th>
-            <th>Position</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>06/2019 - heute</td>
-            <td>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
-            <td>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
-          </tr>
-          <tr>
-            <td>04/2018 - 07/2018</td>
-            <td>Riedl Raumkonzepte</td>
-            <td>Kaufmännischer Leiter</td>
-          </tr>
-          <tr>
-            <td>10/2016 - 04/2018</td>
-            <td>Deutsche Post AG</td>
-            <td>Postzusteller</td>
-          </tr>
-          <tr>
-            <td>06/2016 - 09/2016</td>
-            <td>MR Montagen Straubing</td>
-            <td>Montagehelfer</td>
-          </tr>
-          <tr>
-            <td>01/2012 - 03/2016</td>
-            <td>Bosnisch-Herzegowinische Streitkräfte</td>
-            <td>Soldat</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="timeline">
+
+        <div class="job">
+          <div class="job-header">
+            <h3>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</h3>
+            <span class="date">06/2019 – heute</span>
+          </div>
+          <p><strong>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</strong></p>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <h3>Kaufmännischer Leiter</h3>
+            <span class="date">04/2018 – 07/2018</span>
+          </div>
+          <p><strong>Riedl Raumkonzepte</strong></p>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <h3>Postzusteller</h3>
+            <span class="date">10/2016 – 04/2018</span>
+          </div>
+          <p><strong>Deutsche Post AG</strong></p>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <h3>Montagehelfer</h3>
+            <span class="date">06/2016 – 09/2016</span>
+          </div>
+          <p><strong>MR Montagen Straubing</strong></p>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <h3>Soldat</h3>
+            <span class="date">01/2012 – 03/2016</span>
+          </div>
+          <p><strong>Bosnisch-Herzegowinische Streitkräfte</strong></p>
+        </div>
+
+      </div>
     </section>
 
     <section id="skills">

@@ -8,10 +8,10 @@
   <style>
     :root {
       --main-color: #2c3e50;
-      --accent-color: #2980b9;
-      --light-bg: #f9fafb;
+      --accent-color: #3498db;
+      --light-bg: #f5f7fa;
       --section-bg: #ffffff;
-      --text-color: #333;
+      --text-color: #2c3e50;
     }
 
     * {
@@ -41,6 +41,7 @@
       border-bottom: 3px solid var(--accent-color);
       padding-bottom: 10px;
       margin-bottom: 30px;
+      text-align: center;
     }
 
     label {
@@ -48,6 +49,17 @@
       display: block;
       margin-top: 20px;
       margin-bottom: 5px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    label::before {
+      content: "✉️";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1rem;
+      line-height: 1.4;
     }
 
     input[type="text"],
@@ -89,6 +101,7 @@
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
+      text-align: center;
     }
 
     @media (max-width: 768px) {

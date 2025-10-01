@@ -56,69 +56,30 @@
       background-color: #2980b9;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    td, th {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
     .section-title {
       border-left: 5px solid #3498db;
       padding-left: 10px;
       margin-top: 40px;
     }
 
-    .timeline {
-      position: relative;
-      margin: 20px 0;
-      padding-left: 40px;
-      border-left: 3px solid #3498db;
-    }
-
-    .timeline-entry {
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .timeline-entry::before {
-      content: '';
-      position: absolute;
-      top: 5px;
-      left: -12px;
-      width: 20px;
-      height: 20px;
-      background-color: #3498db;
-      border-radius: 50%;
-    }
-
-    .timeline-entry h4 {
-      margin: 0;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .skill {
-      width: 150px;
-      text-align: center;
-    }
-
-    .circle {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 8px solid #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #2c3e50;
-      margin: auto;
-      position: relative;
-    }
-
-    .circle::after {
-      content: attr(data-percent) '%';
-      position: absolute;
-      font-size: 1.2em;
+    .skills td {
+      border: none;
     }
 
     footer {
@@ -129,8 +90,13 @@
     }
 
     @media (max-width: 768px) {
-      .skills {
-        justify-content: center;
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+
+      td {
+        padding: 10px 0;
       }
     }
   </style>
@@ -156,58 +122,99 @@
   <div class="container">
     <section id="ausbildung">
       <h2 class="section-title">Ausbildung</h2>
-      <ul>
-        <li><strong>2018:</strong> <a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
-          <ul>
-            <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-            <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-          </ul>
-        </li>
-        <li><strong>2013-2016:</strong> <a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
-          <ul>
-            <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
-          </ul>
-        </li>
-        <li><strong>2010-2013:</strong> <a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a></li>
-      </ul>
+      <table>
+        <tr>
+          <td><strong>2018</strong></td>
+          <td><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
+            <ul>
+              <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+              <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>2013-2016</strong></td>
+          <td><a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
+            <ul>
+              <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>2010-2013</strong></td>
+          <td><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a></td>
+        </tr>
+      </table>
     </section>
 
     <section id="laufbahn">
       <h2 class="section-title">Berufliche Laufbahn</h2>
-      <div class="timeline">
-        <div class="timeline-entry">
-          <h4>06/2019 – heute</h4>
-          <p><strong>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</strong><br>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</p>
-        </div>
-        <div class="timeline-entry">
-          <h4>04/2018 – 07/2018</h4>
-          <p><strong>Riedl Raumkonzepte</strong><br>Kaufmännischer Leiter</p>
-        </div>
-        <div class="timeline-entry">
-          <h4>10/2016 – 04/2018</h4>
-          <p><strong>Deutsche Post AG</strong><br>Postzusteller</p>
-        </div>
-        <div class="timeline-entry">
-          <h4>06/2016 – 09/2016</h4>
-          <p><strong>MR Montagen Straubing</strong><br>Montagehelfer</p>
-        </div>
-        <div class="timeline-entry">
-          <h4>01/2012 – 03/2016</h4>
-          <p><strong>Bosnisch-Herzegowinische Streitkräfte</strong><br>Soldat</p>
-        </div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Zeitraum</th>
+            <th>Arbeitgeber</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>06/2019 - heute</td>
+            <td>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</td>
+            <td>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung</td>
+          </tr>
+          <tr>
+            <td>04/2018 - 07/2018</td>
+            <td>Riedl Raumkonzepte</td>
+            <td>Kaufmännischer Leiter</td>
+          </tr>
+          <tr>
+            <td>10/2016 - 04/2018</td>
+            <td>Deutsche Post AG</td>
+            <td>Postzusteller</td>
+          </tr>
+          <tr>
+            <td>06/2016 - 09/2016</td>
+            <td>MR Montagen Straubing</td>
+            <td>Montagehelfer</td>
+          </tr>
+          <tr>
+            <td>01/2012 - 03/2016</td>
+            <td>Bosnisch-Herzegowinische Streitkräfte</td>
+            <td>Soldat</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section id="skills">
       <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
-      <div class="skills">
-        <div class="skill"><div class="circle" data-percent="80"></div><p>Deutsch</p></div>
-        <div class="skill"><div class="circle" data-percent="60"></div><p>Englisch</p></div>
-        <div class="skill"><div class="circle" data-percent="100"></div><p>Kroatisch / Serbisch / Bosnisch</p></div>
-        <div class="skill"><div class="circle" data-percent="100"></div><p>MS Office</p></div>
-        <div class="skill"><div class="circle" data-percent="100"></div><p>Buchhaltung / Abrechnung</p></div>
-        <div class="skill"><div class="circle" data-percent="100"></div><p>Komalog, SAP, PowerBI & Co.</p></div>
-      </div>
+      <table class="skills">
+        <tr>
+          <td>Deutsch</td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Englisch</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Kroatisch / Serbisch / Bosnisch</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>MS Office (Excel, Word, Outlook, PowerPoint)</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Buchhaltung / Abrechnung</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Komalog, Addison, SAP, PowerBI, PowerAutomate, SQL</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+      </table>
     </section>
   </div>
 

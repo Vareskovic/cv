@@ -8,10 +8,10 @@
   <style>
     :root {
       --main-color: #2c3e50;
-      --accent-color: #2980b9;
-      --light-bg: #f9fafb;
+      --accent-color: #3498db;
+      --light-bg: #f5f7fa;
       --section-bg: #ffffff;
-      --text-color: #333;
+      --text-color: #2c3e50;
     }
 
     * {
@@ -41,6 +41,7 @@
       border-bottom: 3px solid var(--accent-color);
       padding-bottom: 10px;
       margin-bottom: 30px;
+      text-align: center;
     }
 
     ol {
@@ -50,6 +51,16 @@
 
     li {
       margin-bottom: 15px;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    li::before {
+      content: "⭐"; /* Icon vor jedem Hobby */
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
     }
 
     a {
@@ -71,6 +82,7 @@
       text-decoration: none;
       border-radius: 5px;
       transition: background-color 0.3s ease;
+      text-align: center;
     }
 
     .btn:hover {

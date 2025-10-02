@@ -7,15 +7,11 @@
   <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
   <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
   <title>Boris Vareskovic</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
       background-color: #f5f7fa;
       color: #2c3e50;
       margin: 0;
@@ -26,25 +22,24 @@
     header {
       background: linear-gradient(135deg, #3498db, #2c3e50);
       color: white;
-      padding: 50px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     header img {
-      width: 150px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      width: 160px;
+      border-radius: 16px;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
     }
 
     header h1 {
-      margin: 10px 0 5px;
-      font-weight: 600;
-      font-size: 2em;
+      margin: 15px 0 5px;
+      font-size: 2.2em;
+      font-weight: 700;
     }
 
     header h3 {
-      margin: 0 0 10px;
+      margin: 5px 0 10px;
       font-weight: 400;
     }
 
@@ -58,128 +53,138 @@
 
     nav a {
       display: inline-block;
-      padding: 14px 20px;
+      padding: 14px 22px;
       color: white;
-      font-weight: 500;
       text-decoration: none;
+      font-weight: 500;
       transition: 0.3s;
     }
 
-    nav a:hover,
-    nav a.active {
+    nav a:hover {
       background-color: #2980b9;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       padding: 20px;
     }
 
     .section-title {
       border-left: 5px solid #3498db;
-      padding-left: 10px;
-      margin: 40px 0 20px;
-      font-size: 1.6em;
+      padding-left: 12px;
+      margin: 50px 0 25px;
+      font-size: 1.7em;
       font-weight: 600;
     }
 
-    /* Timeline mit Linie + Punkten */
+    /* Timeline */
     .timeline {
-      position: relative;
-      margin-left: 20px;
-      padding-left: 20px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 3px;
-      height: 100%;
-      background: #3498db;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
     }
 
     .timeline-item {
-      position: relative;
-      margin-bottom: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
     }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -28px;
-      top: 5px;
-      width: 15px;
-      height: 15px;
-      background: #3498db;
-      border-radius: 50%;
-      border: 3px solid white;
+    .timeline-item i {
+      font-size: 28px;
+      color: #3498db;
+      flex-shrink: 0;
+      margin-top: 4px;
     }
 
-    .timeline-item span {
-      font-weight: bold;
-      color: #2980b9;
+    .timeline-text h4 {
+      margin: 0;
       font-size: 1.1em;
-      margin-bottom: 6px;
-      display: block;
+      font-weight: 600;
     }
 
-    .timeline-item a {
+    .timeline-text p {
+      margin: 3px 0 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    .timeline-text a {
       color: #2c3e50;
-      font-weight: 500;
       text-decoration: none;
+      font-weight: 500;
     }
 
-    .timeline-item a:hover {
+    .timeline-text a:hover {
       text-decoration: underline;
     }
 
-    /* Skills */
-    .skill {
-      margin: 15px 0;
+    /* Skills als Karten mit Kreisen */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
     }
 
-    .skill-name {
-      margin-bottom: 5px;
-      font-weight: 500;
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
     }
 
-    .progress {
-      background: #e0e0e0;
-      border-radius: 30px;
-      overflow: hidden;
-      height: 18px;
+    .skill-card:hover {
+      transform: translateY(-6px);
     }
 
-    .progress-bar {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, #3498db, #2c3e50);
-      text-align: right;
-      padding-right: 8px;
-      color: white;
-      font-size: 12px;
-      line-height: 18px;
-      transition: width 2s ease-in-out;
+    .skill-card h4 {
+      margin: 15px 0 5px;
+      font-size: 1.15em;
+      font-weight: 600;
     }
 
+    .skill-card p {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      position: relative;
+      background: conic-gradient(#3498db 0%, #e6e6e6 0%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+      transition: background 2s linear;
+    }
+
+    .circle::after {
+      content: attr(data-progress) '%';
+      position: absolute;
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    /* Footer */
     footer {
       background: #2c3e50;
       color: white;
       text-align: center;
       padding: 25px;
+      margin-top: 40px;
     }
 
     footer a {
       color: #6dd5fa;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 0 10px;
-    }
-
-    footer a:hover {
       text-decoration: underline;
     }
   </style>
@@ -187,19 +192,19 @@
 
 <body>
   <header>
-    <img src="Images/Boris Vareskovic Profilbild.png" alt="Porträtfoto von Boris Vareskovic">
+    <img src="Images/Boris Vareskovic Profilbild.png" alt="Profilbild Boris Vareskovic">
     <h1>Boris Vareskovic</h1>
     <h3>Master der Betriebswirtschaftslehre</h3>
     <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
   </header>
 
   <nav>
-    <a href="#ausbildung" class="active">🎓 Ausbildung</a>
-    <a href="#laufbahn">💼 Laufbahn</a>
-    <a href="#skills">🧠 Fähigkeiten</a>
-    <a href="beschreibung.html">🧾 Arbeitsplatz</a>
-    <a href="hobbies.html">🎯 Hobbys</a>
-    <a href="#kontakt">📩 Kontakt</a>
+    <a href="#ausbildung"><i class="fa-solid fa-graduation-cap"></i> Ausbildung</a>
+    <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Laufbahn</a>
+    <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Fähigkeiten</a>
+    <a href="beschreibung.html"><i class="fa-solid fa-file-lines"></i> Arbeitsplatz</a>
+    <a href="hobbies.html"><i class="fa-solid fa-person-running"></i> Hobbys</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakt</a>
   </nav>
 
   <div class="container">
@@ -209,23 +214,27 @@
       <h2 class="section-title">Ausbildung</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <span>2018</span>
-          <a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
-          <ul>
-            <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-            <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-          </ul>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut, 2018)</a></h4>
+            <ul>
+              <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+              <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+            </ul>
+          </div>
         </div>
         <div class="timeline-item">
-          <span>2013 – 2016</span>
-          <a href="PDF/Master-Diplom-1.pdf">Master BWL (University of Mostar)</a>
-          <ul>
-            <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
-          </ul>
+          <i class="fa-solid fa-user-graduate"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Master-Diplom-1.pdf">Master BWL (2013 – 2016)</a></h4>
+            <p><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></p>
+          </div>
         </div>
         <div class="timeline-item">
-          <span>2010 – 2013</span>
-          <a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL (University of Mostar)</a>
+          <i class="fa-solid fa-school"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL (2010 – 2013)</a></h4>
+          </div>
         </div>
       </div>
     </section>
@@ -235,24 +244,39 @@
       <h2 class="section-title">Berufliche Laufbahn</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <span>Seit 2019</span>
-          Michael Wolf OHG / Wolf Spedition GmbH & Co. KG – Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung
+          <i class="fa-solid fa-briefcase"></i>
+          <div class="timeline-text">
+            <h4>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</h4>
+            <p>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung (seit 2019)</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <span>2018</span>
-          Riedl Raumkonzepte – Kaufmännischer Leiter
+          <i class="fa-solid fa-briefcase"></i>
+          <div class="timeline-text">
+            <h4>Riedl Raumkonzepte</h4>
+            <p>Kaufmännischer Leiter (2018)</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <span>2016 – 2018</span>
-          Deutsche Post AG – Postzusteller
+          <i class="fa-solid fa-truck"></i>
+          <div class="timeline-text">
+            <h4>Deutsche Post AG</h4>
+            <p>Postzusteller (2016 – 2018)</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <span>2016</span>
-          MR Montagen Straubing – Montagehelfer
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <div class="timeline-text">
+            <h4>MR Montagen Straubing</h4>
+            <p>Montagehelfer (2016)</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <span>2012 – 2016</span>
-          Bosnisch-Herzegowinische Streitkräfte – Soldat
+          <i class="fa-solid fa-person-military-rifle"></i>
+          <div class="timeline-text">
+            <h4>Bosnisch-Herzegowinische Streitkräfte</h4>
+            <p>Soldat (2012 – 2016)</p>
+          </div>
         </div>
       </div>
     </section>
@@ -260,63 +284,75 @@
     <!-- Skills -->
     <section id="skills">
       <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
-
-      <div class="skill">
-        <div class="skill-name">Deutsch</div>
-        <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="circle" data-progress="90"></div>
+          <h4>Deutsch</h4>
+          <p>Sehr gut (90%)</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="75"></div>
+          <h4>Englisch</h4>
+          <p>Gut (75%)</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="100"></div>
+          <h4>Kroatisch / Serbisch / Bosnisch</h4>
+          <p>Muttersprache</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="95"></div>
+          <h4>MS Office</h4>
+          <p>Experte (95%)</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="95"></div>
+          <h4>Buchhaltung / Abrechnung</h4>
+          <p>Experte (95%)</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="90"></div>
+          <h4>Komalog, SAP, PowerBI, PowerAutomate, SQL</h4>
+          <p>Fortgeschritten (90%)</p>
+        </div>
       </div>
-
-      <div class="skill">
-        <div class="skill-name">Englisch</div>
-        <div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-name">Kroatisch / Serbisch / Bosnisch</div>
-        <div class="progress"><div class="progress-bar" style="width: 100%;">100%</div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-name">MS Office (Excel, Word, Outlook, PowerPoint)</div>
-        <div class="progress"><div class="progress-bar" style="width: 95%;">95%</div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-name">Buchhaltung / Abrechnung</div>
-        <div class="progress"><div class="progress-bar" style="width: 95%;">95%</div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-name">Komalog, Addison, SAP, PowerBI, PowerAutomate, SQL</div>
-        <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
-      </div>
-
     </section>
-
-    <!-- Kontakt -->
-    <section id="kontakt">
-      <h2 class="section-title">Kontakt</h2>
-      <p>
-        <a href="mailto:boris.vareskovic@spedition-wolf.de"><i class="fa-solid fa-envelope"></i> E-Mail</a> |
-        <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      </p>
-    </section>
-
   </div>
 
   <footer>
+    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
     <p>&copy; 2025 Boris Vareskovic</p>
   </footer>
 
   <script>
-    // Skills Animation
-    document.addEventListener("DOMContentLoaded", function () {
-      let bars = document.querySelectorAll(".progress-bar");
-      bars.forEach(bar => {
-        let width = bar.style.width;
-        bar.style.width = "0";
-        setTimeout(() => { bar.style.width = width; }, 200);
-      });
+    // Animierte Kreise bei Sichtbarkeit
+    document.addEventListener("DOMContentLoaded", () => {
+      const circles = document.querySelectorAll(".circle");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const circle = entry.target;
+            const progress = circle.getAttribute("data-progress");
+
+            let start = 0;
+            const interval = setInterval(() => {
+              if (start <= progress) {
+                circle.style.background = `conic-gradient(#3498db ${start}%, #e6e6e6 0%)`;
+                circle.setAttribute("data-progress", start);
+                start++;
+              } else {
+                clearInterval(interval);
+                circle.setAttribute("data-progress", progress);
+              }
+            }, 20);
+
+            observer.unobserve(circle);
+          }
+        });
+      }, { threshold: 0.6 });
+
+      circles.forEach(circle => observer.observe(circle));
     });
   </script>
 </body>

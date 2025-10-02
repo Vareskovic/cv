@@ -27,19 +27,14 @@
     header {
       background: linear-gradient(135deg, #3498db, #2c3e50);
       color: white;
-      padding: 50px 20px;
+      padding: 40px 20px;
       text-align: center;
-    }
-
-    header img {
-      width: 120px;
-      border-radius: 12px;
-      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 12px 12px 0 0;
     }
 
     header h1 {
-      margin: 15px 0 5px;
       font-size: 2em;
+      margin: 0;
     }
 
     nav {
@@ -65,7 +60,7 @@
     .section-title {
       border-left: 5px solid #3498db;
       padding-left: 12px;
-      margin: 40px 0 20px;
+      margin: 30px 0 20px;
       font-size: 1.6em;
     }
 
@@ -86,7 +81,7 @@
     }
 
     label::before {
-      content: "\f0e0"; /* FontAwesome Envelope */
+      content: "\f0e0";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
       position: absolute;
@@ -156,32 +151,22 @@
       color: #6dd5fa;
       text-decoration: underline;
     }
-
-    @media (max-width: 768px) {
-      .content {
-        padding: 25px 20px;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
-    }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="Images/Boris Vareskovic Profilbild.png" alt="Profilbild Boris Vareskovic">
-    <h1>Boris Vareskovic</h1>
+    <h1>Kontakt</h1>
   </header>
 
   <nav>
     <a href="index.html">🏠 Startseite</a>
+    <a href="beschreibung.html">🧾 Arbeitsplatz</a>
+    <a href="hobbies.html">🎯 Hobbys</a>
+    <a href="contact.html">📩 Kontakt</a>
   </nav>
 
   <div class="container">
-    <h2 class="section-title">Kontakt</h2>
-
     <div class="content">
       <form action="mailto:borisvareskovic@outlook.de" method="post" enctype="text/plain">
         <label for="name">Ihr Name</label>

@@ -2,78 +2,92 @@
 <html lang="de">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beschreibung der Arbeitsplätze – Boris Vareskovic</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbeitsplätze – Boris Vareskovic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    :root {
-      --main-color: #2c3e50;
-      --accent-color: #3498db;
-      --light-bg: #f5f7fa;
-      --section-bg: #ffffff;
-      --section-highlight: #eaf2f8;
-      --text-color: #2c3e50;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--light-bg);
-      color: var(--text-color);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #2c3e50;
       margin: 0;
-      padding: 20px;
-      line-height: 1.7;
+      padding: 0;
     }
 
-    .content {
-      max-width: 960px;
+    header,
+    footer,
+    .container {
+      max-width: 1000px;
       margin: auto;
-      background: var(--section-bg);
-      padding: 40px 50px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
+      padding: 20px;
     }
 
-    h1 {
-      color: var(--main-color);
-      border-bottom: 3px solid var(--accent-color);
-      padding-bottom: 10px;
-      margin-bottom: 30px;
+    header {
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      color: white;
+      padding: 40px 20px;
       text-align: center;
+      border-radius: 12px 12px 0 0;
     }
 
-    h2 {
-      color: var(--main-color);
-      background-color: var(--section-highlight);
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    nav {
+      background: #2c3e50;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2980b9;
+    }
+
+    .section-title {
+      background: #eaf2f8;
+      border-left: 5px solid #3498db;
       padding: 12px 18px;
-      border-left: 5px solid var(--accent-color);
-      margin-top: 40px;
+      margin-top: 30px;
       margin-bottom: 20px;
-      border-radius: 5px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      font-size: 1.4em;
+      font-weight: 600;
     }
 
-    h2::before {
-      content: "💼"; /* Standard-Icon für Arbeit, kann individuell geändert werden */
-      font-size: 1.3rem;
+    .section-title i {
+      color: #3498db;
+      font-size: 1.3em;
     }
 
     ul {
       padding-left: 25px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     ul li {
       margin-bottom: 10px;
+      line-height: 1.6;
     }
 
     a {
-      color: var(--accent-color);
+      color: #3498db;
       text-decoration: none;
       font-weight: 500;
     }
@@ -86,10 +100,11 @@
       display: inline-block;
       margin-top: 20px;
       padding: 12px 20px;
-      background-color: var(--accent-color);
+      background-color: #3498db;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
+      text-align: center;
       transition: background-color 0.3s ease;
     }
 
@@ -97,89 +112,91 @@
       background-color: #1c6391;
     }
 
-    @media (max-width: 768px) {
-      .content {
-        padding: 25px 20px;
-      }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
 
-      h1 {
-        font-size: 1.6rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      ul li {
-        font-size: 0.95rem;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-        padding: 14px;
-      }
+    footer a {
+      color: #6dd5fa;
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
-  <div class="content">
-    <h1>Beschreibung der Arbeitsplätze</h1>
+  <header>
+    <h1>Arbeitsplätze</h1>
+  </header>
 
-    <h2>📊 Buchhaltung und Finanzkontrolle</h2>
+  <nav>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Startseite</a>
+    <a href="beschreibung.html"><i class="fa-solid fa-briefcase"></i> Arbeitsplatz</a>
+    <a href="hobbies.html"><i class="fa-solid fa-bullseye"></i> Hobbys</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakt</a>
+  </nav>
+
+  <div class="container">
+    <div class="section-title"><i class="fa-solid fa-chart-simple"></i> Buchhaltung & Finanzkontrolle</div>
     <ul>
-      <li>Verwaltung und Überwachung von Eingangs- und Ausgangsrechnungen zur Sicherstellung korrekter Buchung aller Geschäftsvorfälle.</li>
-      <li>Abwicklung nationaler und internationaler Zahlungen unter Einhaltung gesetzlicher und interner Richtlinien.</li>
-      <li>Monatliche Endabrechnungen und regelmäßige Prüfung der Finanzdaten auf Vollständigkeit und Richtigkeit.</li>
-      <li>Steuerliches Berichtswesen inklusive fristgerechter Erklärungen und Optimierungspotenzialanalyse.</li>
-      <li>Mahnwesen zur Sicherung der Liquidität und Einhaltung von Zahlungszielen.</li>
-      <li>Nutzung unternehmensspezifischer Systeme</li>
+      <li>Verwaltung und Überwachung von Eingangs- und Ausgangsrechnungen.</li>
+      <li>Abwicklung nationaler und internationaler Zahlungen.</li>
+      <li>Monatliche Endabrechnungen und Prüfung der Finanzdaten.</li>
+      <li>Steuerliches Berichtswesen und Optimierungspotenziale.</li>
+      <li>Mahnwesen zur Sicherung der Liquidität.</li>
+      <li>Nutzung unternehmensspezifischer Systeme.</li>
     </ul>
 
-    <h2>📈 Vertrieb und Preisgestaltung</h2>
+    <div class="section-title"><i class="fa-solid fa-chart-line"></i> Vertrieb & Preisgestaltung</div>
     <ul>
-      <li>Kalkulation und Pflege von Preisstrukturen zur Sicherung von Wettbewerbsfähigkeit und Rentabilität.</li>
+      <li>Kalkulation und Pflege von Preisstrukturen.</li>
       <li>Optimierung und Digitalisierung der Kalkulationsprozesse.</li>
-      <li>Mitgestaltung von Automatisierungslösungen zur Effizienzsteigerung im Angebots- und Vertriebsprozess.</li>
+      <li>Mitgestaltung von Automatisierungslösungen im Vertriebsprozess.</li>
     </ul>
 
-    <h2>🧾 Leitung Rechnungsabteilung</h2>
+    <div class="section-title"><i class="fa-solid fa-file-invoice"></i> Leitung Rechnungsabteilung</div>
     <ul>
       <li>Pflege von Tarifen und Abrechnungssätzen im ERP-System.</li>
-      <li>Verantwortung für die korrekte Fakturierung nationaler und internationaler Transporte.</li>
+      <li>Verantwortung für die Fakturierung nationaler und internationaler Transporte.</li>
       <li>Aufbau effizienter Datenflüsse und Reportingprozesse.</li>
       <li>Wirtschaftlichkeitsanalysen und Projektkalkulationen.</li>
-      <li>Abteilungsorganisation und Teamkoordination zur Sicherstellung produktiver Abläufe.</li>
-      <li>Überwachung externer Partner und Systeme (z. B. 24Plus, Online) mit Fokus auf Performance und Kosten.</li>
+      <li>Abteilungsorganisation und Teamkoordination.</li>
+      <li>Überwachung externer Partner und Systeme.</li>
     </ul>
 
-    <h2>💻 IT-Automatisierung & Systemadministration</h2>
+    <div class="section-title"><i class="fa-solid fa-computer"></i> IT-Automatisierung & Systemadministration</div>
     <ul>
-      <li>Umsetzung papierloser Prozesse durch gezielte Automatisierungslösungen.</li>
-      <li>Technische Schulungen für Fahrer zur Nutzung digitaler Endgeräte.</li>
-      <li>Unternehmensweite Betreuung von Microsoft Office, Netzwerk- und Clientstrukturen.</li>
+      <li>Umsetzung papierloser Prozesse durch Automatisierung.</li>
+      <li>Schulungen für Fahrer zur Nutzung digitaler Endgeräte.</li>
+      <li>Betreuung von Microsoft Office, Netzwerk- und Clientstrukturen.</li>
       <li>Einrichtung und Wartung von Arbeitsplatzrechnern und Servern.</li>
-      <li>Datenmanagement, inklusive Backup-Strategien und DFÜ-Unterstützung.</li>
-      <li>Projektarbeit im Bereich Automatisierung, Schnittstellen und Digitalisierung.</li>
+      <li>Datenmanagement, Backup-Strategien und DFÜ-Unterstützung.</li>
+      <li>Projektarbeit zu Automatisierung und Digitalisierung.</li>
     </ul>
 
-    <h2>🚛 Disposition & Fahrerbetreuung</h2>
+    <div class="section-title"><i class="fa-solid fa-truck"></i> Disposition & Fahrerbetreuung</div>
     <ul>
-      <li>Integration und Betreuung internationaler Fahrer, inklusive Hilfe bei behördlichen Angelegenheiten.</li>
-      <li>Mitwirkung an Automatisierung im Nahverkehr sowie organisatorische Unterstützung der Disposition.</li>
+      <li>Integration und Betreuung internationaler Fahrer.</li>
+      <li>Unterstützung der Disposition im Nahverkehr.</li>
     </ul>
 
-    <h2>⚡ Task Force</h2>
+    <div class="section-title"><i class="fa-solid fa-bolt"></i> Task Force</div>
     <ul>
-      <li>Einarbeitung neuer Mitarbeiter in operative Kernbereiche wie Sonderfahrten, International, Abrechnung und Disposition.</li>
-      <li>Durchführung interner Schulungen und Qualitätsworkshops.</li>
-      <li>Projektleitung im Rahmen von Prozessoptimierung und Arbeitsplatzgestaltung.</li>
-      <li>Koordination eines spezialisierten Task-Force-Teams zur Umsetzung strategischer Ziele.</li>
+      <li>Einarbeitung neuer Mitarbeiter in operative Kernbereiche.</li>
+      <li>Interne Schulungen und Qualitätsworkshops.</li>
+      <li>Projektleitung Prozessoptimierung und Arbeitsplatzgestaltung.</li>
+      <li>Koordination eines spezialisierten Task-Force-Teams.</li>
     </ul>
-
-    <a href="index.html" class="btn">Zurück zur Hauptseite</a>
+    
   </div>
+
+  <footer>
+    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
+    <p>&copy; 2025 Boris Vareskovic</p>
+  </footer>
 </body>
 
 </html>

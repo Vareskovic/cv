@@ -27,19 +27,14 @@
     header {
       background: linear-gradient(135deg, #3498db, #2c3e50);
       color: white;
-      padding: 50px 20px;
+      padding: 40px 20px;
       text-align: center;
-    }
-
-    header img {
-      width: 120px;
-      border-radius: 12px;
-      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 12px 12px 0 0;
     }
 
     header h1 {
-      margin: 15px 0 5px;
       font-size: 2em;
+      margin: 0;
     }
 
     nav {
@@ -65,11 +60,10 @@
     .section-title {
       border-left: 5px solid #3498db;
       padding-left: 12px;
-      margin: 40px 0 20px;
+      margin: 30px 0 20px;
       font-size: 1.6em;
     }
 
-    /* Hobby Cards */
     .hobby-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -119,7 +113,8 @@
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      transition: 0.3s;
+      text-align: center;
+      transition: background-color 0.3s;
     }
 
     .btn:hover {
@@ -143,20 +138,14 @@
 
 <body>
   <header>
-    <img src="Images/Boris Vareskovic Profilbild.png" alt="Profilbild Boris Vareskovic">
-    <h1>Boris Vareskovic</h1>
+    <h1>Meine Hobbys</h1>
   </header>
 
   <nav>
     <a href="index.html">🏠 Startseite</a>
-    <a href="beschreibung.html">🧾 Arbeitsplatz</a>
-    <a href="hobbies.html">🎯 Hobbys</a>
-    <a href="contact.html">📩 Kontakt</a>
   </nav>
 
   <div class="container">
-    <h2 class="section-title">Meine Hobbys</h2>
-
     <div class="hobby-grid">
       <div class="hobby-card">
         <i class="fa-solid fa-futbol"></i>

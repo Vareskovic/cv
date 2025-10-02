@@ -2,119 +2,182 @@
 <html lang="de">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meine Hobbys – Boris Vareskovic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    :root {
-      --main-color: #2c3e50;
-      --accent-color: #3498db;
-      --light-bg: #f5f7fa;
-      --section-bg: #ffffff;
-      --text-color: #2c3e50;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--light-bg);
-      color: var(--text-color);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #2c3e50;
       margin: 0;
+      padding: 0;
+    }
+
+    header,
+    footer,
+    .container {
+      max-width: 1000px;
+      margin: auto;
       padding: 20px;
     }
 
-    .content {
-      max-width: 800px;
-      margin: auto;
-      background: var(--section-bg);
-      padding: 40px 50px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      color: var(--main-color);
-      border-bottom: 3px solid var(--accent-color);
-      padding-bottom: 10px;
-      margin-bottom: 30px;
+    header {
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      color: white;
+      padding: 50px 20px;
       text-align: center;
     }
 
-    ol {
-      padding-left: 25px;
-      font-size: 1.1rem;
+    header img {
+      width: 120px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
     }
 
-    li {
-      margin-bottom: 15px;
-      position: relative;
-      padding-left: 30px;
+    header h1 {
+      margin: 15px 0 5px;
+      font-size: 2em;
     }
 
-    li::before {
-      content: "⭐"; /* Icon vor jedem Hobby */
-      position: absolute;
-      left: 0;
+    nav {
+      background: #2c3e50;
+      text-align: center;
+      position: sticky;
       top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2980b9;
+    }
+
+    .section-title {
+      border-left: 5px solid #3498db;
+      padding-left: 12px;
+      margin: 40px 0 20px;
+      font-size: 1.6em;
+    }
+
+    /* Hobby Cards */
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .hobby-card {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hobby-card i {
+      font-size: 2rem;
+      color: #3498db;
+      margin-bottom: 12px;
+    }
+
+    .hobby-card h3 {
+      margin: 10px 0;
       font-size: 1.2rem;
     }
 
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
+    .hobby-card a {
+      color: #2c3e50;
       font-weight: 600;
+      text-decoration: none;
     }
 
-    a:hover {
+    .hobby-card a:hover {
       text-decoration: underline;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 25px;
       padding: 12px 20px;
-      background-color: var(--accent-color);
+      background-color: #3498db;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      transition: background-color 0.3s ease;
-      text-align: center;
+      transition: 0.3s;
     }
 
     .btn:hover {
       background-color: #1c6391;
     }
 
-    @media (max-width: 768px) {
-      .content {
-        padding: 25px 20px;
-      }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
 
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      ol {
-        font-size: 1rem;
-      }
+    footer a {
+      color: #6dd5fa;
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
-  <div class="content">
-    <h1>Meine Hobbys</h1>
-    <ol>
-      <li><a href="https://www.fupa.net/player/boris-vareskovic-955599" target="_blank">Fußball</a></li>
-      <li><a href="https://de-de.facebook.com/borisvareskovicfit/" target="_blank">Fitness</a></li>
-    </ol>
+  <header>
+    <img src="Images/Boris Vareskovic Profilbild.png" alt="Profilbild Boris Vareskovic">
+    <h1>Boris Vareskovic</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Startseite</a>
+    <a href="beschreibung.html">🧾 Arbeitsplatz</a>
+    <a href="hobbies.html">🎯 Hobbys</a>
+    <a href="contact.html">📩 Kontakt</a>
+  </nav>
+
+  <div class="container">
+    <h2 class="section-title">Meine Hobbys</h2>
+
+    <div class="hobby-grid">
+      <div class="hobby-card">
+        <i class="fa-solid fa-futbol"></i>
+        <h3>Fußball</h3>
+        <p><a href="https://www.fupa.net/player/boris-vareskovic-955599" target="_blank">Zu meinem Spielerprofil</a></p>
+      </div>
+
+      <div class="hobby-card">
+        <i class="fa-solid fa-dumbbell"></i>
+        <h3>Fitness</h3>
+        <p><a href="https://de-de.facebook.com/borisvareskovicfit/" target="_blank">Meine Fitness-Seite</a></p>
+      </div>
+    </div>
 
     <a href="index.html" class="btn">Zurück zur Hauptseite</a>
   </div>
+
+  <footer>
+    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
+    <p>&copy; 2025 Boris Vareskovic</p>
+  </footer>
 </body>
 
 </html>

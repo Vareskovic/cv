@@ -27,29 +27,35 @@
       padding: 20px;
     }
 
-    /* ==== Header Business-Style ==== */
+    /* ==== Header Business Look ==== */
     header {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap: 50px; /* Abstand zwischen Bild und Text */
-      background: linear-gradient(135deg, #3a7bd5, #2c3e50); /* dezenter Farbverlauf */
+      gap: 50px;
+      background: linear-gradient(135deg, #3a7bd5, #2c3e50);
       color: white;
-      padding: 60px 40px; /* mehr Luft */
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* feine Trennung */
+      padding: 60px 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    header img {
-      width: 140px;
-      border-radius: 0; /* kein Kreis */
-      border: none; /* kein Rahmen */
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* dezenter Schatten */
+    .header-image-wrapper {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 4px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    header img:hover {
+    .header-image-wrapper img {
+      display: block;
+      width: 140px;
+      border-radius: 8px;
+    }
+
+    .header-image-wrapper:hover {
       transform: scale(1.04);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     }
 
     .header-text h1 {
@@ -62,25 +68,6 @@
       margin: 5px 0 15px 0;
     }
 
-    /* Mobile responsive: Bild oben, Text darunter */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-        padding: 40px 20px;
-      }
-
-      .header-text h1 {
-        font-size: 2em;
-      }
-
-      .header-text h3 {
-        font-size: 1.2em;
-      }
-    }
-
-    /* ==== Navigation ==== */
     nav {
       background: #2c3e50;
       text-align: center;
@@ -101,7 +88,6 @@
       background-color: #2980b9;
     }
 
-    /* ==== Sections ==== */
     .section-title {
       border-left: 5px solid #3498db;
       padding-left: 10px;
@@ -109,7 +95,7 @@
       font-size: 1.6em;
     }
 
-    /* Timeline */
+    /* ==== Timeline ==== */
     .timeline {
       display: flex;
       flex-direction: column;
@@ -138,7 +124,26 @@
       text-decoration: underline;
     }
 
-    /* Skills Balken */
+    /* ==== Tabelle Laufbahn ==== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    thead {
+      background: #3498db;
+      color: white;
+    }
+
+    /* ==== Skills Balken ==== */
     .skill {
       margin: 15px 0;
     }
@@ -167,7 +172,6 @@
       transition: width 2s ease-in-out;
     }
 
-    /* Footer */
     footer {
       background: #2c3e50;
       color: white;
@@ -181,6 +185,21 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 40px 20px;
+      }
+
+      .header-text h1 {
+        font-size: 2em;
+      }
+
+      .header-text h3 {
+        font-size: 1.2em;
+      }
+
       .timeline-item {
         flex-direction: column;
       }
@@ -189,9 +208,10 @@
 </head>
 
 <body>
-  <!-- ==== Header ==== -->
   <header>
-    <img src="Images/Boris Vareskovic Profilbild.png" alt="Porträtfoto von Boris Vareskovic">
+    <div class="header-image-wrapper">
+      <img src="Images/Boris Vareskovic Profilbild.png" alt="Porträtfoto von Boris Vareskovic">
+    </div>
     <div class="header-text">
       <h1>Boris Vareskovic</h1>
       <h3>Master der Betriebswirtschaftslehre</h3>
@@ -199,7 +219,6 @@
     </div>
   </header>
 
-  <!-- ==== Navigation ==== -->
   <nav>
     <a href="#ausbildung">🎓 Ausbildung</a>
     <a href="#laufbahn">💼 Laufbahn</a>
@@ -210,6 +229,7 @@
   </nav>
 
   <div class="container">
+
     <!-- Ausbildung -->
     <section id="ausbildung">
       <h2 class="section-title">Ausbildung</h2>
@@ -300,14 +320,13 @@
     </section>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
     <p>&copy; 2025 Boris Vareskovic</p>
   </footer>
 
-  <!-- Script für Skills Animation -->
   <script>
+    // Skills Animation
     document.addEventListener("DOMContentLoaded", function () {
       let bars = document.querySelectorAll(".progress-bar");
       bars.forEach(bar => {
@@ -317,5 +336,6 @@
       });
     });
   </script>
+
 </body>
 </html>

@@ -2,46 +2,78 @@
 <html lang="de">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt – Boris Vareskovic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    :root {
-      --main-color: #2c3e50;
-      --accent-color: #3498db;
-      --light-bg: #f5f7fa;
-      --section-bg: #ffffff;
-      --text-color: #2c3e50;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--light-bg);
-      color: var(--text-color);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #2c3e50;
       margin: 0;
+      padding: 0;
+    }
+
+    header,
+    footer,
+    .container {
+      max-width: 1000px;
+      margin: auto;
       padding: 20px;
     }
 
-    .content {
-      max-width: 700px;
-      margin: auto;
-      background: var(--section-bg);
-      padding: 40px 50px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
+    header {
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
     }
 
-    h1 {
-      font-size: 1.8rem;
-      color: var(--main-color);
-      border-bottom: 3px solid var(--accent-color);
-      padding-bottom: 10px;
-      margin-bottom: 30px;
+    header img {
+      width: 120px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 15px 0 5px;
+      font-size: 2em;
+    }
+
+    nav {
+      background: #2c3e50;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2980b9;
+    }
+
+    .section-title {
+      border-left: 5px solid #3498db;
+      padding-left: 12px;
+      margin: 40px 0 20px;
+      font-size: 1.6em;
+    }
+
+    .content {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
     }
 
     label {
@@ -50,16 +82,19 @@
       margin-top: 20px;
       margin-bottom: 5px;
       position: relative;
-      padding-left: 25px;
+      padding-left: 28px;
     }
 
     label::before {
-      content: "✉️";
+      content: "\f0e0"; /* FontAwesome Envelope */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
       position: absolute;
       left: 0;
       top: 0;
       font-size: 1rem;
       line-height: 1.4;
+      color: #3498db;
     }
 
     input[type="text"],
@@ -78,7 +113,7 @@
     }
 
     input[type="submit"] {
-      background-color: var(--accent-color);
+      background-color: #3498db;
       color: white;
       padding: 12px 25px;
       border: none;
@@ -95,13 +130,31 @@
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 25px;
       padding: 12px 20px;
-      background-color: var(--accent-color);
+      background-color: #3498db;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1c6391;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #6dd5fa;
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -109,7 +162,7 @@
         padding: 25px 20px;
       }
 
-      h1 {
+      header h1 {
         font-size: 1.5rem;
       }
     }
@@ -117,24 +170,40 @@
 </head>
 
 <body>
-  <div class="content">
-    <h1>Kontakt</h1>
+  <header>
+    <img src="Images/Boris Vareskovic Profilbild.png" alt="Profilbild Boris Vareskovic">
+    <h1>Boris Vareskovic</h1>
+  </header>
 
-    <form action="mailto:borisvareskovic@outlook.de" method="post" enctype="text/plain">
-      <label for="name">Ihr Name</label>
-      <input type="text" name="name" id="name" placeholder="Max Mustermann" required>
+  <nav>
+    <a href="index.html">🏠 Startseite</a>
+  </nav>
 
-      <label for="email">Ihre E-Mail</label>
-      <input type="email" name="email" id="email" placeholder="max@example.com" required>
+  <div class="container">
+    <h2 class="section-title">Kontakt</h2>
 
-      <label for="message">Ihre Nachricht</label>
-      <textarea name="message" id="message" placeholder="Was möchten Sie mitteilen?" required></textarea>
+    <div class="content">
+      <form action="mailto:borisvareskovic@outlook.de" method="post" enctype="text/plain">
+        <label for="name">Ihr Name</label>
+        <input type="text" name="name" id="name" placeholder="Max Mustermann" required>
 
-      <input type="submit" value="Nachricht senden">
-    </form>
+        <label for="email">Ihre E-Mail</label>
+        <input type="email" name="email" id="email" placeholder="max@example.com" required>
 
-    <a href="index.html" class="btn">Zurück zur Hauptseite</a>
+        <label for="message">Ihre Nachricht</label>
+        <textarea name="message" id="message" placeholder="Was möchten Sie mitteilen?" required></textarea>
+
+        <input type="submit" value="Nachricht senden">
+      </form>
+
+      <a href="index.html" class="btn">Zurück zur Hauptseite</a>
+    </div>
   </div>
+
+  <footer>
+    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
+    <p>&copy; 2025 Boris Vareskovic</p>
+  </footer>
 </body>
 
 </html>

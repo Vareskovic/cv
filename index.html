@@ -7,11 +7,15 @@
   <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
   <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
   <title>Boris Vareskovic</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: #f5f7fa;
       color: #2c3e50;
       margin: 0;
@@ -19,53 +23,29 @@
       line-height: 1.6;
     }
 
-    header,
-    footer,
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    /* ==== Header Business Look ==== */
     header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 50px;
-      background: linear-gradient(135deg, #3a7bd5, #2c3e50);
+      background: linear-gradient(135deg, #3498db, #2c3e50);
       color: white;
-      padding: 60px 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 50px 20px;
+      text-align: center;
     }
 
-    .header-image-wrapper {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 4px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    header img {
+      width: 150px;
+      border-radius: 12px; /* Kein Kreis, dezente Rundung */
+      margin-bottom: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     }
 
-    .header-image-wrapper img {
-      display: block;
-      width: 140px;
-      border-radius: 8px;
+    header h1 {
+      margin: 10px 0 5px;
+      font-weight: 600;
+      font-size: 2em;
     }
 
-    .header-image-wrapper:hover {
-      transform: scale(1.04);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    }
-
-    .header-text h1 {
-      font-size: 2.2em;
-      margin: 0;
-    }
-
-    .header-text h3 {
-      font-size: 1.3em;
-      margin: 5px 0 15px 0;
+    header h3 {
+      margin: 0 0 10px;
+      font-weight: 400;
     }
 
     nav {
@@ -80,12 +60,20 @@
       display: inline-block;
       padding: 14px 20px;
       color: white;
+      font-weight: 500;
       text-decoration: none;
       transition: 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       background-color: #2980b9;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
     }
 
     .section-title {
@@ -93,18 +81,41 @@
       padding-left: 10px;
       margin: 40px 0 20px;
       font-size: 1.6em;
+      font-weight: 600;
     }
 
-    /* ==== Timeline ==== */
+    /* Timeline mit Linie + Punkten */
     .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
+      position: relative;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: #3498db;
     }
 
     .timeline-item {
-      display: flex;
-      flex-direction: column;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      background: #3498db;
+      border-radius: 50%;
+      border: 3px solid white;
     }
 
     .timeline-item span {
@@ -112,52 +123,24 @@
       color: #2980b9;
       font-size: 1.1em;
       margin-bottom: 6px;
+      display: block;
     }
 
-    .timeline-item a {
-      color: #2c3e50;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .timeline-item a:hover {
-      text-decoration: underline;
-    }
-
-    /* ==== Tabelle Laufbahn ==== */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    th,
-    td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    thead {
-      background: #3498db;
-      color: white;
-    }
-
-    /* ==== Skills Balken ==== */
+    /* Skills */
     .skill {
       margin: 15px 0;
     }
 
     .skill-name {
       margin-bottom: 5px;
-      font-weight: bold;
+      font-weight: 500;
     }
 
     .progress {
-      background: #ddd;
+      background: #e0e0e0;
       border-radius: 30px;
       overflow: hidden;
-      height: 20px;
+      height: 18px;
     }
 
     .progress-bar {
@@ -168,7 +151,7 @@
       padding-right: 8px;
       color: white;
       font-size: 12px;
-      line-height: 20px;
+      line-height: 18px;
       transition: width 2s ease-in-out;
     }
 
@@ -176,56 +159,37 @@
       background: #2c3e50;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
     }
 
     footer a {
       color: #6dd5fa;
-      text-decoration: underline;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 10px;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-        padding: 40px 20px;
-      }
-
-      .header-text h1 {
-        font-size: 2em;
-      }
-
-      .header-text h3 {
-        font-size: 1.2em;
-      }
-
-      .timeline-item {
-        flex-direction: column;
-      }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="header-image-wrapper">
-      <img src="Images/Boris Vareskovic Profilbild.png" alt="Porträtfoto von Boris Vareskovic">
-    </div>
-    <div class="header-text">
-      <h1>Boris Vareskovic</h1>
-      <h3>Master der Betriebswirtschaftslehre</h3>
-      <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
-    </div>
+    <img src="Images/Boris Vareskovic Profilbild.png" alt="Porträtfoto von Boris Vareskovic">
+    <h1>Boris Vareskovic</h1>
+    <h3>Master der Betriebswirtschaftslehre</h3>
+    <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
   </header>
 
   <nav>
-    <a href="#ausbildung">🎓 Ausbildung</a>
+    <a href="#ausbildung" class="active">🎓 Ausbildung</a>
     <a href="#laufbahn">💼 Laufbahn</a>
     <a href="#skills">🧠 Fähigkeiten</a>
     <a href="beschreibung.html">🧾 Arbeitsplatz</a>
     <a href="hobbies.html">🎯 Hobbys</a>
-    <a href="contact.html">📩 Kontakt</a>
+    <a href="#kontakt">📩 Kontakt</a>
   </nav>
 
   <div class="container">
@@ -235,23 +199,16 @@
       <h2 class="section-title">Ausbildung</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <span>🎓 2018</span>
-          <a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)</a>
-          <ul>
-            <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-            <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-          </ul>
+          <span>2018</span>
+          Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut)
         </div>
         <div class="timeline-item">
-          <span>🎓 Oktober 2013 – Juli 2016</span>
-          <a href="PDF/Master-Diplom-1.pdf">Master BWL</a>
-          <ul>
-            <li><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></li>
-          </ul>
+          <span>2013 – 2016</span>
+          Master BWL (University of Mostar)
         </div>
         <div class="timeline-item">
-          <span>🎓 September 2010 – Juli 2013</span>
-          <a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL</a>
+          <span>2010 – 2013</span>
+          Bachelor BWL (University of Mostar)
         </div>
       </div>
     </section>
@@ -261,23 +218,23 @@
       <h2 class="section-title">Berufliche Laufbahn</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <span>💼 Juni 2019 – Heute</span>
+          <span>Seit 2019</span>
           Michael Wolf OHG / Wolf Spedition GmbH & Co. KG – Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung
         </div>
         <div class="timeline-item">
-          <span>💼 April 2018 – Juli 2018</span>
+          <span>2018</span>
           Riedl Raumkonzepte – Kaufmännischer Leiter
         </div>
         <div class="timeline-item">
-          <span>💼 Oktober 2016 – April 2018</span>
+          <span>2016 – 2018</span>
           Deutsche Post AG – Postzusteller
         </div>
         <div class="timeline-item">
-          <span>💼 Juni 2016 – September 2016</span>
+          <span>2016</span>
           MR Montagen Straubing – Montagehelfer
         </div>
         <div class="timeline-item">
-          <span>💼 Januar 2012 – März 2016</span>
+          <span>2012 – 2016</span>
           Bosnisch-Herzegowinische Streitkräfte – Soldat
         </div>
       </div>
@@ -318,10 +275,19 @@
       </div>
 
     </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt">
+      <h2 class="section-title">Kontakt</h2>
+      <p>
+        <a href="mailto:boris.vareskovic@spedition-wolf.de"><i class="fa-solid fa-envelope"></i> E-Mail</a> |
+        <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </p>
+    </section>
+
   </div>
 
   <footer>
-    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
     <p>&copy; 2025 Boris Vareskovic</p>
   </footer>
 
@@ -336,6 +302,5 @@
       });
     });
   </script>
-
 </body>
 </html>

@@ -27,25 +27,46 @@
       padding: 20px;
     }
 
+    /* ==== Header Business-Style ==== */
     header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 25px;
       background: linear-gradient(135deg, #3498db, #2c3e50);
       color: white;
-      padding: 50px 20px;
-      text-align: center;
+      padding: 40px 20px;
     }
 
-   header img {
-  width: 130px;
-  border-radius: 50%; /* klassisch rund */
-  border: 3px solid #fff; 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* dezenter Schatten */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    header img {
+      width: 130px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-header img:hover {
-  transform: scale(1.03); /* leichtes Zoomen beim Hover */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* etwas stärkerer Schatten */
-}
+    header img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-text {
+      max-width: 600px;
+    }
+
+    /* Mobile responsive: Bild oben, Text darunter */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-text {
+        max-width: 100%;
+        margin-top: 15px;
+      }
+    }
 
     h1,
     h3 {
@@ -79,7 +100,7 @@ header img:hover {
       font-size: 1.6em;
     }
 
-    /* ==== Timeline ohne Punkte + Icons ==== */
+    /* ==== Timeline ==== */
     .timeline {
       display: flex;
       flex-direction: column;
@@ -106,25 +127,6 @@ header img:hover {
 
     .timeline-item a:hover {
       text-decoration: underline;
-    }
-
-    /* ==== Tabelle Laufbahn ==== */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    th,
-    td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    thead {
-      background: #3498db;
-      color: white;
     }
 
     /* ==== Skills Balken ==== */
@@ -177,13 +179,17 @@ header img:hover {
 </head>
 
 <body>
+  <!-- ==== Header ==== -->
   <header>
     <img src="Images/Boris Vareskovic Profilbild.png" alt="Porträtfoto von Boris Vareskovic">
-    <h1>Boris Vareskovic</h1>
-    <h3>Master der Betriebswirtschaftslehre</h3>
-    <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
+    <div class="header-text">
+      <h1>Boris Vareskovic</h1>
+      <h3>Master der Betriebswirtschaftslehre</h3>
+      <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
+    </div>
   </header>
 
+  <!-- ==== Navigation ==== -->
   <nav>
     <a href="#ausbildung">🎓 Ausbildung</a>
     <a href="#laufbahn">💼 Laufbahn</a>
@@ -194,7 +200,6 @@ header img:hover {
   </nav>
 
   <div class="container">
-
     <!-- Ausbildung -->
     <section id="ausbildung">
       <h2 class="section-title">Ausbildung</h2>
@@ -285,13 +290,14 @@ header img:hover {
     </section>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
     <p>&copy; 2025 Boris Vareskovic</p>
   </footer>
 
+  <!-- Script für Skills Animation -->
   <script>
-    // Skills Animation
     document.addEventListener("DOMContentLoaded", function () {
       let bars = document.querySelectorAll(".progress-bar");
       bars.forEach(bar => {
@@ -301,6 +307,5 @@ header img:hover {
       });
     });
   </script>
-
 </body>
 </html>

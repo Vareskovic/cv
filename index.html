@@ -4,12 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Qualifikationen, Berufserfahrung und Kompetenzen.">
   <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
   <title>Boris Vareskovic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background-color: #f5f7fa;
@@ -118,6 +121,7 @@
 
     .timeline-text a:hover {
       text-decoration: underline;
+      color: #3498db;
     }
 
     /* Skills als Karten mit Kreisen */
@@ -153,8 +157,8 @@
     }
 
     .circle {
-      width: 110px;
-      height: 110px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       margin: 0 auto 10px;
       position: relative;
@@ -164,7 +168,6 @@
       justify-content: center;
       font-weight: bold;
       color: #333;
-      transition: background 2s linear;
     }
 
     .circle::after {
@@ -187,29 +190,36 @@
       color: #6dd5fa;
       text-decoration: underline;
     }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      header img { width: 120px; }
+      header h1 { font-size: 1.8em; }
+      header h3 { font-size: 1em; }
+      .container { padding: 10px; }
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="Images/Boris Vareskovic Profilbild.JPG" alt="Profilbild Boris Vareskovic">
+    <img src="Images/Boris-Vareskovic-Profilbild.jpg" alt="Profilbild Boris Vareskovic">
     <h1>Boris Vareskovic</h1>
     <h3>Master der Betriebswirtschaftslehre</h3>
     <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
   </header>
 
   <nav>
-    <a href="#ausbildung"><i class="fa-solid fa-graduation-cap"></i> Qualifikationen</a>
-    <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Berufserfahrung</a>
-    <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Kompetenzen</a>
-    <a href="beschreibung.html"><i class="fa-solid fa-file-lines"></i> Verantwortungsbereiche</a>
-    <a href="hobbies.html"><i class="fa-solid fa-person-running"></i> Interessen</a>
+    <a href="#qualifikationen" aria-label="Qualifikationen"><i class="fa-solid fa-graduation-cap"></i> Qualifikationen</a>
+    <a href="#laufbahn" aria-label="Berufserfahrung"><i class="fa-solid fa-briefcase"></i> Berufserfahrung</a>
+    <a href="#skills" aria-label="Kompetenzen"><i class="fa-solid fa-lightbulb"></i> Kompetenzen</a>
+    <a href="beschreibung.html" aria-label="Verantwortungsbereiche"><i class="fa-solid fa-file-lines"></i> Verantwortungsbereiche</a>
+    <a href="hobbies.html" aria-label="Interessen"><i class="fa-solid fa-person-running"></i> Interessen</a>
   </nav>
 
   <div class="container">
-
-    <!-- Ausbildung -->
-    <section id="ausbildung">
+    <!-- Qualifikationen -->
+    <section id="qualifikationen">
       <h2 class="section-title">Qualifikationen</h2>
       <div class="timeline">
         <div class="timeline-item">
@@ -285,32 +295,32 @@
       <h2 class="section-title">Kompetenzen</h2>
       <div class="skills-grid">
         <div class="skill-card">
-          <div class="circle" data-progress="90"></div>
+          <div class="circle" data-progress="90" aria-label="Deutsch: 90%"></div>
           <h4>Deutsch</h4>
           <p>Sehr gut (90%)</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="75"></div>
+          <div class="circle" data-progress="75" aria-label="Englisch: 75%"></div>
           <h4>Englisch</h4>
           <p>Gut (75%)</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="100"></div>
+          <div class="circle" data-progress="100" aria-label="Kroatisch / Serbisch / Bosnisch: 100%"></div>
           <h4>Kroatisch / Serbisch / Bosnisch</h4>
           <p>Muttersprache</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="95"></div>
+          <div class="circle" data-progress="95" aria-label="MS Office: 95%"></div>
           <h4>MS Office</h4>
           <p>Experte (95%)</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="95"></div>
+          <div class="circle" data-progress="95" aria-label="Buchhaltung / Abrechnung: 95%"></div>
           <h4>Buchhaltung / Abrechnung</h4>
           <p>Experte (95%)</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="90"></div>
+          <div class="circle" data-progress="90" aria-label="Komalog, SAP, PowerBI, PowerAutomate, SQL: 90%"></div>
           <h4>Komalog, SAP, PowerBI, PowerAutomate, SQL</h4>
           <p>Fortgeschritten (90%)</p>
         </div>
@@ -318,7 +328,7 @@
     </section>
   </div>
 
-    <footer>
+  <footer>
     <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
     <p><a href="mailto:borisvareskovic@outlook.de"><i class="fa-solid fa-envelope"></i> Kontakt</a></p>
     <p>&copy; 2025 Boris Vareskovic</p>
@@ -333,20 +343,21 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const circle = entry.target;
-            const progress = circle.getAttribute("data-progress");
-
+            const progress = parseInt(circle.getAttribute("data-progress"));
             let start = 0;
-            const interval = setInterval(() => {
+
+            const animate = () => {
               if (start <= progress) {
                 circle.style.background = `conic-gradient(#3498db ${start}%, #e6e6e6 0%)`;
                 circle.setAttribute("data-progress", start);
                 start++;
+                requestAnimationFrame(animate);
               } else {
-                clearInterval(interval);
                 circle.setAttribute("data-progress", progress);
               }
-            }, 20);
+            }
 
+            animate();
             observer.unobserve(circle);
           }
         });

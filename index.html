@@ -4,45 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Verantwortungsbereiche von Boris Vareskovic – Buchhaltung, Vertrieb, Rechnungswesen, IT-Automatisierung und mehr.">
-  <title>Verantwortungsbereiche – Boris Vareskovic</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
+  <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
+  <title>Boris Vareskovic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* ===== Body & Grundlayout ===== */
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background-color: #f5f7fa;
       color: #2c3e50;
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
-    header,
-    footer,
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    /* ===== Header ===== */
     header {
       background: linear-gradient(135deg, #3498db, #2c3e50);
       color: white;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
-      border-radius: 12px 12px 0 0;
+    }
+
+    header img {
+      width: 160px;
+      border-radius: 16px;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
     }
 
     header h1 {
-      font-size: 2em;
-      margin: 0;
+      margin: 15px 0 5px;
+      font-size: 2.2em;
+      font-weight: 700;
     }
 
-    /* ===== Navigation ===== */
+    header h3 {
+      margin: 5px 0 10px;
+      font-weight: 400;
+    }
+
     nav {
       background: #2c3e50;
       text-align: center;
@@ -53,9 +53,10 @@
 
     nav a {
       display: inline-block;
-      padding: 14px 20px;
+      padding: 14px 22px;
       color: white;
       text-decoration: none;
+      font-weight: 500;
       transition: 0.3s;
     }
 
@@ -63,83 +64,122 @@
       background-color: #2980b9;
     }
 
-    /* ===== Container & Section ===== */
     .container {
-      padding: 20px 10px;
-    }
-
-    section {
-      margin-bottom: 40px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
     }
 
     .section-title {
-      background: #eaf2f8;
       border-left: 5px solid #3498db;
-      padding: 12px 18px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.4em;
+      padding-left: 12px;
+      margin: 50px 0 25px;
+      font-size: 1.7em;
       font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      transition: 0.3s;
     }
 
-    .section-title i {
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .timeline-item i {
+      font-size: 28px;
       color: #3498db;
-      font-size: 1.3em;
+      flex-shrink: 0;
+      margin-top: 4px;
     }
 
-    ul {
-      padding-left: 25px;
-      margin-bottom: 25px;
+    .timeline-text h4 {
+      margin: 0;
+      font-size: 1.1em;
+      font-weight: 600;
     }
 
-    ul li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-      transition: 0.2s;
+    .timeline-text p {
+      margin: 3px 0 0;
+      color: #555;
+      font-size: 0.95em;
     }
 
-    ul li:hover {
-      background: #f0f6fc;
-      border-radius: 4px;
-      padding-left: 5px;
-    }
-
-    a {
-      color: #3498db;
+    .timeline-text a {
+      color: #2c3e50;
       text-decoration: none;
       font-weight: 500;
     }
 
-    a:hover {
+    .timeline-text a:hover {
       text-decoration: underline;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background-color: #3498db;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
+    /* Skills als Karten mit Kreisen */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
       text-align: center;
-      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    .btn:hover {
-      background-color: #1c6391;
+    .skill-card:hover {
+      transform: translateY(-6px);
     }
 
-    /* ===== Footer ===== */
+    .skill-card h4 {
+      margin: 15px 0 5px;
+      font-size: 1.15em;
+      font-weight: 600;
+    }
+
+    .skill-card p {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      position: relative;
+      background: conic-gradient(#3498db 0%, #e6e6e6 0%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+      transition: background 2s linear;
+    }
+
+    .circle::after {
+      content: attr(data-progress) '%';
+      position: absolute;
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    /* Footer */
     footer {
       background: #2c3e50;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       margin-top: 40px;
     }
 
@@ -147,184 +187,173 @@
       color: #6dd5fa;
       text-decoration: underline;
     }
-
-    /* ===== Back to Top Button ===== */
-    #back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #3498db;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      font-size: 1.2em;
-      z-index: 100;
-      transition: background-color 0.3s;
-    }
-
-    #back-to-top:hover {
-      background-color: #1c6391;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        border-bottom: 1px solid #444;
-      }
-
-      header h1 {
-        font-size: 1.5em;
-      }
-
-      .section-title {
-        font-size: 1.2em;
-      }
-    }
-
-    /* ===== Dark Mode ===== */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #1e1e2f;
-        color: #f5f7fa;
-      }
-
-      header {
-        background: linear-gradient(135deg, #2980b9, #1c1c2a);
-      }
-
-      nav {
-        background: #1c1c2a;
-      }
-
-      nav a:hover {
-        background-color: #2980b9;
-      }
-
-      .section-title {
-        background: #2a2a3a;
-        border-left: 5px solid #2980b9;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-      }
-
-      ul li:hover {
-        background: #33334d;
-      }
-
-      a {
-        color: #6dd5fa;
-      }
-
-      footer {
-        background: #1c1c2a;
-      }
-
-      #back-to-top {
-        background-color: #2980b9;
-      }
-    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Verantwortungsbereiche</h1>
+    <img src="Images/Boris Vareskovic Profilbild.JPG" alt="Profilbild Boris Vareskovic">
+    <h1>Boris Vareskovic</h1>
+    <h3>Master der Betriebswirtschaftslehre</h3>
+    <p><a href="https://ef.sum.ba/en" style="color:white; text-decoration: underline;">Faculty of Economics, University of Mostar</a></p>
   </header>
 
   <nav>
-    <a href="index.html"><i class="fa-solid fa-house"></i> Startseite</a>
+    <a href="#ausbildung"><i class="fa-solid fa-graduation-cap"></i> Ausbildung</a>
+    <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Berufserfahrung</a>
+    <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Kompetenzen</a>
+    <a href="beschreibung.html"><i class="fa-solid fa-file-lines"></i> Verantwortungsbereiche</a>
+    <a href="hobbies.html"><i class="fa-solid fa-person-running"></i> Interessen</a>
   </nav>
 
   <div class="container">
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-chart-simple"></i> Buchhaltung & Finanzkontrolle</h2>
-      <ul>
-        <li>Verwaltung und Überwachung von Eingangs- und Ausgangsrechnungen.</li>
-        <li>Abwicklung nationaler und internationaler Zahlungen.</li>
-        <li>Monatliche Endabrechnungen und Prüfung der Finanzdaten.</li>
-        <li>Steuerliches Berichtswesen und Optimierungspotenziale.</li>
-        <li>Mahnwesen zur Sicherung der Liquidität.</li>
-        <li>Nutzung unternehmensspezifischer Systeme.</li>
-      </ul>
+
+    <!-- Ausbildung -->
+    <section id="ausbildung">
+      <h2 class="section-title">Ausbildung</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut, 2018)</a></h4>
+            <ul>
+              <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+              <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-user-graduate"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Master-Diplom-1.pdf">Master BWL (2013 – 2016)</a></h4>
+            <p><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-school"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL (2010 – 2013)</a></h4>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Vertrieb & Preisgestaltung</h2>
-      <ul>
-        <li>Kalkulation und Pflege von Preisstrukturen.</li>
-        <li>Optimierung und Digitalisierung der Kalkulationsprozesse.</li>
-        <li>Mitgestaltung von Automatisierungslösungen im Vertriebsprozess.</li>
-      </ul>
+    <!-- Laufbahn -->
+    <section id="laufbahn">
+      <h2 class="section-title">Berufliche Laufbahn</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <div class="timeline-text">
+            <h4>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</h4>
+            <p>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung (seit 2019)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <div class="timeline-text">
+            <h4>Riedl Raumkonzepte</h4>
+            <p>Kaufmännischer Leiter (2018)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-truck"></i>
+          <div class="timeline-text">
+            <h4>Deutsche Post AG</h4>
+            <p>Postzusteller (2016 – 2018)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <div class="timeline-text">
+            <h4>MR Montagen Straubing</h4>
+            <p>Montagehelfer (2016)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-person-military-rifle"></i>
+          <div class="timeline-text">
+            <h4>Bosnisch-Herzegowinische Streitkräfte</h4>
+            <p>Soldat (2012 – 2016)</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-file-invoice"></i> Leitung Rechnungsabteilung</h2>
-      <ul>
-        <li>Pflege von Tarifen und Abrechnungssätzen im ERP-System.</li>
-        <li>Verantwortung für die Fakturierung nationaler und internationaler Transporte.</li>
-        <li>Aufbau effizienter Datenflüsse und Reportingprozesse.</li>
-        <li>Wirtschaftlichkeitsanalysen und Projektkalkulationen.</li>
-        <li>Abteilungsorganisation und Teamkoordination.</li>
-        <li>Überwachung externer Partner und Systeme.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-computer"></i> IT-Automatisierung & Systemadministration</h2>
-      <ul>
-        <li>Umsetzung papierloser Prozesse durch Automatisierung.</li>
-        <li>Schulungen für Fahrer zur Nutzung digitaler Endgeräte.</li>
-        <li>Betreuung von Microsoft Office, Netzwerk- und Clientstrukturen.</li>
-        <li>Einrichtung und Wartung von Arbeitsplatzrechnern und Servern.</li>
-        <li>Datenmanagement, Backup-Strategien und DFÜ-Unterstützung.</li>
-        <li>Projektarbeit zu Automatisierung und Digitalisierung.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-truck"></i> Disposition & Fahrerbetreuung</h2>
-      <ul>
-        <li>Integration und Betreuung internationaler Fahrer.</li>
-        <li>Unterstützung der Disposition im Nahverkehr.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-bolt"></i> Task Force</h2>
-      <ul>
-        <li>Einarbeitung neuer Mitarbeiter in operative Kernbereiche.</li>
-        <li>Interne Schulungen und Qualitätsworkshops.</li>
-        <li>Projektleitung Prozessoptimierung und Arbeitsplatzgestaltung.</li>
-        <li>Koordination eines spezialisierten Task-Force-Teams.</li>
-      </ul>
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="circle" data-progress="90"></div>
+          <h4>Deutsch</h4>
+          <p>Sehr gut (90%)</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="75"></div>
+          <h4>Englisch</h4>
+          <p>Gut (75%)</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="100"></div>
+          <h4>Kroatisch / Serbisch / Bosnisch</h4>
+          <p>Muttersprache</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="95"></div>
+          <h4>MS Office</h4>
+          <p>Experte (95%)</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="95"></div>
+          <h4>Buchhaltung / Abrechnung</h4>
+          <p>Experte (95%)</p>
+        </div>
+        <div class="skill-card">
+          <div class="circle" data-progress="90"></div>
+          <h4>Komalog, SAP, PowerBI, PowerAutomate, SQL</h4>
+          <p>Fortgeschritten (90%)</p>
+        </div>
+      </div>
     </section>
   </div>
 
-  <footer>
+    <footer>
     <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
     <p><a href="mailto:borisvareskovic@outlook.de"><i class="fa-solid fa-envelope"></i> Kontakt</a></p>
     <p>&copy; 2025 Boris Vareskovic</p>
   </footer>
 
-  <div id="back-to-top" title="Nach oben"><i class="fa-solid fa-arrow-up"></i></div>
-
   <script>
-    // ===== Back-to-Top-Button =====
-    const backToTop = document.getElementById("back-to-top");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
-      }
-    });
+    // Animierte Kreise bei Sichtbarkeit
+    document.addEventListener("DOMContentLoaded", () => {
+      const circles = document.querySelectorAll(".circle");
 
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const circle = entry.target;
+            const progress = circle.getAttribute("data-progress");
+
+            let start = 0;
+            const interval = setInterval(() => {
+              if (start <= progress) {
+                circle.style.background = `conic-gradient(#3498db ${start}%, #e6e6e6 0%)`;
+                circle.setAttribute("data-progress", start);
+                start++;
+              } else {
+                clearInterval(interval);
+                circle.setAttribute("data-progress", progress);
+              }
+            }, 20);
+
+            observer.unobserve(circle);
+          }
+        });
+      }, { threshold: 0.6 });
+
+      circles.forEach(circle => observer.observe(circle));
     });
   </script>
 </body>
-
 </html>

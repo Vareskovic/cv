@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Kompetenzen.">
   <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
   <title>Boris Vareskovic</title>
+  <link rel="icon" type="image/png" href="Images/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -80,15 +81,28 @@
 
     /* Timeline */
     .timeline {
+      position: relative;
       display: flex;
       flex-direction: column;
       gap: 25px;
+      margin-left: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #3498db;
     }
 
     .timeline-item {
       display: flex;
       align-items: flex-start;
       gap: 18px;
+      position: relative;
     }
 
     .timeline-item i {
@@ -96,6 +110,10 @@
       color: #3498db;
       flex-shrink: 0;
       margin-top: 4px;
+      z-index: 2;
+      background: #f5f7fa;
+      border-radius: 50%;
+      padding: 4px;
     }
 
     .timeline-text h4 {
@@ -120,7 +138,7 @@
       text-decoration: underline;
     }
 
-    /* Skills als Karten mit Kreisen */
+    /* Skills */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -167,8 +185,7 @@
       transition: background 2s linear;
     }
 
-    .circle::after {
-      content: attr(data-progress) '%';
+    .circle span {
       position: absolute;
       font-size: 0.9em;
       color: #333;
@@ -200,10 +217,10 @@
 
   <nav>
     <a href="#ausbildung"><i class="fa-solid fa-graduation-cap"></i> Ausbildung</a>
-    <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Laufbahn</a>
-    <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Fähigkeiten</a>
-    <a href="beschreibung.html"><i class="fa-solid fa-file-lines"></i> Arbeitsplatz</a>
-    <a href="hobbies.html"><i class="fa-solid fa-person-running"></i> Hobbys</a>
+    <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Berufserfahrung</a>
+    <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Kompetenzen</a>
+    <a href="beschreibung.html"><i class="fa-solid fa-tasks"></i> Verantwortungsbereiche</a>
+    <a href="hobbies.html"><i class="fa-solid fa-heart"></i> Interessen</a>
     <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakt</a>
   </nav>
 
@@ -239,9 +256,9 @@
       </div>
     </section>
 
-    <!-- Laufbahn -->
+    <!-- Berufserfahrung -->
     <section id="laufbahn">
-      <h2 class="section-title">Berufliche Laufbahn</h2>
+      <h2 class="section-title">Berufserfahrung</h2>
       <div class="timeline">
         <div class="timeline-item">
           <i class="fa-solid fa-briefcase"></i>
@@ -281,39 +298,39 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Kompetenzen -->
     <section id="skills">
-      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
+      <h2 class="section-title">Kompetenzen</h2>
       <div class="skills-grid">
         <div class="skill-card">
-          <div class="circle" data-progress="90"></div>
+          <div class="circle" data-end="90"><span>90%</span></div>
           <h4>Deutsch</h4>
-          <p>Sehr gut (90%)</p>
+          <p>Sehr gut</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="75"></div>
+          <div class="circle" data-end="75"><span>75%</span></div>
           <h4>Englisch</h4>
-          <p>Gut (75%)</p>
+          <p>Gut</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="100"></div>
+          <div class="circle" data-end="100"><span>100%</span></div>
           <h4>Kroatisch / Serbisch / Bosnisch</h4>
           <p>Muttersprache</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="95"></div>
+          <div class="circle" data-end="95"><span>95%</span></div>
           <h4>MS Office</h4>
-          <p>Experte (95%)</p>
+          <p>Experte</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="95"></div>
+          <div class="circle" data-end="95"><span>95%</span></div>
           <h4>Buchhaltung / Abrechnung</h4>
-          <p>Experte (95%)</p>
+          <p>Experte</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-progress="90"></div>
+          <div class="circle" data-end="90"><span>90%</span></div>
           <h4>Komalog, SAP, PowerBI, PowerAutomate, SQL</h4>
-          <p>Fortgeschritten (90%)</p>
+          <p>Fortgeschritten</p>
         </div>
       </div>
     </section>
@@ -333,17 +350,15 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const circle = entry.target;
-            const progress = circle.getAttribute("data-progress");
+            const end = parseInt(circle.getAttribute("data-end"), 10);
 
             let start = 0;
             const interval = setInterval(() => {
-              if (start <= progress) {
+              if (start <= end) {
                 circle.style.background = `conic-gradient(#3498db ${start}%, #e6e6e6 0%)`;
-                circle.setAttribute("data-progress", start);
                 start++;
               } else {
                 clearInterval(interval);
-                circle.setAttribute("data-progress", progress);
               }
             }, 20);
 

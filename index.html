@@ -18,6 +18,9 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -69,6 +72,7 @@
       max-width: 1100px;
       margin: auto;
       padding: 20px;
+      flex: 1;
     }
 
     .section-title {
@@ -77,65 +81,6 @@
       margin: 50px 0 25px;
       font-size: 1.7em;
       font-weight: 600;
-    }
-
-    /* Timeline */
-    .timeline {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      margin-left: 20px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 12px;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: #3498db;
-    }
-
-    .timeline-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      position: relative;
-    }
-
-    .timeline-item i {
-      font-size: 28px;
-      color: #3498db;
-      flex-shrink: 0;
-      margin-top: 4px;
-      z-index: 2;
-      background: #f5f7fa;
-      border-radius: 50%;
-      padding: 4px;
-    }
-
-    .timeline-text h4 {
-      margin: 0;
-      font-size: 1.1em;
-      font-weight: 600;
-    }
-
-    .timeline-text p {
-      margin: 3px 0 0;
-      color: #555;
-      font-size: 0.95em;
-    }
-
-    .timeline-text a {
-      color: #2c3e50;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .timeline-text a:hover {
-      text-decoration: underline;
     }
 
     /* Skills */
@@ -197,7 +142,7 @@
       color: white;
       text-align: center;
       padding: 25px;
-      margin-top: 40px;
+      margin-top: auto;
     }
 
     footer a {
@@ -221,7 +166,6 @@
     <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Kompetenzen</a>
     <a href="beschreibung.html"><i class="fa-solid fa-tasks"></i> Verantwortungsbereiche</a>
     <a href="hobbies.html"><i class="fa-solid fa-heart"></i> Interessen</a>
-    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakt</a>
   </nav>
 
   <div class="container">
@@ -229,73 +173,25 @@
     <!-- Ausbildung -->
     <section id="ausbildung">
       <h2 class="section-title">Ausbildung</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <div class="timeline-text">
-            <h4><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut, 2018)</a></h4>
-            <ul>
-              <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-              <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <i class="fa-solid fa-user-graduate"></i>
-          <div class="timeline-text">
-            <h4><a href="PDF/Master-Diplom-1.pdf">Master BWL (2013 – 2016)</a></h4>
-            <p><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <i class="fa-solid fa-school"></i>
-          <div class="timeline-text">
-            <h4><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL (2010 – 2013)</a></h4>
-          </div>
-        </div>
-      </div>
+      <ul>
+        <li><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut, 2018)</a></li>
+        <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+        <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+        <li><a href="PDF/Master-Diplom-1.pdf">Master BWL (2013 – 2016)</a> – <a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung</a></li>
+        <li><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL (2010 – 2013)</a></li>
+      </ul>
     </section>
 
     <!-- Berufserfahrung -->
     <section id="laufbahn">
       <h2 class="section-title">Berufserfahrung</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <i class="fa-solid fa-briefcase"></i>
-          <div class="timeline-text">
-            <h4>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</h4>
-            <p>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung (seit 2019)</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <i class="fa-solid fa-briefcase"></i>
-          <div class="timeline-text">
-            <h4>Riedl Raumkonzepte</h4>
-            <p>Kaufmännischer Leiter (2018)</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <i class="fa-solid fa-truck"></i>
-          <div class="timeline-text">
-            <h4>Deutsche Post AG</h4>
-            <p>Postzusteller (2016 – 2018)</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <i class="fa-solid fa-screwdriver-wrench"></i>
-          <div class="timeline-text">
-            <h4>MR Montagen Straubing</h4>
-            <p>Montagehelfer (2016)</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <i class="fa-solid fa-person-military-rifle"></i>
-          <div class="timeline-text">
-            <h4>Bosnisch-Herzegowinische Streitkräfte</h4>
-            <p>Soldat (2012 – 2016)</p>
-          </div>
-        </div>
-      </div>
+      <ul>
+        <li><strong>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</strong> – Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung (seit 2019)</li>
+        <li><strong>Riedl Raumkonzepte</strong> – Kaufmännischer Leiter (2018)</li>
+        <li><strong>Deutsche Post AG</strong> – Postzusteller (2016 – 2018)</li>
+        <li><strong>MR Montagen Straubing</strong> – Montagehelfer (2016)</li>
+        <li><strong>Bosnisch-Herzegowinische Streitkräfte</strong> – Soldat (2012 – 2016)</li>
+      </ul>
     </section>
 
     <!-- Kompetenzen -->

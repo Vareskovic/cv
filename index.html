@@ -1,13 +1,14 @@
+
+
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Kompetenzen.">
+  <meta name="description" content="Persönliche Webseite von Boris Vareskovic – Profil, Ausbildung, Berufserfahrung und Fähigkeiten.">
   <meta name="keywords" content="Boris Vareskovic, BWL, Abrechnung, SAP, Power Automate, Lebenslauf">
   <title>Boris Vareskovic</title>
-  <link rel="icon" type="image/png" href="Images/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -18,9 +19,6 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     header {
@@ -72,7 +70,6 @@
       max-width: 1100px;
       margin: auto;
       padding: 20px;
-      flex: 1;
     }
 
     .section-title {
@@ -83,7 +80,49 @@
       font-weight: 600;
     }
 
-    /* Skills */
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .timeline-item i {
+      font-size: 28px;
+      color: #3498db;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .timeline-text h4 {
+      margin: 0;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    .timeline-text p {
+      margin: 3px 0 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    .timeline-text a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .timeline-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Skills als Karten mit Kreisen */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -130,7 +169,8 @@
       transition: background 2s linear;
     }
 
-    .circle span {
+    .circle::after {
+      content: attr(data-progress) '%';
       position: absolute;
       font-size: 0.9em;
       color: #333;
@@ -142,7 +182,7 @@
       color: white;
       text-align: center;
       padding: 25px;
-      margin-top: auto;
+      margin-top: 40px;
     }
 
     footer a {
@@ -162,10 +202,11 @@
 
   <nav>
     <a href="#ausbildung"><i class="fa-solid fa-graduation-cap"></i> Ausbildung</a>
-    <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Berufserfahrung</a>
-    <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Kompetenzen</a>
-    <a href="beschreibung.html"><i class="fa-solid fa-tasks"></i> Verantwortungsbereiche</a>
-    <a href="hobbies.html"><i class="fa-solid fa-heart"></i> Interessen</a>
+    <a href="#laufbahn"><i class="fa-solid fa-briefcase"></i> Laufbahn</a>
+    <a href="#skills"><i class="fa-solid fa-lightbulb"></i> Fähigkeiten</a>
+    <a href="beschreibung.html"><i class="fa-solid fa-file-lines"></i> Arbeitsplatz</a>
+    <a href="hobbies.html"><i class="fa-solid fa-person-running"></i> Hobbys</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakt</a>
   </nav>
 
   <div class="container">
@@ -173,60 +214,108 @@
     <!-- Ausbildung -->
     <section id="ausbildung">
       <h2 class="section-title">Ausbildung</h2>
-      <ul>
-        <li><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut, 2018)</a></li>
-        <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
-        <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
-        <li><a href="PDF/Master-Diplom-1.pdf">Master BWL (2013 – 2016)</a> – <a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung</a></li>
-        <li><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL (2010 – 2013)</a></li>
-      </ul>
+      <div class="timeline">
+        <div class="timeline-item">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Fachkraft Finanzbuchhaltung.pdf">Fachkraft Finanzbuchhaltung mit SAP & Lexware (BFZ Landshut, 2018)</a></h4>
+            <ul>
+              <li><a href="PDF/SAP Foundation Level (FL).pdf">SAP Foundation Level (FL)</a></li>
+              <li><a href="PDF/SAP Finanzbuchhaltung (FI).pdf">SAP Financial Accounting (FI)</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-user-graduate"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Master-Diplom-1.pdf">Master BWL (2013 – 2016)</a></h4>
+            <p><a href="PDF/Zeugnisbewertung Boris Vareskovic 2.pdf">Zeugnisbewertung (ZAB)</a></p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-school"></i>
+          <div class="timeline-text">
+            <h4><a href="PDF/Bachelor-Diplom-1.pdf">Bachelor BWL (2010 – 2013)</a></h4>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Berufserfahrung -->
+    <!-- Laufbahn -->
     <section id="laufbahn">
-      <h2 class="section-title">Berufserfahrung</h2>
-      <ul>
-        <li><strong>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</strong> – Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung (seit 2019)</li>
-        <li><strong>Riedl Raumkonzepte</strong> – Kaufmännischer Leiter (2018)</li>
-        <li><strong>Deutsche Post AG</strong> – Postzusteller (2016 – 2018)</li>
-        <li><strong>MR Montagen Straubing</strong> – Montagehelfer (2016)</li>
-        <li><strong>Bosnisch-Herzegowinische Streitkräfte</strong> – Soldat (2012 – 2016)</li>
-      </ul>
+      <h2 class="section-title">Berufliche Laufbahn</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <div class="timeline-text">
+            <h4>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG</h4>
+            <p>Task-Force Koordinator, Abrechnung, IT/EDV, Finanzbuchhaltung (seit 2019)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <div class="timeline-text">
+            <h4>Riedl Raumkonzepte</h4>
+            <p>Kaufmännischer Leiter (2018)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-truck"></i>
+          <div class="timeline-text">
+            <h4>Deutsche Post AG</h4>
+            <p>Postzusteller (2016 – 2018)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <div class="timeline-text">
+            <h4>MR Montagen Straubing</h4>
+            <p>Montagehelfer (2016)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <i class="fa-solid fa-person-military-rifle"></i>
+          <div class="timeline-text">
+            <h4>Bosnisch-Herzegowinische Streitkräfte</h4>
+            <p>Soldat (2012 – 2016)</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Kompetenzen -->
+    <!-- Skills -->
     <section id="skills">
-      <h2 class="section-title">Kompetenzen</h2>
+      <h2 class="section-title">Kenntnisse & Fähigkeiten</h2>
       <div class="skills-grid">
         <div class="skill-card">
-          <div class="circle" data-end="90"><span>90%</span></div>
+          <div class="circle" data-progress="90"></div>
           <h4>Deutsch</h4>
-          <p>Sehr gut</p>
+          <p>Sehr gut (90%)</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-end="75"><span>75%</span></div>
+          <div class="circle" data-progress="75"></div>
           <h4>Englisch</h4>
-          <p>Gut</p>
+          <p>Gut (75%)</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-end="100"><span>100%</span></div>
+          <div class="circle" data-progress="100"></div>
           <h4>Kroatisch / Serbisch / Bosnisch</h4>
           <p>Muttersprache</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-end="95"><span>95%</span></div>
+          <div class="circle" data-progress="95"></div>
           <h4>MS Office</h4>
-          <p>Experte</p>
+          <p>Experte (95%)</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-end="95"><span>95%</span></div>
+          <div class="circle" data-progress="95"></div>
           <h4>Buchhaltung / Abrechnung</h4>
-          <p>Experte</p>
+          <p>Experte (95%)</p>
         </div>
         <div class="skill-card">
-          <div class="circle" data-end="90"><span>90%</span></div>
+          <div class="circle" data-progress="90"></div>
           <h4>Komalog, SAP, PowerBI, PowerAutomate, SQL</h4>
-          <p>Fortgeschritten</p>
+          <p>Fortgeschritten (90%)</p>
         </div>
       </div>
     </section>
@@ -246,15 +335,17 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const circle = entry.target;
-            const end = parseInt(circle.getAttribute("data-end"), 10);
+            const progress = circle.getAttribute("data-progress");
 
             let start = 0;
             const interval = setInterval(() => {
-              if (start <= end) {
+              if (start <= progress) {
                 circle.style.background = `conic-gradient(#3498db ${start}%, #e6e6e6 0%)`;
+                circle.setAttribute("data-progress", start);
                 start++;
               } else {
                 clearInterval(interval);
+                circle.setAttribute("data-progress", progress);
               }
             }, 20);
 

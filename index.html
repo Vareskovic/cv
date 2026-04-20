@@ -3,193 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Boris Vareskovic</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #061018;
-  --surface: rgba(255,255,255,0.04);
-  --surface-hover: rgba(255,255,255,0.07);
-  --border: rgba(255,255,255,0.08);
-  --border-bright: rgba(255,255,255,0.15);
-  --text: #ecfdf5;
-  --muted: #7aa6a1;
+  --bg:#061018;
+  --surface:rgba(255,255,255,0.04);
+  --surface-hover:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.08);
+  --border-bright:rgba(255,255,255,0.15);
 
-  --blue: #0ea5a4;
-  --blue-glow: rgba(14,165,164,0.35);
+  --text:#ecfdf5;
+  --muted:#7aa6a1;
 
-  --accent: #22c55e;
-  --accent-glow: rgba(34,197,94,0.25);
+  --primary:#0ea5a4;
+  --primary-glow:rgba(14,165,164,0.35);
 
-  --radius: 18px;
+  --accent:#22c55e;
 }
 
-body {
-  font-family: 'Manrope', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+body{
   margin:0;
+  font-family:'Manrope',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(6,16,24,0.8);
+  backdrop-filter:blur(10px);
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  z-index:10;
+}
+
+nav a{
+  color:var(--muted);
+  margin-left:15px;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:var(--text);
 }
 
 /* HERO */
-.hero {
+.hero{
+  padding:140px 20px 80px;
   text-align:center;
-  padding:100px 20px;
 }
 
-.hero h1 {
+.hero h1{
   font-family:'Syne';
-  font-size:3.5em;
+  font-size:4em;
 }
 
-.hl {
-  background: linear-gradient(90deg,#0ea5a4,#22c55e);
+.hl{
+  background:linear-gradient(90deg,#0ea5a4,#22c55e);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-.hero-sub {
+.hero-sub{
   color:var(--muted);
   max-width:600px;
   margin:20px auto;
+  line-height:1.6;
 }
 
-.btn {
-  display:inline-block;
+.btn{
   padding:12px 22px;
-  margin:6px;
   border-radius:10px;
   text-decoration:none;
   font-weight:600;
+  margin:5px;
+  display:inline-block;
 }
 
-.btn-p {
-  background:var(--blue);
-  color:#fff;
+.btn-primary{
+  background:var(--primary);
+  color:white;
+  box-shadow:0 0 20px var(--primary-glow);
 }
 
-.btn-s {
+.btn-secondary{
   border:1px solid var(--border-bright);
   color:var(--text);
 }
 
 /* SECTIONS */
-section {
+section{
   max-width:900px;
-  margin:60px auto;
+  margin:80px auto;
   padding:0 20px;
 }
 
-h2 {
+h2{
   font-family:'Syne';
+  font-size:2em;
 }
 
 /* CARD */
-.card {
+.card{
   background:var(--surface);
   border:1px solid var(--border);
-  padding:20px;
-  border-radius:var(--radius);
-  margin-top:15px;
+  padding:25px;
+  border-radius:18px;
+  margin-top:20px;
   transition:0.3s;
 }
 
-.card:hover {
+.card:hover{
   background:var(--surface-hover);
+  transform:translateY(-3px);
   box-shadow:0 10px 40px rgba(0,0,0,0.4);
 }
 
 /* GRID */
-.grid {
+.grid{
   display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:12px;
 }
 
+/* TAG */
+.tag{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:20px;
+  background:rgba(14,165,164,0.1);
+  margin:4px;
+  font-size:0.8em;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+}
 </style>
 </head>
 
 <body>
+
+<!-- NAV -->
+<nav>
+  <strong>Boris Vareskovic</strong>
+  <div>
+    <a href="#about">Über mich</a>
+    <a href="#exp">Erfahrung</a>
+    <a href="#skills">Kompetenzen</a>
+    <a href="#contact">Kontakt</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
   <h1>Boris <span class="hl">Vareskovic</span></h1>
 
   <p class="hero-sub">
-    Betriebswirt (M.Sc.) mit Fokus auf Finanzprozesse, Controlling und datenbasierte Optimierung.
-    Erfahrung in SAP, Power BI und Automatisierung von Geschäftsprozessen.
+    Betriebswirt (M.Sc.) mit Fokus auf Finanzprozesse, Controlling und operative Steuerung.
+    Erfahrung in SAP, Power BI und der Automatisierung komplexer Geschäftsprozesse.
   </p>
 
-  <a href="#" class="btn btn-p">Kontakt</a>
-  <a href="#" class="btn btn-s">LinkedIn</a>
+  <div>
+    <span class="tag">Finanzprozesse</span>
+    <span class="tag">Controlling</span>
+    <span class="tag">SAP</span>
+    <span class="tag">Power BI</span>
+    <span class="tag">Automatisierung</span>
+  </div>
+
+  <div style="margin-top:20px;">
+    <a href="#" class="btn btn-primary">Kontakt</a>
+    <a href="#" class="btn btn-secondary">LinkedIn</a>
+  </div>
 </section>
 
-<!-- ÜBER MICH -->
-<section>
+<!-- ABOUT -->
+<section id="about">
   <h2>Über mich</h2>
 
   <div class="card">
     <p>
       Ich bin Betriebswirt (M.Sc.) mit über 6 Jahren Erfahrung in der Logistik- und Finanzpraxis.
-      Mein Schwerpunkt liegt auf der Optimierung von Finanzprozessen, Abrechnungssystemen und operativen Abläufen.
+      Mein Schwerpunkt liegt auf der Steuerung und Optimierung von Abrechnungsprozessen sowie operativen Abläufen.
     </p>
 
     <p>
-      In meiner aktuellen Rolle verbinde ich kaufmännisches Know-how mit technischer Umsetzung:
-      Ich entwickle Lösungen mit SAP, Power BI und Power Automate, um Transparenz zu schaffen,
-      Prozesse zu automatisieren und fundierte Entscheidungen zu ermöglichen.
+      In meiner aktuellen Funktion verbinde ich Finance und Technologie:
+      Ich entwickle datenbasierte Lösungen mit SAP, Power BI und Power Automate,
+      um Prozesse effizienter zu gestalten und Entscheidungsgrundlagen zu verbessern.
     </p>
 
     <p>
-      Ich arbeite strukturiert, lösungsorientiert und übernehme Verantwortung in dynamischen Situationen –
-      insbesondere dort, wo Effizienz und Klarheit gefragt sind.
+      Ich übernehme Verantwortung in komplexen Situationen und arbeite strukturiert,
+      lösungsorientiert und mit klarem Fokus auf Umsetzung und Ergebnis.
     </p>
   </div>
 </section>
 
-<!-- BERUFSERFAHRUNG -->
-<section>
+<!-- EXPERIENCE -->
+<section id="exp">
   <h2>Berufserfahrung</h2>
 
   <div class="card">
     <strong>
       Abteilungsleiter Abrechnung & Internationale Transporte · Task-Force Koordinator
     </strong>
-    <p>
-      Michael Wolf OHG / Wolf Spedition GmbH & Co. KG
-    </p>
+
+    <p>Michael Wolf OHG / Wolf Spedition GmbH & Co. KG · seit 2019</p>
 
     <p style="color:var(--muted);">
-      Verantwortung für Abrechnung, internationale Transporte sowie Prozessoptimierung und Systemintegration.
-      Steuerung zentraler Geschäftsprozesse mit Fokus auf Effizienz, Datenqualität und Automatisierung.
+      Verantwortung für Abrechnung und internationale Transporte sowie Optimierung zentraler Geschäftsprozesse.
+      Fokus auf Effizienzsteigerung, Automatisierung und Systemintegration (SAP, Power BI, Power Automate).
     </p>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section>
+<section id="skills">
   <h2>Kompetenzen</h2>
 
   <div class="grid">
     <div class="card">Finanzbuchhaltung</div>
+    <div class="card">Controlling</div>
     <div class="card">SAP FI</div>
     <div class="card">Power BI</div>
     <div class="card">Power Automate</div>
     <div class="card">SQL</div>
-    <div class="card">MS Office</div>
   </div>
 </section>
 
-<!-- KONTAKT -->
-<section>
+<!-- CONTACT -->
+<section id="contact">
   <h2>Kontakt</h2>
 
   <div class="card">
     <p>Email: borisvareskovic@outlook.de</p>
-    <p>LinkedIn: Profil ansehen</p>
+    <p>LinkedIn: dein Profil</p>
   </div>
 </section>
+
+<footer>
+  © 2026 Boris Vareskovic
+</footer>
 
 </body>
 </html>

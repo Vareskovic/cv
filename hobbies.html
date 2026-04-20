@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -23,8 +22,8 @@
       --muted: #7a8ba8;
       --blue: #4f8ef7;
       --blue-glow: rgba(79,142,247,0.35);
-      --accent: #f0b429;
-      --accent-glow: rgba(240,180,41,0.25);
+      --turquoise: #06b6d4; /* Türkis als Akzentfarbe */
+      --turquoise-glow: rgba(6, 182, 212, 0.3);
       --radius: 18px;
     }
 
@@ -57,7 +56,8 @@
       opacity: 0.18;
     }
     .orb-1 { width: 600px; height: 600px; background: #2563eb; top: -150px; left: -100px; animation: drift 18s ease-in-out infinite alternate; }
-    .orb-2 { width: 500px; height: 500px; background: #7c3aed; top: 40%; right: -120px; animation: drift 22s ease-in-out infinite alternate-reverse; }
+    /* Geändert auf Türkis */
+    .orb-2 { width: 500px; height: 500px; background: var(--turquoise); top: 40%; right: -120px; animation: drift 22s ease-in-out infinite alternate-reverse; }
     .orb-3 { width: 400px; height: 400px; background: #0891b2; bottom: 5%; left: 30%; animation: drift 15s ease-in-out infinite alternate; }
 
     @keyframes drift {
@@ -179,29 +179,29 @@
     }
 
     .hobby-card:hover {
-      border-color: var(--border-bright);
+      border-color: var(--turquoise);
       background: var(--surface-hover);
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(79,142,247,0.1);
+      box-shadow: 0 12px 40px var(--turquoise-glow);
     }
 
     .hobby-icon {
       width: 72px;
       height: 72px;
       border-radius: 20px;
-      background: rgba(79,142,247,0.1);
-      border: 1px solid rgba(79,142,247,0.2);
+      background: rgba(6, 182, 212, 0.1); /* Türkis-Hintergrund */
+      border: 1px solid rgba(6, 182, 212, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.8em;
-      color: var(--blue);
+      color: var(--turquoise);
       transition: background 0.25s, box-shadow 0.25s;
     }
 
     .hobby-card:hover .hobby-icon {
-      background: rgba(79,142,247,0.18);
-      box-shadow: 0 0 24px var(--blue-glow);
+      background: rgba(6, 182, 212, 0.22);
+      box-shadow: 0 0 24px var(--turquoise-glow);
     }
 
     .hobby-card h3 {
@@ -224,17 +224,17 @@
       margin-top: 4px;
       font-size: 0.84em;
       font-weight: 600;
-      color: var(--blue);
-      background: rgba(79,142,247,0.08);
-      border: 1px solid rgba(79,142,247,0.2);
+      color: var(--turquoise);
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.2);
       padding: 8px 16px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s, box-shadow 0.2s;
     }
     .hobby-link:hover {
-      background: rgba(79,142,247,0.16);
-      box-shadow: 0 0 16px var(--blue-glow);
+      background: rgba(6, 182, 212, 0.16);
+      box-shadow: 0 0 16px var(--turquoise-glow);
     }
 
     /* ── FOOTER ── */
@@ -271,35 +271,33 @@
 
   <div class="page">
 
-```
-<div class="section-header fi">
-  <span class="sec-num">05</span>
-  <h1 class="sec-title">Interessen</h1>
-  <div class="sec-line"></div>
-</div>
+    <div class="section-header fi">
+      <span class="sec-num">07</span>
+      <h1 class="sec-title">Interessen</h1>
+      <div class="sec-line"></div>
+    </div>
 
-<div class="hobby-grid">
+    <div class="hobby-grid">
 
-  <div class="hobby-card fi">
-    <div class="hobby-icon"><i class="fa-solid fa-futbol"></i></div>
-    <h3>Fußball</h3>
-    <p>Aktiver Spieler mit eigenem FuPa-Profil.</p>
-    <a class="hobby-link" href="https://www.fupa.net/player/boris-vareskovic-955599" target="_blank" rel="noopener">
-      <i class="fa-solid fa-arrow-up-right-from-square"></i> Spielerprofil ansehen
-    </a>
-  </div>
+      <div class="hobby-card fi">
+        <div class="hobby-icon"><i class="fa-solid fa-futbol"></i></div>
+        <h3>Fußball</h3>
+        <p>Aktiver Spieler mit eigenem FuPa-Profil.</p>
+        <a class="hobby-link" href="https://www.fupa.net/player/boris-vareskovic-955599" target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Spielerprofil ansehen
+        </a>
+      </div>
 
-  <div class="hobby-card fi">
-    <div class="hobby-icon"><i class="fa-solid fa-dumbbell"></i></div>
-    <h3>Fitness</h3>
-    <p>Training & gesunder Lebensstil – folge mir auf meiner Fitness-Seite.</p>
-    <a class="hobby-link" href="https://de-de.facebook.com/borisvareskovicfit/" target="_blank" rel="noopener">
-      <i class="fa-brands fa-facebook"></i> Fitness-Seite besuchen
-    </a>
-  </div>
+      <div class="hobby-card fi">
+        <div class="hobby-icon"><i class="fa-solid fa-dumbbell"></i></div>
+        <h3>Fitness</h3>
+        <p>Training & gesunder Lebensstil – folge mir auf meiner Fitness-Seite.</p>
+        <a class="hobby-link" href="https://de-de.facebook.com/borisvareskovicfit/" target="_blank" rel="noopener">
+          <i class="fa-brands fa-facebook"></i> Fitness-Seite besuchen
+        </a>
+      </div>
 
-</div>
-```
+    </div>
 
   </div>
 

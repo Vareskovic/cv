@@ -11,6 +11,10 @@
   <meta property="og:type" content="website">
   <title>Boris Vareskovic</title>
 
+  <!-- Favicon inline SVG als Data-URI -->
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234f8ef7'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='26' fill='white'>BV</text></svg>">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -43,20 +47,9 @@
       overflow-x: hidden;
     }
 
-    /* ── BACKGROUND ORBS ── */
-    .bg-orbs {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.18;
-    }
+    /* ── ORBS ── */
+    .bg-orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.18; }
     .orb-1 { width: 600px; height: 600px; background: #2563eb; top: -150px; left: -100px; animation: drift 18s ease-in-out infinite alternate; }
     .orb-2 { width: 500px; height: 500px; background: #7c3aed; top: 40%; right: -120px; animation: drift 22s ease-in-out infinite alternate-reverse; }
     .orb-3 { width: 400px; height: 400px; background: #0891b2; bottom: 5%; left: 30%; animation: drift 15s ease-in-out infinite alternate; }
@@ -92,11 +85,7 @@
     }
     .nav-logo span { color: var(--blue); }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
 
     .nav-links a {
       color: var(--muted);
@@ -108,12 +97,7 @@
       transition: color 0.2s, background 0.2s;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--surface-hover); }
-
-    .nav-cta {
-      background: var(--blue) !important;
-      color: #fff !important;
-      margin-left: 6px;
-    }
+    .nav-cta { background: var(--blue) !important; color: #fff !important; margin-left: 6px; }
     .nav-cta:hover { opacity: 0.85; }
 
     .nav-toggle {
@@ -122,8 +106,7 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       color: var(--text);
-      width: 38px;
-      height: 38px;
+      width: 38px; height: 38px;
       cursor: pointer;
       font-size: 1em;
       align-items: center;
@@ -134,12 +117,8 @@
       nav { padding: 0 20px; }
       .nav-toggle { display: flex; }
       .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 2px;
-        position: absolute;
-        top: 64px; left: 0; right: 0;
+        display: none; flex-direction: column; align-items: stretch; gap: 2px;
+        position: absolute; top: 64px; left: 0; right: 0;
         background: rgba(8,12,20,0.97);
         border-bottom: 1px solid var(--border);
         padding: 10px 16px 16px;
@@ -223,16 +202,9 @@
       max-width: 480px;
       margin-bottom: 30px;
     }
-
     @media (max-width: 680px) { .hero-sub { margin: 0 auto 30px; } }
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 34px;
-    }
-
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 34px; }
     @media (max-width: 680px) { .hero-tags { justify-content: center; } }
 
     .tag {
@@ -245,12 +217,7 @@
       color: var(--muted);
     }
 
-    .hero-btns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
     @media (max-width: 680px) { .hero-btns { justify-content: center; } }
 
     .btn {
@@ -269,88 +236,54 @@
     .btn-p:hover { box-shadow: 0 0 40px var(--blue-glow); }
     .btn-s { background: var(--surface); color: var(--text); border: 1px solid var(--border-bright); }
     .btn-s:hover { background: var(--surface-hover); }
+    .btn-accent { background: rgba(240,180,41,0.12); color: var(--accent); border: 1px solid rgba(240,180,41,0.3); }
+    .btn-accent:hover { background: rgba(240,180,41,0.2); box-shadow: 0 0 24px var(--accent-glow); }
 
     /* Profile image */
-    .hero-img-wrap {
-      position: relative;
-      width: 210px;
-      height: 210px;
-      flex-shrink: 0;
-    }
-
-    .img-glow {
-      position: absolute;
-      inset: -24px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--blue-glow), transparent 65%);
-    }
-
+    .hero-img-wrap { position: relative; width: 210px; height: 210px; flex-shrink: 0; }
+    .img-glow { position: absolute; inset: -24px; border-radius: 50%; background: radial-gradient(circle, var(--blue-glow), transparent 65%); }
     .hero-img-wrap img {
-      width: 210px;
-      height: 210px;
+      width: 210px; height: 210px;
       border-radius: 28px;
       object-fit: cover;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       border: 1px solid var(--border-bright);
     }
-
     .img-badge {
-      position: absolute;
-      bottom: -12px;
-      right: -12px;
-      z-index: 2;
-      background: var(--accent);
-      color: #1a1200;
-      font-size: 0.7em;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 99px;
+      position: absolute; bottom: -12px; right: -12px; z-index: 2;
+      background: var(--accent); color: #1a1200;
+      font-size: 0.7em; font-weight: 700;
+      padding: 6px 12px; border-radius: 99px;
       white-space: nowrap;
       box-shadow: 0 0 20px var(--accent-glow);
     }
 
-    /* ── MAIN CONTENT ── */
+    /* ── MAIN ── */
     main {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       max-width: 900px;
       margin: 0 auto;
       padding: 0 24px 100px;
     }
 
+    /* ── SECTION HEADER ── */
     .section-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      display: flex; align-items: center; gap: 16px;
       margin: 80px 0 32px;
     }
-
     .sec-num {
       font-family: 'Syne', sans-serif;
-      font-size: 0.72em;
-      font-weight: 700;
-      color: var(--blue);
-      letter-spacing: 2px;
-      opacity: 0.65;
-      flex-shrink: 0;
+      font-size: 0.72em; font-weight: 700;
+      color: var(--blue); letter-spacing: 2px; opacity: 0.65; flex-shrink: 0;
     }
-
     .sec-title {
       font-family: 'Syne', sans-serif;
-      font-size: 1.85em;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      flex-shrink: 0;
+      font-size: 1.85em; font-weight: 800;
+      letter-spacing: -0.5px; flex-shrink: 0;
     }
+    .sec-line { flex: 1; height: 1px; background: var(--border); }
 
-    .sec-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ── CARD ── */
+    /* ── CARD BASE ── */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -364,52 +297,80 @@
       transform: translateY(-2px);
     }
 
-    /* ── QUALIFIKATIONEN ── */
-    .qual-list { display: flex; flex-direction: column; gap: 12px; }
+    /* ── ÜBER MICH ── */
+    .about-card {
+      padding: 32px 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 600px) { .about-card { grid-template-columns: 1fr; } .about-stats { justify-content: flex-start; } }
 
-    .qual-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 22px 24px;
+    .about-text p {
+      font-size: 1em;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
-    .qual-icon {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      background: rgba(79,142,247,0.1);
-      border: 1px solid rgba(79,142,247,0.2);
+    .about-text p + p { margin-top: 12px; }
+
+    .about-stats {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 1em;
+      flex-direction: column;
+      gap: 18px;
       flex-shrink: 0;
     }
 
-    .qual-body h4 {
-      font-weight: 600;
-      font-size: 1em;
-      margin-bottom: 3px;
+    .stat {
+      text-align: center;
+      padding: 16px 24px;
+      background: rgba(79,142,247,0.07);
+      border: 1px solid rgba(79,142,247,0.15);
+      border-radius: 14px;
+      min-width: 100px;
     }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8em;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.74em;
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* ── QUALIFIKATIONEN ── */
+    .qual-list { display: flex; flex-direction: column; gap: 12px; }
+
+    .qual-card { display: flex; align-items: flex-start; gap: 18px; padding: 22px 24px; }
+
+    .qual-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue); font-size: 1em; flex-shrink: 0;
+    }
+
+    .qual-body h4 { font-weight: 600; font-size: 1em; margin-bottom: 3px; }
     .qual-body h4 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
     .qual-body h4 a:hover { color: var(--blue); }
     .qual-body .meta { font-size: 0.82em; color: var(--muted); margin-bottom: 8px; }
 
     .cert-links { display: flex; flex-wrap: wrap; gap: 7px; }
     .cert-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.76em;
-      font-weight: 600;
-      color: var(--blue);
-      background: rgba(79,142,247,0.08);
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.76em; font-weight: 600;
+      color: var(--blue); background: rgba(79,142,247,0.08);
       border: 1px solid rgba(79,142,247,0.18);
-      padding: 4px 10px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.2s;
+      padding: 4px 10px; border-radius: 6px;
+      text-decoration: none; transition: background 0.2s;
     }
     .cert-link:hover { background: rgba(79,142,247,0.16); }
 
@@ -417,27 +378,18 @@
     .exp-list { display: flex; flex-direction: column; gap: 10px; }
 
     .exp-card {
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 20px 24px;
-      flex-wrap: wrap;
+      gap: 16px; padding: 20px 24px; flex-wrap: wrap;
     }
 
     .exp-role { font-weight: 600; font-size: 0.97em; margin-bottom: 2px; }
     .exp-company { font-size: 0.85em; color: var(--muted); }
 
     .exp-period {
-      font-size: 0.78em;
-      font-weight: 600;
-      color: var(--blue);
-      background: rgba(79,142,247,0.08);
-      border: 1px solid rgba(79,142,247,0.15);
-      padding: 4px 11px;
-      border-radius: 6px;
-      white-space: nowrap;
-      flex-shrink: 0;
+      font-size: 0.78em; font-weight: 600; color: var(--blue);
+      background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.15);
+      padding: 4px 11px; border-radius: 6px; white-space: nowrap; flex-shrink: 0;
     }
 
     /* ── SKILLS ── */
@@ -447,101 +399,69 @@
       gap: 12px;
     }
 
-    .skill-card {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 18px 22px;
-    }
+    .skill-card { display: flex; align-items: center; gap: 18px; padding: 18px 22px; }
 
-    .ring-wrap {
-      position: relative;
-      width: 64px; height: 64px;
-      flex-shrink: 0;
-    }
+    .ring-wrap { position: relative; width: 64px; height: 64px; flex-shrink: 0; }
     .ring-wrap svg { transform: rotate(-90deg); display: block; }
     .ring-track { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 5; }
     .ring-fill {
-      fill: none;
-      stroke: url(#rg);
-      stroke-width: 5;
-      stroke-linecap: round;
-      stroke-dasharray: 170;
-      stroke-dashoffset: 170;
+      fill: none; stroke: url(#rg);
+      stroke-width: 5; stroke-linecap: round;
+      stroke-dasharray: 170; stroke-dashoffset: 170;
       transition: stroke-dashoffset 1.1s cubic-bezier(0.4,0,0.2,1);
     }
     .ring-label {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 0.82em;
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82em;
     }
 
     .skill-info h4 { font-weight: 600; font-size: 0.95em; margin-bottom: 2px; }
     .skill-info p  { font-size: 0.8em; color: var(--muted); }
 
-    /* ── KONTAKT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+    .lang-level {
+      display: inline-block;
+      font-size: 0.72em;
+      font-weight: 700;
+      color: var(--blue);
+      background: rgba(79,142,247,0.1);
+      border: 1px solid rgba(79,142,247,0.2);
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-top: 3px;
+      letter-spacing: 0.5px;
     }
 
+    /* ── KONTAKT ── */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+
     .contact-card {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 22px 24px;
-      text-decoration: none;
-      color: var(--text);
-      border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--border);
+      display: flex; align-items: center; gap: 16px; padding: 22px 24px;
+      text-decoration: none; color: var(--text);
+      border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border);
       transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
     }
     .contact-card:hover {
-      border-color: var(--blue);
-      background: var(--surface-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 0 24px var(--blue-glow);
+      border-color: var(--blue); background: var(--surface-hover);
+      transform: translateY(-2px); box-shadow: 0 0 24px var(--blue-glow);
     }
-
     .contact-icon {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      background: rgba(79,142,247,0.1);
-      border: 1px solid rgba(79,142,247,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 1.1em;
-      flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue); font-size: 1.1em; flex-shrink: 0;
     }
-
     .contact-lbl { font-size: 0.75em; color: var(--muted); margin-bottom: 2px; font-weight: 500; }
     .contact-val { font-size: 0.92em; font-weight: 600; }
 
     /* ── BACK TO TOP ── */
     #btt {
-      position: fixed;
-      bottom: 28px; right: 28px;
-      z-index: 999;
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
       width: 44px; height: 44px;
-      background: var(--surface);
-      border: 1px solid var(--border-bright);
-      border-radius: 12px;
-      color: var(--text);
-      font-size: 1em;
-      cursor: pointer;
-      backdrop-filter: blur(12px);
-      display: none;
-      align-items: center;
-      justify-content: center;
+      background: var(--surface); border: 1px solid var(--border-bright);
+      border-radius: 12px; color: var(--text); font-size: 1em;
+      cursor: pointer; backdrop-filter: blur(12px);
+      display: none; align-items: center; justify-content: center;
       transition: background 0.2s, transform 0.2s;
     }
     #btt:hover { background: var(--surface-hover); transform: translateY(-2px); }
@@ -549,13 +469,10 @@
 
     /* ── FOOTER ── */
     footer {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 0.83em;
-      color: var(--muted);
+      text-align: center; padding: 28px 20px;
+      font-size: 0.83em; color: var(--muted);
     }
     footer a { color: var(--muted); text-decoration: none; margin: 0 6px; transition: color 0.2s; }
     footer a:hover { color: var(--text); }
@@ -580,6 +497,7 @@
     <a class="nav-logo" href="#top"><span>BV</span> Boris Vareskovic</a>
     <button class="nav-toggle" onclick="toggleNav()" aria-label="Menü öffnen"><i class="fa-solid fa-bars"></i></button>
     <div class="nav-links" id="nav-links">
+      <a href="#ueber">Über mich</a>
       <a href="#qualifikationen">Qualifikationen</a>
       <a href="#laufbahn">Laufbahn</a>
       <a href="#skills">Kompetenzen</a>
@@ -606,7 +524,8 @@
           <span class="tag">MS Office</span>
         </div>
         <div class="hero-btns">
-          <a href="#kontakt" class="btn btn-p"><i class="fa-solid fa-paper-plane"></i> Kontakt aufnehmen</a>
+          <a href="PDF/CV_Boris_Vareskovic.pdf" download class="btn btn-accent"><i class="fa-solid fa-download"></i> Lebenslauf herunterladen</a>
+          <a href="#kontakt" class="btn btn-p"><i class="fa-solid fa-paper-plane"></i> Kontakt</a>
           <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank" rel="noopener" class="btn btn-s"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         </div>
       </div>
@@ -625,7 +544,6 @@
   <main>
 
 ```
-<!-- SVG gradient def -->
 <svg width="0" height="0" style="position:absolute;pointer-events:none" aria-hidden="true">
   <defs>
     <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -635,10 +553,40 @@
   </defs>
 </svg>
 
+<!-- ÜBER MICH -->
+<section id="ueber">
+  <div class="section-header fi">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title">Über mich</h2>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="card about-card fi">
+    <div class="about-text">
+      <p>Ich bin Boris Vareskovic – Betriebswirt mit Master-Abschluss und über 6 Jahren Berufserfahrung in der Speditionsbranche. Meine Stärken liegen in der Verbindung von kaufmännischem Know-how und technischer Umsetzungskompetenz: Von der Finanzbuchhaltung über ERP-Systeme bis hin zur Prozessautomatisierung mit Power Automate und Power BI bringe ich Struktur in komplexe Abläufe.</p>
+      <p>Als Task-Force Koordinator übernehme ich Verantwortung dort, wo Lösungen gefragt sind – ob bei der Digitalisierung von Workflows, der Teamkoordination oder der Einführung neuer Systeme. Ich arbeite präzise, lösungsorientiert und schätze enge Zusammenarbeit im Team.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Jahre Erfahrung</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Sprachen</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">M.Sc.</div>
+        <div class="stat-label">Abschluss</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- QUALIFIKATIONEN -->
 <section id="qualifikationen">
   <div class="section-header fi">
-    <span class="sec-num">01</span>
+    <span class="sec-num">02</span>
     <h2 class="sec-title">Qualifikationen</h2>
     <div class="sec-line"></div>
   </div>
@@ -681,7 +629,7 @@
 <!-- LAUFBAHN -->
 <section id="laufbahn">
   <div class="section-header fi">
-    <span class="sec-num">02</span>
+    <span class="sec-num">03</span>
     <h2 class="sec-title">Berufserfahrung</h2>
     <div class="sec-line"></div>
   </div>
@@ -733,7 +681,7 @@
 <!-- KOMPETENZEN -->
 <section id="skills">
   <div class="section-header fi">
-    <span class="sec-num">03</span>
+    <span class="sec-num">04</span>
     <h2 class="sec-title">Kompetenzen</h2>
     <div class="sec-line"></div>
   </div>
@@ -747,7 +695,11 @@
         </svg>
         <span class="ring-label">90%</span>
       </div>
-      <div class="skill-info"><h4>Deutsch</h4><p>Sehr gut</p></div>
+      <div class="skill-info">
+        <h4>Deutsch</h4>
+        <p>Sehr gut</p>
+        <span class="lang-level">C1</span>
+      </div>
     </div>
 
     <div class="card skill-card fi">
@@ -758,7 +710,11 @@
         </svg>
         <span class="ring-label">75%</span>
       </div>
-      <div class="skill-info"><h4>Englisch</h4><p>Gut</p></div>
+      <div class="skill-info">
+        <h4>Englisch</h4>
+        <p>Gut</p>
+        <span class="lang-level">B2</span>
+      </div>
     </div>
 
     <div class="card skill-card fi">
@@ -769,7 +725,11 @@
         </svg>
         <span class="ring-label">100%</span>
       </div>
-      <div class="skill-info"><h4>BKS-Sprachen</h4><p>Muttersprache</p></div>
+      <div class="skill-info">
+        <h4>BKS-Sprachen</h4>
+        <p>Muttersprache</p>
+        <span class="lang-level">C2</span>
+      </div>
     </div>
 
     <div class="card skill-card fi">
@@ -811,7 +771,7 @@
 <!-- KONTAKT -->
 <section id="kontakt">
   <div class="section-header fi">
-    <span class="sec-num">04</span>
+    <span class="sec-num">05</span>
     <h2 class="sec-title">Kontakt</h2>
     <div class="sec-line"></div>
   </div>
@@ -830,6 +790,13 @@
         <div class="contact-val">Profil ansehen →</div>
       </div>
     </a>
+    <a href="PDF/CV_Boris_Vareskovic.pdf" download class="contact-card">
+      <div class="contact-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+      <div>
+        <div class="contact-lbl">Lebenslauf</div>
+        <div class="contact-val">PDF herunterladen →</div>
+      </div>
+    </a>
   </div>
 </section>
 ```
@@ -837,7 +804,11 @@
   </main>
 
   <footer>
-    <p><a href="mailto:borisvareskovic@outlook.de">E-Mail</a> · <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p>
+      <a href="mailto:borisvareskovic@outlook.de"><i class="fa-solid fa-envelope"></i> E-Mail</a> ·
+      <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a> ·
+      <a href="hobbies.html"><i class="fa-solid fa-person-running"></i> Interessen</a>
+    </p>
     <p style="margin-top:8px">&copy; 2026 Boris Vareskovic</p>
   </footer>
 
@@ -850,50 +821,32 @@
       document.getElementById('nav-links').classList.toggle('open');
     }
 
-    // Active nav link
-    const secs = [...document.querySelectorAll('section[id]')];
-    const navAs = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-    new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          navAs.forEach(a => a.classList.remove('active'));
-          const m = navAs.find(a => a.getAttribute('href') === '#' + e.target.id);
-          if (m) m.classList.add('active');
-        }
-      });
-    }, { threshold: 0.3 }).observe && secs.forEach(s =>
+    // Active nav
+    document.querySelectorAll('section[id]').forEach(s => {
       new IntersectionObserver(entries => {
         entries.forEach(e => {
           if (e.isIntersecting) {
-            navAs.forEach(a => a.classList.remove('active'));
-            const m = navAs.find(a => a.getAttribute('href') === '#' + e.target.id);
+            document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => a.classList.remove('active'));
+            const m = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
             if (m) m.classList.add('active');
           }
         });
-      }, { threshold: 0.35 }).observe(s)
-    );
+      }, { threshold: 0.35 }).observe(s);
+    });
 
     // Back to top
     const btt = document.getElementById('btt');
     window.addEventListener('scroll', () => btt.classList.toggle('vis', scrollY > 350));
 
-    // Skill rings – circumference of r=27: 2*PI*27 ≈ 169.6
+    // Skill rings
     const C = 2 * Math.PI * 27;
-    new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const fill = e.target.querySelector('.ring-fill');
-        const p = parseInt(fill.getAttribute('data-p'));
-        fill.style.strokeDashoffset = C * (1 - p / 100);
-      });
-    }, { threshold: 0.5 }).observe && document.querySelectorAll('.ring-wrap').forEach(w => {
+    document.querySelectorAll('.ring-wrap').forEach(w => {
       w.querySelector('.ring-fill').style.strokeDashoffset = C;
       new IntersectionObserver(entries => {
         entries.forEach(e => {
           if (!e.isIntersecting) return;
           const fill = e.target.querySelector('.ring-fill');
-          const p = parseInt(fill.getAttribute('data-p'));
-          fill.style.strokeDashoffset = C * (1 - p / 100);
+          fill.style.strokeDashoffset = C * (1 - parseInt(fill.getAttribute('data-p')) / 100);
         });
       }, { threshold: 0.5 }).observe(w);
     });

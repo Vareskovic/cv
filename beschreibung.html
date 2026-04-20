@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -23,6 +22,7 @@
       --muted: #7a8ba8;
       --blue: #4f8ef7;
       --blue-glow: rgba(79,142,247,0.35);
+      --turquoise: #06b6d4; /* Türkis Variable */
       --radius: 18px;
     }
 
@@ -44,7 +44,8 @@
     .bg-orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
     .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.18; }
     .orb-1 { width: 600px; height: 600px; background: #2563eb; top: -150px; left: -100px; animation: drift 18s ease-in-out infinite alternate; }
-    .orb-2 { width: 500px; height: 500px; background: #7c3aed; top: 40%; right: -120px; animation: drift 22s ease-in-out infinite alternate-reverse; }
+    /* Orb 2 jetzt in Türkis statt Lila */
+    .orb-2 { width: 500px; height: 500px; background: var(--turquoise); top: 40%; right: -120px; animation: drift 22s ease-in-out infinite alternate-reverse; }
     .orb-3 { width: 400px; height: 400px; background: #0891b2; bottom: 5%; left: 30%; animation: drift 15s ease-in-out infinite alternate; }
 
     @keyframes drift {
@@ -113,7 +114,6 @@
       gap: 16px;
       margin-bottom: 48px;
     }
-
     .sec-num {
       font-family: 'Syne', sans-serif;
       font-size: 0.72em;
@@ -123,7 +123,6 @@
       opacity: 0.65;
       flex-shrink: 0;
     }
-
     .sec-title {
       font-family: 'Syne', sans-serif;
       font-size: 1.85em;
@@ -131,7 +130,6 @@
       letter-spacing: -0.5px;
       flex-shrink: 0;
     }
-
     .sec-line {
       flex: 1;
       height: 1px;
@@ -165,6 +163,7 @@
       user-select: none;
     }
 
+    /* Icon-Hintergrund in Türkis bei Hover */
     .area-icon {
       width: 44px;
       height: 44px;
@@ -177,12 +176,13 @@
       color: var(--blue);
       font-size: 1em;
       flex-shrink: 0;
-      transition: background 0.2s, box-shadow 0.2s;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
     }
 
     .area-card:hover .area-icon {
-      background: rgba(79,142,247,0.18);
-      box-shadow: 0 0 18px var(--blue-glow);
+      background: rgba(6, 182, 212, 0.18); /* Türkis Glow */
+      box-shadow: 0 0 18px rgba(6, 182, 212, 0.35);
+      color: var(--turquoise);
     }
 
     .area-label {
@@ -201,7 +201,7 @@
 
     .area-card.open .area-toggle {
       transform: rotate(180deg);
-      color: var(--blue);
+      color: var(--turquoise);
     }
 
     .area-body {
@@ -238,7 +238,7 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: var(--blue);
+      background: var(--turquoise); /* Türkise Aufzählungspunkte */
       opacity: 0.6;
     }
 
@@ -276,117 +276,114 @@
 
   <div class="page">
 
-```
-<div class="section-header fi">
-  <span class="sec-num">06</span>
-  <h1 class="sec-title">Verantwortungsbereiche</h1>
-  <div class="sec-line"></div>
-</div>
+    <div class="section-header fi">
+      <span class="sec-num">06</span>
+      <h1 class="sec-title">Verantwortungsbereiche</h1>
+      <div class="sec-line"></div>
+    </div>
 
-<div class="areas">
+    <div class="areas">
 
-  <div class="area-card fi">
-    <div class="area-header" onclick="toggle(this)">
-      <div class="area-icon"><i class="fa-solid fa-chart-simple"></i></div>
-      <span class="area-label">Buchhaltung & Finanzkontrolle</span>
-      <i class="fa-solid fa-chevron-down area-toggle"></i>
-    </div>
-    <div class="area-body">
-      <ul class="area-list">
-        <li>Verwaltung und Überwachung von Eingangs- und Ausgangsrechnungen.</li>
-        <li>Abwicklung nationaler und internationaler Zahlungen.</li>
-        <li>Monatliche Endabrechnungen und Prüfung der Finanzdaten.</li>
-        <li>Steuerliches Berichtswesen und Optimierungspotenziale.</li>
-        <li>Mahnwesen zur Sicherung der Liquidität.</li>
-        <li>Nutzung unternehmensspezifischer Systeme.</li>
-      </ul>
-    </div>
-  </div>
+      <div class="area-card fi">
+        <div class="area-header" onclick="toggle(this)">
+          <div class="area-icon"><i class="fa-solid fa-chart-simple"></i></div>
+          <span class="area-label">Buchhaltung & Finanzkontrolle</span>
+          <i class="fa-solid fa-chevron-down area-toggle"></i>
+        </div>
+        <div class="area-body">
+          <ul class="area-list">
+            <li>Verwaltung und Überwachung von Eingangs- und Ausgangsrechnungen.</li>
+            <li>Abwicklung nationaler und internationaler Zahlungen.</li>
+            <li>Monatliche Endabrechnungen und Prüfung der Finanzdaten.</li>
+            <li>Steuerliches Berichtswesen und Optimierungspotenziale.</li>
+            <li>Mahnwesen zur Sicherung der Liquidität.</li>
+            <li>Nutzung unternehmensspezifischer Systeme.</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="area-card fi">
-    <div class="area-header" onclick="toggle(this)">
-      <div class="area-icon"><i class="fa-solid fa-chart-line"></i></div>
-      <span class="area-label">Vertrieb & Preisgestaltung</span>
-      <i class="fa-solid fa-chevron-down area-toggle"></i>
-    </div>
-    <div class="area-body">
-      <ul class="area-list">
-        <li>Kalkulation und Pflege von Preisstrukturen.</li>
-        <li>Optimierung und Digitalisierung der Kalkulationsprozesse.</li>
-        <li>Mitgestaltung von Automatisierungslösungen im Vertriebsprozess.</li>
-      </ul>
-    </div>
-  </div>
+      <div class="area-card fi">
+        <div class="area-header" onclick="toggle(this)">
+          <div class="area-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <span class="area-label">Vertrieb & Preisgestaltung</span>
+          <i class="fa-solid fa-chevron-down area-toggle"></i>
+        </div>
+        <div class="area-body">
+          <ul class="area-list">
+            <li>Kalkulation und Pflege von Preisstrukturen.</li>
+            <li>Optimierung und Digitalisierung der Kalkulationsprozesse.</li>
+            <li>Mitgestaltung von Automatisierungslösungen im Vertriebsprozess.</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="area-card fi">
-    <div class="area-header" onclick="toggle(this)">
-      <div class="area-icon"><i class="fa-solid fa-file-invoice"></i></div>
-      <span class="area-label">Leitung Rechnungsabteilung</span>
-      <i class="fa-solid fa-chevron-down area-toggle"></i>
-    </div>
-    <div class="area-body">
-      <ul class="area-list">
-        <li>Pflege von Tarifen und Abrechnungssätzen im ERP-System.</li>
-        <li>Verantwortung für die Fakturierung nationaler und internationaler Transporte.</li>
-        <li>Aufbau effizienter Datenflüsse und Reportingprozesse.</li>
-        <li>Wirtschaftlichkeitsanalysen und Projektkalkulationen.</li>
-        <li>Abteilungsorganisation und Teamkoordination.</li>
-        <li>Überwachung externer Partner und Systeme.</li>
-      </ul>
-    </div>
-  </div>
+      <div class="area-card fi">
+        <div class="area-header" onclick="toggle(this)">
+          <div class="area-icon"><i class="fa-solid fa-file-invoice"></i></div>
+          <span class="area-label">Leitung Rechnungsabteilung</span>
+          <i class="fa-solid fa-chevron-down area-toggle"></i>
+        </div>
+        <div class="area-body">
+          <ul class="area-list">
+            <li>Pflege von Tarifen und Abrechnungssätzen im ERP-System.</li>
+            <li>Verantwortung für die Fakturierung nationaler und internationaler Transporte.</li>
+            <li>Aufbau effizienter Datenflüsse und Reportingprozesse.</li>
+            <li>Wirtschaftlichkeitsanalysen und Projektkalkulationen.</li>
+            <li>Abteilungsorganisation und Teamkoordination.</li>
+            <li>Überwachung externer Partner und Systeme.</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="area-card fi">
-    <div class="area-header" onclick="toggle(this)">
-      <div class="area-icon"><i class="fa-solid fa-computer"></i></div>
-      <span class="area-label">IT-Automatisierung & Systemadministration</span>
-      <i class="fa-solid fa-chevron-down area-toggle"></i>
-    </div>
-    <div class="area-body">
-      <ul class="area-list">
-        <li>Umsetzung papierloser Prozesse durch Automatisierung.</li>
-        <li>Schulungen für Fahrer zur Nutzung digitaler Endgeräte.</li>
-        <li>Betreuung von Microsoft Office, Netzwerk- und Clientstrukturen.</li>
-        <li>Einrichtung und Wartung von Arbeitsplatzrechnern und Servern.</li>
-        <li>Datenmanagement, Backup-Strategien und DFÜ-Unterstützung.</li>
-        <li>Projektarbeit zu Automatisierung und Digitalisierung.</li>
-      </ul>
-    </div>
-  </div>
+      <div class="area-card fi">
+        <div class="area-header" onclick="toggle(this)">
+          <div class="area-icon"><i class="fa-solid fa-computer"></i></div>
+          <span class="area-label">IT-Automatisierung & Systemadministration</span>
+          <i class="fa-solid fa-chevron-down area-toggle"></i>
+        </div>
+        <div class="area-body">
+          <ul class="area-list">
+            <li>Umsetzung papierloser Prozesse durch Automatisierung.</li>
+            <li>Schulungen für Fahrer zur Nutzung digitaler Endgeräte.</li>
+            <li>Betreuung von Microsoft Office, Netzwerk- und Clientstrukturen.</li>
+            <li>Einrichtung und Wartung von Arbeitsplatzrechnern und Servern.</li>
+            <li>Datenmanagement, Backup-Strategien und DFÜ-Unterstützung.</li>
+            <li>Projektarbeit zu Automatisierung und Digitalisierung.</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="area-card fi">
-    <div class="area-header" onclick="toggle(this)">
-      <div class="area-icon"><i class="fa-solid fa-truck"></i></div>
-      <span class="area-label">Disposition & Fahrerbetreuung</span>
-      <i class="fa-solid fa-chevron-down area-toggle"></i>
-    </div>
-    <div class="area-body">
-      <ul class="area-list">
-        <li>Integration und Betreuung internationaler Fahrer.</li>
-        <li>Unterstützung der Disposition im Nahverkehr.</li>
-      </ul>
-    </div>
-  </div>
+      <div class="area-card fi">
+        <div class="area-header" onclick="toggle(this)">
+          <div class="area-icon"><i class="fa-solid fa-truck"></i></div>
+          <span class="area-label">Disposition & Fahrerbetreuung</span>
+          <i class="fa-solid fa-chevron-down area-toggle"></i>
+        </div>
+        <div class="area-body">
+          <ul class="area-list">
+            <li>Integration und Betreuung internationaler Fahrer.</li>
+            <li>Unterstützung der Disposition im Nahverkehr.</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="area-card fi">
-    <div class="area-header" onclick="toggle(this)">
-      <div class="area-icon"><i class="fa-solid fa-bolt"></i></div>
-      <span class="area-label">Task Force</span>
-      <i class="fa-solid fa-chevron-down area-toggle"></i>
-    </div>
-    <div class="area-body">
-      <ul class="area-list">
-        <li>Einarbeitung neuer Mitarbeiter in operative Kernbereiche.</li>
-        <li>Interne Schulungen und Qualitätsworkshops.</li>
-        <li>Projektleitung Prozessoptimierung und Arbeitsplatzgestaltung.</li>
-        <li>Koordination eines spezialisierten Task-Force-Teams.</li>
-      </ul>
-    </div>
-  </div>
+      <div class="area-card fi">
+        <div class="area-header" onclick="toggle(this)">
+          <div class="area-icon"><i class="fa-solid fa-bolt"></i></div>
+          <span class="area-label">Task Force</span>
+          <i class="fa-solid fa-chevron-down area-toggle"></i>
+        </div>
+        <div class="area-body">
+          <ul class="area-list">
+            <li>Einarbeitung neuer Mitarbeiter in operative Kernbereiche.</li>
+            <li>Interne Schulungen und Qualitätsworkshops.</li>
+            <li>Projektleitung Prozessoptimierung und Arbeitsplatzgestaltung.</li>
+            <li>Koordination eines spezialisierten Task-Force-Teams.</li>
+          </ul>
+        </div>
+      </div>
 
-</div>
-```
-
+    </div>
   </div>
 
   <footer>

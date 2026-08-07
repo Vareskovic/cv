@@ -6,289 +6,158 @@
 <meta name="description" content="Verantwortungsbereiche von Boris Vareskovic – Buchhaltung, IT, Vertrieb, Task Force.">
 <title>Verantwortungsbereiche — Boris Vareskovic</title>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%23101B26'/><circle cx='32' cy='32' r='24' fill='none' stroke='%23AE3F2E' stroke-width='3' stroke-dasharray='4 3'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='20' fill='%23EFE7D3'>BV</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314161A'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%23ffffff'>BV</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-  :root{
-    --ink:#101B26;
-    --ink-raised:#172433;
-    --ink-border:rgba(239,231,211,0.12);
-    --ink-border-br:rgba(239,231,211,0.22);
-    --paper:#EFE7D3;
-    --paper-border:#C8B98D;
-    --paper-text:#231F17;
-    --paper-muted:#6C6250;
-    --text:#F3EEDD;
-    --muted:#93A4B4;
-    --stamp:#B4432F;
-    --stamp-dim:rgba(180,67,47,0.16);
-    --seal:#2E7268;
-    --seal-dim:rgba(46,114,104,0.16);
-    --radius:14px;
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter',sans-serif; background:var(--ink); color:var(--text);
-    line-height:1.65; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column;
-  }
-  .mono{font-family:'IBM Plex Mono',monospace;}
-
-  .grid-tex{
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-    background-image:
-      linear-gradient(rgba(239,231,211,0.028) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(239,231,211,0.028) 1px, transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
-  }
-  .glow{position:fixed; z-index:0; pointer-events:none; border-radius:50%; filter:blur(110px); opacity:0.22;}
-  .glow-1{width:520px;height:520px;background:#8a3324;top:-160px;left:-120px;}
-  .glow-2{width:480px;height:480px;background:#1f5f56;bottom:-140px;right:-100px;}
-
-  nav{
-    position:fixed; top:0; left:0; right:0; z-index:1000; height:60px;
-    padding:0 32px; display:flex; align-items:center; justify-content:space-between;
-    background:rgba(16,27,38,0.86); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-    border-bottom:1px solid var(--ink-border);
-  }
-  .nav-logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);}
-  .nav-mark{
-    width:30px;height:30px;border-radius:50%; border:1.5px dashed var(--stamp);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces',serif; font-weight:700; font-size:0.72em; color:var(--paper); flex-shrink:0;
-  }
-  .nav-logo-text{font-family:'Fraunces',serif; font-weight:600; font-size:1em;}
-  .nav-back{
-    display:inline-flex; align-items:center; gap:8px; color:var(--muted); text-decoration:none;
-    font-family:'IBM Plex Mono',monospace; font-size:0.8em; font-weight:500;
-    padding:8px 14px; border-radius:8px; border:1px solid var(--ink-border-br);
-    transition:color .2s, background .2s, border-color .2s;
-  }
-  .nav-back:hover{color:var(--text); background:rgba(239,231,211,0.06); border-color:var(--ink-border-br);}
-  @media (max-width:500px){ nav{padding:0 16px;} }
-
-  .page{position:relative; z-index:1; flex:1; max-width:900px; margin:0 auto; width:100%; padding:118px 24px 80px;}
-
-  .doc-label{
-    font-family:'IBM Plex Mono',monospace; font-size:0.74em; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--muted); display:inline-flex; align-items:center; gap:10px; margin-bottom:14px;
-  }
-  .doc-label::before{content:'';width:22px;height:1px;background:var(--stamp);}
-
-  .section-head{margin-bottom:44px;}
-  .section-title{font-family:'Fraunces',serif; font-weight:600; font-size:2em; letter-spacing:-0.5px; color:var(--paper);}
-  .section-sub{color:var(--muted); font-size:0.96em; margin-top:10px; max-width:520px;}
-
-  .areas{display:flex; flex-direction:column; gap:12px;}
-
-  .area-card{
-    background:var(--paper); color:var(--paper-text); border-radius:var(--radius);
-    border:1px solid var(--paper-border); box-shadow:0 18px 40px -24px rgba(0,0,0,0.55);
-    overflow:hidden; position:relative; transition:transform .25s, box-shadow .25s;
-  }
-  .area-card::before{
-    content:''; position:absolute; inset:6px; border:1px dashed rgba(35,31,23,0.14);
-    border-radius:9px; pointer-events:none;
-  }
-  .area-card:hover{ transform:translateY(-2px); }
-
-  .area-header{
-    display:flex; align-items:center; gap:18px; padding:20px 26px; cursor:pointer; user-select:none;
-    position:relative; z-index:1;
-  }
-  .area-index{
-    font-family:'IBM Plex Mono',monospace; font-size:0.72em; font-weight:600; color:var(--paper-muted);
-    width:22px; flex-shrink:0;
-  }
-  .area-icon{
-    width:44px; height:44px; border-radius:50%; flex-shrink:0;
-    border:1.5px dashed var(--stamp); display:flex; align-items:center; justify-content:center;
-    color:var(--stamp); font-size:1em; transition:background .2s, color .2s;
-  }
-  .area-card.open .area-icon{ background:var(--stamp-dim); }
-  .area-label{font-family:'Inter',sans-serif; font-weight:700; font-size:1.02em; flex:1;}
-  .area-toggle{ color:var(--paper-muted); font-size:0.85em; transition:transform .3s ease, color .2s; }
-  .area-card.open .area-toggle{ transform:rotate(180deg); color:var(--stamp); }
-
-  .area-body{ max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.4,0,.2,1); position:relative; z-index:1; }
-  .area-card.open .area-body{ max-height:700px; }
-
-  .area-list{
-    list-style:none; margin:0 24px 22px 84px; padding-top:12px;
-    border-top:1px dashed var(--paper-border);
-    display:flex; flex-direction:column; gap:10px;
-  }
-  .area-list li{ position:relative; font-size:0.93em; color:var(--paper-text); padding-left:18px; line-height:1.6; padding-top:12px; }
-  .area-list li:first-child{ padding-top:0; }
-  .area-list li::before{
-    content:''; position:absolute; left:0; top:19px; width:5px; height:5px; border-radius:50%;
-    background:var(--stamp); opacity:0.7;
-  }
-  .area-list li:first-child::before{ top:7px; }
-
-  footer{
-    position:relative; z-index:1; border-top:1px solid var(--ink-border); text-align:center;
-    padding:26px 20px; font-family:'IBM Plex Mono',monospace; font-size:0.76em; color:var(--muted);
-  }
-  footer a{ color:var(--muted); text-decoration:none; margin:0 8px; transition:color .2s; }
-  footer a:hover{ color:var(--paper); }
-
-  .fi{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
-  .fi.in{ opacity:1; transform:none; }
-
-  :focus-visible{ outline:2px solid var(--stamp); outline-offset:2px; }
-</style>
+<link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
-<div class="grid-tex" aria-hidden="true"></div>
-<div class="glow glow-1" aria-hidden="true"></div>
-<div class="glow glow-2" aria-hidden="true"></div>
-
-<nav>
-  <a class="nav-logo" href="index.html">
-    <span class="nav-mark">BV</span>
-    <span class="nav-logo-text">Boris Vareskovic</span>
-  </a>
-  <a class="nav-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Zurück</a>
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">BV</span>
+      <span class="brand-name">Boris Vareskovic</span>
+    </a>
+    <a class="nav-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Zurück</a>
+  </div>
 </nav>
 
 <div class="page">
-  <div class="section-head fi">
-    <span class="doc-label mono">Anhang · Aufgabenverzeichnis</span>
-    <h1 class="section-title">Verantwortungsbereiche</h1>
-    <p class="section-sub">Ein Überblick über die operativen und strategischen Aufgabenfelder in meiner aktuellen Position.</p>
-  </div>
-
-  <div class="areas">
-
-    <div class="area-card fi">
-      <div class="area-header" onclick="toggle(this)">
-        <span class="area-index mono">01</span>
-        <div class="area-icon"><i class="fa-solid fa-chart-simple"></i></div>
-        <span class="area-label">Buchhaltung &amp; Finanzkontrolle</span>
-        <i class="fa-solid fa-chevron-down area-toggle"></i>
-      </div>
-      <div class="area-body">
-        <ul class="area-list">
-          <li>Verwaltung und Überwachung von Eingangs- und Ausgangsrechnungen.</li>
-          <li>Abwicklung nationaler und internationaler Zahlungen.</li>
-          <li>Monatliche Endabrechnungen und Prüfung der Finanzdaten.</li>
-          <li>Steuerliches Berichtswesen und Optimierungspotenziale.</li>
-          <li>Mahnwesen zur Sicherung der Liquidität.</li>
-          <li>Nutzung unternehmensspezifischer Systeme.</li>
-        </ul>
-      </div>
+  <div class="wrap">
+    <div class="page-header fi">
+      <span class="eyebrow mono">Anhang · Aufgabenverzeichnis</span>
+      <h1 class="page-title">Verantwortungsbereiche</h1>
+      <p class="page-lead">Ein Überblick über die operativen und strategischen Aufgabenfelder in meiner aktuellen Position.</p>
     </div>
 
-    <div class="area-card fi">
-      <div class="area-header" onclick="toggle(this)">
-        <span class="area-index mono">02</span>
-        <div class="area-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <span class="area-label">Vertrieb &amp; Preisgestaltung</span>
-        <i class="fa-solid fa-chevron-down area-toggle"></i>
-      </div>
-      <div class="area-body">
-        <ul class="area-list">
-          <li>Kalkulation und Pflege von Preisstrukturen.</li>
-          <li>Optimierung und Digitalisierung der Kalkulationsprozesse.</li>
-          <li>Mitgestaltung von Automatisierungslösungen im Vertriebsprozess.</li>
-        </ul>
-      </div>
-    </div>
+    <div class="resp-list">
 
-    <div class="area-card fi">
-      <div class="area-header" onclick="toggle(this)">
-        <span class="area-index mono">03</span>
-        <div class="area-icon"><i class="fa-solid fa-file-invoice"></i></div>
-        <span class="area-label">Leitung Rechnungsabteilung</span>
-        <i class="fa-solid fa-chevron-down area-toggle"></i>
+      <div class="card resp-card fi">
+        <div class="resp-header" onclick="toggle(this)">
+          <span class="resp-index mono">01</span>
+          <div class="resp-icon"><i class="fa-solid fa-chart-simple"></i></div>
+          <span class="resp-label">Buchhaltung &amp; Finanzkontrolle</span>
+          <i class="fa-solid fa-chevron-down resp-toggle"></i>
+        </div>
+        <div class="resp-body">
+          <ul class="resp-items">
+            <li>Verwaltung und Überwachung von Eingangs- und Ausgangsrechnungen.</li>
+            <li>Abwicklung nationaler und internationaler Zahlungen.</li>
+            <li>Monatliche Endabrechnungen und Prüfung der Finanzdaten.</li>
+            <li>Steuerliches Berichtswesen und Optimierungspotenziale.</li>
+            <li>Mahnwesen zur Sicherung der Liquidität.</li>
+            <li>Nutzung unternehmensspezifischer Systeme.</li>
+          </ul>
+        </div>
       </div>
-      <div class="area-body">
-        <ul class="area-list">
-          <li>Pflege von Tarifen und Abrechnungssätzen im ERP-System.</li>
-          <li>Verantwortung für die Fakturierung nationaler und internationaler Transporte.</li>
-          <li>Aufbau effizienter Datenflüsse und Reportingprozesse.</li>
-          <li>Wirtschaftlichkeitsanalysen und Projektkalkulationen.</li>
-          <li>Abteilungsorganisation und Teamkoordination.</li>
-          <li>Überwachung externer Partner und Systeme.</li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="area-card fi">
-      <div class="area-header" onclick="toggle(this)">
-        <span class="area-index mono">04</span>
-        <div class="area-icon"><i class="fa-solid fa-computer"></i></div>
-        <span class="area-label">IT-Automatisierung &amp; Systemadministration</span>
-        <i class="fa-solid fa-chevron-down area-toggle"></i>
+      <div class="card resp-card fi">
+        <div class="resp-header" onclick="toggle(this)">
+          <span class="resp-index mono">02</span>
+          <div class="resp-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <span class="resp-label">Vertrieb &amp; Preisgestaltung</span>
+          <i class="fa-solid fa-chevron-down resp-toggle"></i>
+        </div>
+        <div class="resp-body">
+          <ul class="resp-items">
+            <li>Kalkulation und Pflege von Preisstrukturen.</li>
+            <li>Optimierung und Digitalisierung der Kalkulationsprozesse.</li>
+            <li>Mitgestaltung von Automatisierungslösungen im Vertriebsprozess.</li>
+          </ul>
+        </div>
       </div>
-      <div class="area-body">
-        <ul class="area-list">
-          <li>Umsetzung papierloser Prozesse durch Automatisierung.</li>
-          <li>Schulungen für Fahrer zur Nutzung digitaler Endgeräte.</li>
-          <li>Betreuung von Microsoft Office, Netzwerk- und Clientstrukturen.</li>
-          <li>Einrichtung und Wartung von Arbeitsplatzrechnern und Servern.</li>
-          <li>Datenmanagement, Backup-Strategien und DFÜ-Unterstützung.</li>
-          <li>Projektarbeit zu Automatisierung und Digitalisierung.</li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="area-card fi">
-      <div class="area-header" onclick="toggle(this)">
-        <span class="area-index mono">05</span>
-        <div class="area-icon"><i class="fa-solid fa-truck"></i></div>
-        <span class="area-label">Disposition &amp; Fahrerbetreuung</span>
-        <i class="fa-solid fa-chevron-down area-toggle"></i>
+      <div class="card resp-card fi">
+        <div class="resp-header" onclick="toggle(this)">
+          <span class="resp-index mono">03</span>
+          <div class="resp-icon"><i class="fa-solid fa-file-invoice"></i></div>
+          <span class="resp-label">Leitung Rechnungsabteilung</span>
+          <i class="fa-solid fa-chevron-down resp-toggle"></i>
+        </div>
+        <div class="resp-body">
+          <ul class="resp-items">
+            <li>Pflege von Tarifen und Abrechnungssätzen im ERP-System.</li>
+            <li>Verantwortung für die Fakturierung nationaler und internationaler Transporte.</li>
+            <li>Aufbau effizienter Datenflüsse und Reportingprozesse.</li>
+            <li>Wirtschaftlichkeitsanalysen und Projektkalkulationen.</li>
+            <li>Abteilungsorganisation und Teamkoordination.</li>
+            <li>Überwachung externer Partner und Systeme.</li>
+          </ul>
+        </div>
       </div>
-      <div class="area-body">
-        <ul class="area-list">
-          <li>Integration und Betreuung internationaler Fahrer.</li>
-          <li>Unterstützung der Disposition im Nahverkehr.</li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="area-card fi">
-      <div class="area-header" onclick="toggle(this)">
-        <span class="area-index mono">06</span>
-        <div class="area-icon"><i class="fa-solid fa-bolt"></i></div>
-        <span class="area-label">Task Force</span>
-        <i class="fa-solid fa-chevron-down area-toggle"></i>
+      <div class="card resp-card fi">
+        <div class="resp-header" onclick="toggle(this)">
+          <span class="resp-index mono">04</span>
+          <div class="resp-icon"><i class="fa-solid fa-computer"></i></div>
+          <span class="resp-label">IT-Automatisierung &amp; Systemadministration</span>
+          <i class="fa-solid fa-chevron-down resp-toggle"></i>
+        </div>
+        <div class="resp-body">
+          <ul class="resp-items">
+            <li>Umsetzung papierloser Prozesse durch Automatisierung.</li>
+            <li>Schulungen für Fahrer zur Nutzung digitaler Endgeräte.</li>
+            <li>Betreuung von Microsoft Office, Netzwerk- und Clientstrukturen.</li>
+            <li>Einrichtung und Wartung von Arbeitsplatzrechnern und Servern.</li>
+            <li>Datenmanagement, Backup-Strategien und DFÜ-Unterstützung.</li>
+            <li>Projektarbeit zu Automatisierung und Digitalisierung.</li>
+          </ul>
+        </div>
       </div>
-      <div class="area-body">
-        <ul class="area-list">
-          <li>Einarbeitung neuer Mitarbeiter in operative Kernbereiche.</li>
-          <li>Interne Schulungen und Qualitätsworkshops.</li>
-          <li>Projektleitung Prozessoptimierung und Arbeitsplatzgestaltung.</li>
-          <li>Koordination eines spezialisierten Task-Force-Teams.</li>
-        </ul>
-      </div>
-    </div>
 
+      <div class="card resp-card fi">
+        <div class="resp-header" onclick="toggle(this)">
+          <span class="resp-index mono">05</span>
+          <div class="resp-icon"><i class="fa-solid fa-truck"></i></div>
+          <span class="resp-label">Disposition &amp; Fahrerbetreuung</span>
+          <i class="fa-solid fa-chevron-down resp-toggle"></i>
+        </div>
+        <div class="resp-body">
+          <ul class="resp-items">
+            <li>Integration und Betreuung internationaler Fahrer.</li>
+            <li>Unterstützung der Disposition im Nahverkehr.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card resp-card fi">
+        <div class="resp-header" onclick="toggle(this)">
+          <span class="resp-index mono">06</span>
+          <div class="resp-icon"><i class="fa-solid fa-bolt"></i></div>
+          <span class="resp-label">Task Force</span>
+          <i class="fa-solid fa-chevron-down resp-toggle"></i>
+        </div>
+        <div class="resp-body">
+          <ul class="resp-items">
+            <li>Einarbeitung neuer Mitarbeiter in operative Kernbereiche.</li>
+            <li>Interne Schulungen und Qualitätsworkshops.</li>
+            <li>Projektleitung Prozessoptimierung und Arbeitsplatzgestaltung.</li>
+            <li>Koordination eines spezialisierten Task-Force-Teams.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<footer>
+<footer class="site-footer">
   <p>
     <a href="mailto:borisvareskovic@outlook.de"><i class="fa-solid fa-envelope"></i> E-Mail</a> ·
     <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
   </p>
-  <p style="margin-top:8px">&copy; 2026 Boris Vareskovic</p>
+  <p>&copy; 2026 Boris Vareskovic</p>
 </footer>
 
 <script>
   function toggle(header){
-    const card = header.closest('.area-card');
+    const card = header.closest('.resp-card');
     const isOpen = card.classList.contains('open');
-    document.querySelectorAll('.area-card.open').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.resp-card.open').forEach(c => c.classList.remove('open'));
     if(!isOpen) card.classList.add('open');
   }
 

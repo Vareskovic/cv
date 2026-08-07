@@ -1,189 +1,89 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – Boris Vareskovic</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kontakt – Boris Vareskovic. Per E-Mail oder LinkedIn erreichen.">
+<title>Kontakt — Boris Vareskovic</title>
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #f5f7fa;
-      color: #2c3e50;
-      margin: 0;
-      padding: 0;
-    }
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314161A'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%23ffffff'>BV</text></svg>">
 
-    header,
-    footer,
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    header {
-      background: linear-gradient(135deg, #3498db, #2c3e50);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      border-radius: 12px 12px 0 0;
-    }
-
-    header h1 {
-      font-size: 2em;
-      margin: 0;
-    }
-
-    nav {
-      background: #2c3e50;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      display: inline-block;
-      padding: 14px 20px;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #2980b9;
-    }
-
-    .section-title {
-      border-left: 5px solid #3498db;
-      padding-left: 12px;
-      margin: 30px 0 20px;
-      font-size: 1.6em;
-    }
-
-    .content {
-      background: white;
-      padding: 30px 25px;
-      border-radius: 12px;
-      box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      font-weight: 600;
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 5px;
-      position: relative;
-      padding-left: 28px;
-    }
-
-    label::before {
-      content: "\f0e0";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1rem;
-      line-height: 1.4;
-      color: #3498db;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    input[type="submit"] {
-      background-color: #3498db;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 6px;
-      margin-top: 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #1c6391;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 20px;
-      background-color: #3498db;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      text-align: center;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #1c6391;
-    }
-
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #6dd5fa;
-      text-decoration: underline;
-    }
-  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="CSS/style.css">
 </head>
-
 <body>
-  <header>
-    <h1>Kontakt</h1>
-  </header>
 
-  <nav>
-   <a href="index.html"><i class="fa-solid fa-house"></i> Startseite</a>
-  </nav>
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">BV</span>
+      <span class="brand-name">Boris Vareskovic</span>
+    </a>
+    <a class="nav-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Zurück</a>
+  </div>
+</nav>
 
-  <div class="container">
-    <div class="content">
-      <form action="mailto:" method="post" enctype="text/plain">
-        <label for="name">Ihr Name</label>
-        <input type="text" name="name" id="name" placeholder="Max Mustermann" required>
+<div class="page">
+  <div class="wrap">
+    <div class="page-header fi">
+      <span class="eyebrow mono">Kontakt</span>
+      <h1 class="page-title">Lassen Sie uns sprechen</h1>
+      <p class="page-lead">Ob Projektanfrage, Karrieregespräch oder einfach Networking – ich freue mich über eine Nachricht per E-Mail oder LinkedIn.</p>
+    </div>
 
-        <label for="email">Ihre E-Mail</label>
-        <input type="email" name="email" id="email" placeholder="max@example.com" required>
+    <div class="contact-grid fi">
+      <a href="mailto:borisvareskovic@outlook.de" class="card contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div>
+          <div class="contact-lbl">E-Mail</div>
+          <div class="contact-val">borisvareskovic@outlook.de</div>
+        </div>
+      </a>
+      <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank" rel="noopener" class="card contact-card">
+        <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+        <div>
+          <div class="contact-lbl">LinkedIn</div>
+          <div class="contact-val">Profil ansehen →</div>
+        </div>
+      </a>
+      <a href="PDF/CV_Boris_Vareskovic.pdf" download class="card contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+        <div>
+          <div class="contact-lbl">Lebenslauf</div>
+          <div class="contact-val">PDF herunterladen →</div>
+        </div>
+      </a>
+    </div>
 
-        <label for="message">Ihre Nachricht</label>
-        <textarea name="message" id="message" placeholder="Was möchten Sie mitteilen?" required></textarea>
-
-        <input type="submit" value="Nachricht senden">
-      </form>
+    <div class="card about-card fi" style="margin-top:14px;">
+      <p><i class="fa-solid fa-circle-info" style="color:var(--accent); margin-right:8px;"></i>Am schnellsten erreichen Sie mich per E-Mail — der Button öffnet direkt Ihr E-Mail-Programm mit meiner Adresse als Empfänger.</p>
     </div>
   </div>
+</div>
 
-  <footer>
-    <p><a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231">LinkedIn</a></p>
-    <p>&copy; 2025 Boris Vareskovic</p>
-  </footer>
+<footer class="site-footer">
+  <p>
+    <a href="mailto:borisvareskovic@outlook.de"><i class="fa-solid fa-envelope"></i> E-Mail</a> ·
+    <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+  </p>
+  <p>&copy; 2026 Boris Vareskovic</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.fi').forEach((el,i)=>{
+    new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.style.transitionDelay=(i*70)+'ms';
+          e.target.classList.add('in');
+        }
+      });
+    },{threshold:0.1}).observe(el);
+  });
+</script>
+
 </body>
-
 </html>

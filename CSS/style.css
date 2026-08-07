@@ -1,104 +1,334 @@
-body {
-  background-color: #202020;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-  margin: auto;
+/* ==========================================================================
+   Boris Vareskovic — CV site
+   Clean, minimal, light design system shared across all pages.
+   ========================================================================== */
+
+:root{
+  --bg:#FAFAF8;
+  --surface:#FFFFFF;
+  --surface-soft:#F4F4F2;
+  --border:#E7E6E1;
+  --border-strong:#D8D6CE;
+  --ink:#14161A;
+  --ink-soft:#42454C;
+  --muted:#7B7F86;
+  --accent:#2453E0;
+  --accent-hover:#1B41B8;
+  --accent-soft:rgba(36,83,224,0.08);
+  --accent-soft-strong:rgba(36,83,224,0.14);
+  --accent-line:rgba(36,83,224,0.28);
+  --ring:#DCE3FA;
+  --radius-lg:20px;
+  --radius-md:14px;
+  --radius-sm:9px;
+  --shadow-sm:0 1px 2px rgba(20,22,26,0.05);
+  --shadow-md:0 10px 30px -14px rgba(20,22,26,0.16);
+  --shadow-lg:0 24px 60px -24px rgba(20,22,26,0.20);
+  --maxw:1080px;
 }
 
-hr {
-  border: dotted;
-  border-color: white;
-  border-style: none;
-  border-top-style: inset;
-  border-bottom: 0;
-  width: 5%
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--ink-soft);
+  line-height:1.65;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+
+.mono{ font-family:'IBM Plex Mono',ui-monospace,monospace; }
+.heading{ font-family:'Space Grotesk',sans-serif; color:var(--ink); }
+
+/* ── layout helpers ── */
+.wrap{ max-width:var(--maxw); margin:0 auto; width:100%; padding:0 24px; }
+
+/* ── nav ── */
+.site-nav{
+  position:fixed; top:0; left:0; right:0; z-index:1000; height:68px;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(250,250,248,0.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.site-nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:100%; }
+.brand{ display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink); }
+.brand-mark{
+  width:34px; height:34px; border-radius:10px; background:var(--ink); color:#fff;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.82em; letter-spacing:0.2px;
+}
+.brand-name{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.02em; letter-spacing:-0.1px; }
+
+.nav-links{ display:flex; align-items:center; gap:2px; }
+.nav-link{
+  color:var(--muted); text-decoration:none; font-size:0.88em; font-weight:500;
+  padding:9px 14px; border-radius:8px; transition:color .18s, background .18s;
+}
+.nav-link:hover{ color:var(--ink); background:var(--surface-soft); }
+.nav-link.active{ color:var(--accent); background:var(--accent-soft); }
+.nav-cta{
+  margin-left:8px; background:var(--ink) !important; color:#fff !important;
+}
+.nav-cta:hover{ background:var(--accent) !important; }
+
+.nav-back{
+  display:inline-flex; align-items:center; gap:8px; color:var(--ink-soft); text-decoration:none;
+  font-size:0.88em; font-weight:500; padding:9px 15px; border-radius:8px; border:1px solid var(--border);
+  transition:border-color .18s, background .18s, color .18s;
+}
+.nav-back:hover{ background:var(--surface-soft); border-color:var(--border-strong); color:var(--ink); }
+
+.nav-toggle{
+  display:none; background:none; border:1px solid var(--border); border-radius:8px; color:var(--ink);
+  width:38px; height:38px; cursor:pointer; font-size:0.95em; align-items:center; justify-content:center;
+}
+@media (max-width:780px){
+  .nav-links{
+    display:none; flex-direction:column; align-items:stretch; gap:2px;
+    position:absolute; top:68px; left:0; right:0; background:var(--surface);
+    border-bottom:1px solid var(--border); padding:10px 20px 18px; box-shadow:var(--shadow-md);
+  }
+  .nav-links.open{ display:flex; }
+  .nav-link{ padding:11px 14px; }
+  .nav-cta{ margin-left:0; margin-top:4px; text-align:center; }
+  .nav-toggle{ display:flex; }
 }
 
-h1 {
-  color: #f2f2f2;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-  font-size: 2.0rem;
-  font-style: normal;
-  font-variant: normal;
-  margin-top: 0;
-  text-shadow: 2px 2px 4px #000000;
+/* ── buttons ── */
+.btn{
+  display:inline-flex; align-items:center; gap:9px; padding:13px 22px; border-radius:10px;
+  font-weight:600; font-size:0.93em; text-decoration:none; border:1px solid transparent;
+  transition:transform .18s, box-shadow .18s, background .18s, border-color .18s, color .18s;
+  cursor:pointer;
+}
+.btn:hover{ transform:translateY(-1px); }
+.btn-primary{ background:var(--ink); color:#fff; }
+.btn-primary:hover{ background:var(--accent); }
+.btn-secondary{ background:var(--surface); color:var(--ink); border-color:var(--border-strong); box-shadow:var(--shadow-sm); }
+.btn-secondary:hover{ border-color:var(--accent); color:var(--accent); }
+.btn-ghost{ background:transparent; color:var(--ink-soft); border-color:var(--border); }
+.btn-ghost:hover{ border-color:var(--border-strong); color:var(--ink); }
+
+/* ── hero ── */
+.hero{ position:relative; padding:150px 0 76px; }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:'IBM Plex Mono',monospace; font-size:0.76em; font-weight:500; letter-spacing:1.3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:20px;
+}
+.eyebrow::before{ content:''; width:20px; height:1.5px; background:var(--accent); }
+
+.hero-grid{ display:grid; grid-template-columns:1.35fr 0.85fr; gap:56px; align-items:center; }
+@media (max-width:820px){ .hero-grid{ grid-template-columns:1fr; gap:40px; } }
+
+.hero h1{
+  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(2.4em,5.6vw,3.7em);
+  line-height:1.06; letter-spacing:-1.2px; color:var(--ink); margin-bottom:20px;
+}
+.hero h1 span{ color:var(--accent); }
+
+.hero-lead{ font-size:1.07em; color:var(--muted); max-width:520px; margin-bottom:26px; }
+
+.hero-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
+.tag{
+  font-family:'IBM Plex Mono',monospace; font-size:0.74em; font-weight:500; letter-spacing:0.2px;
+  padding:6px 12px; border-radius:7px; background:var(--surface);
+  border:1px solid var(--border); color:var(--ink-soft);
 }
 
-h3 {
-  color: #f2f2f2;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-variant: normal;
-  text-shadow: 2px 2px 4px #000000;
+.hero-actions{ display:flex; gap:12px; flex-wrap:wrap; }
+
+.hero-portrait{ position:relative; justify-self:center; }
+.portrait-frame{
+  width:250px; height:250px; border-radius:var(--radius-lg); overflow:hidden;
+  border:1px solid var(--border); box-shadow:var(--shadow-lg); background:var(--surface-soft);
+}
+.portrait-frame img{ width:100%; height:100%; object-fit:cover; }
+.portrait-badge{
+  position:absolute; bottom:-14px; left:50%; transform:translateX(-50%);
+  background:var(--ink); color:#fff; font-family:'IBM Plex Mono',monospace;
+  font-size:0.72em; font-weight:600; padding:8px 16px; border-radius:99px;
+  white-space:nowrap; box-shadow:var(--shadow-md);
+}
+@media (max-width:820px){ .hero-portrait{ order:-1; } }
+
+/* ── sections ── */
+main{ position:relative; flex:1; }
+.section{ padding:88px 0; border-top:1px solid var(--border); }
+.section:first-of-type{ border-top:none; }
+.section-header{ margin-bottom:38px; max-width:600px; }
+.section-title{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.9em; letter-spacing:-0.6px; color:var(--ink); }
+.section-lead{ color:var(--muted); font-size:0.98em; margin-top:10px; }
+
+/* ── card base ── */
+.card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+  box-shadow:var(--shadow-sm);
 }
 
-p {
-  color: rgb(192, 192, 192);
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-  font-size: 1.1rem;
-  font-style: normal;
-  font-variant: normal;
+/* about */
+.about-grid{ display:grid; grid-template-columns:1.5fr 1fr; gap:16px; }
+@media (max-width:760px){ .about-grid{ grid-template-columns:1fr; } }
+.about-card{ padding:32px; }
+.about-card p{ color:var(--ink-soft); }
+.about-card p + p{ margin-top:14px; }
+
+.facts-card{ padding:28px 30px; display:flex; flex-direction:column; gap:18px; }
+.fact-row{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:14px; }
+.fact-row:last-child{ border-bottom:none; padding-bottom:0; }
+.fact-label{ font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.8px; text-transform:uppercase; color:var(--muted); }
+.fact-value{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.3em; color:var(--ink); }
+
+/* qualifications */
+.qual-list{ display:flex; flex-direction:column; gap:12px; }
+.qual-card{ display:flex; align-items:flex-start; gap:18px; padding:24px 26px; }
+.qual-icon{
+  width:46px; height:46px; border-radius:12px; flex-shrink:0;
+  background:var(--accent-soft); display:flex; align-items:center; justify-content:center;
+  color:var(--accent); font-size:1.05em;
+}
+.qual-body h4{ font-weight:700; font-size:1em; color:var(--ink); margin-bottom:3px; }
+.qual-body h4 a{ color:var(--ink); text-decoration:none; border-bottom:1.5px solid transparent; transition:border-color .18s, color .18s; }
+.qual-body h4 a:hover{ border-color:var(--accent); color:var(--accent); }
+.qual-meta{ font-family:'IBM Plex Mono',monospace; font-size:0.76em; color:var(--muted); margin-bottom:10px; }
+.qual-links{ display:flex; flex-wrap:wrap; gap:7px; }
+.qual-link{
+  display:inline-flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace;
+  font-size:0.72em; font-weight:500; color:var(--accent); background:var(--accent-soft);
+  border:1px solid var(--accent-line); padding:5px 11px; border-radius:6px; text-decoration:none;
+  transition:background .18s;
+}
+.qual-link:hover{ background:var(--accent-soft-strong); }
+
+/* experience timeline */
+.timeline{ position:relative; padding-left:32px; }
+.timeline::before{
+  content:''; position:absolute; left:9px; top:6px; bottom:6px; width:2px; background:var(--border);
+}
+.timeline-item{ position:relative; margin-bottom:14px; }
+.timeline-item:last-child{ margin-bottom:0; }
+.timeline-dot{
+  position:absolute; left:-32px; top:26px; width:19px; height:19px; border-radius:50%;
+  background:var(--surface); border:2px solid var(--border-strong); z-index:1;
+}
+.timeline-item.current .timeline-dot{ background:var(--accent); border-color:var(--accent); }
+.timeline-card{ padding:20px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.role{ font-weight:700; font-size:0.98em; color:var(--ink); margin-bottom:2px; }
+.company{ font-family:'IBM Plex Mono',monospace; font-size:0.8em; color:var(--muted); }
+.period{
+  font-family:'IBM Plex Mono',monospace; font-size:0.74em; font-weight:600; color:var(--accent);
+  background:var(--accent-soft); border:1px solid var(--accent-line);
+  padding:5px 12px; border-radius:6px; white-space:nowrap; flex-shrink:0;
 }
 
-a {
-  color: #00ADB5;
-  font-size: 1.1rem;
-  text-decoration: none;
+/* skills */
+.skill-list{ display:flex; flex-direction:column; gap:10px; }
+.skill-card{ padding:20px 26px; display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+.skill-info{ min-width:170px; flex-shrink:0; }
+.skill-info h4{ font-weight:700; font-size:0.95em; color:var(--ink); }
+.skill-info p{ font-family:'IBM Plex Mono',monospace; font-size:0.74em; color:var(--muted); margin-top:2px; }
+.skill-track{ flex:1; min-width:140px; height:6px; border-radius:99px; background:var(--surface-soft); position:relative; overflow:hidden; }
+.skill-fill{ position:absolute; inset:0; width:0; border-radius:99px; background:var(--accent); transition:width 1s cubic-bezier(.4,0,.2,1); }
+.skill-pct{ font-family:'IBM Plex Mono',monospace; font-size:0.8em; font-weight:600; color:var(--ink); width:44px; text-align:right; flex-shrink:0; }
+.level-chip{
+  font-family:'IBM Plex Mono',monospace; font-size:0.68em; font-weight:700; color:var(--accent);
+  background:var(--accent-soft); border:1px solid var(--accent-line); padding:2px 8px; border-radius:5px;
 }
 
-a:hover {
-  color: #EAF6F6;
+/* contact */
+.contact-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+.contact-card{
+  display:flex; align-items:center; gap:16px; padding:22px 24px; text-decoration:none;
+  transition:transform .18s, box-shadow .18s, border-color .18s;
+}
+.contact-card:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); border-color:var(--accent-line); }
+.contact-icon{
+  width:44px; height:44px; border-radius:12px; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:1.05em; flex-shrink:0;
+}
+.contact-lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.7em; color:var(--muted); margin-bottom:3px; }
+.contact-val{ font-size:0.94em; font-weight:700; color:var(--ink); }
+
+/* ── generic page header (sub-pages) ── */
+.page{ position:relative; flex:1; padding:150px 0 90px; }
+.page-header{ margin-bottom:46px; max-width:600px; }
+.page-title{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(1.9em,4vw,2.6em); letter-spacing:-0.8px; color:var(--ink); }
+.page-lead{ color:var(--muted); font-size:1em; margin-top:12px; }
+
+/* interests (hobbies) */
+.interest-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(270px,1fr)); gap:14px; }
+.interest-card{
+  padding:36px 28px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px;
+  transition:transform .2s, box-shadow .2s, border-color .2s;
+}
+.interest-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.interest-tag{ font-family:'IBM Plex Mono',monospace; font-size:0.68em; letter-spacing:1px; text-transform:uppercase; color:var(--muted); }
+.interest-icon{
+  width:60px; height:60px; border-radius:16px; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; font-size:1.5em; color:var(--accent);
+}
+.interest-card h3{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.28em; letter-spacing:-0.3px; color:var(--ink); }
+.interest-card p{ font-size:0.92em; color:var(--muted); max-width:230px; }
+.interest-link{
+  display:inline-flex; align-items:center; gap:7px; margin-top:4px;
+  font-family:'IBM Plex Mono',monospace; font-size:0.78em; font-weight:600;
+  color:var(--accent); background:var(--accent-soft); border:1px solid var(--accent-line);
+  padding:9px 16px; border-radius:8px; text-decoration:none; transition:background .18s;
+}
+.interest-link:hover{ background:var(--accent-soft-strong); }
+
+/* responsibilities (beschreibung) */
+.resp-list{ display:flex; flex-direction:column; gap:12px; }
+.resp-card{ overflow:hidden; transition:box-shadow .2s, border-color .2s; }
+.resp-card:hover{ box-shadow:var(--shadow-md); }
+.resp-header{ display:flex; align-items:center; gap:18px; padding:20px 26px; cursor:pointer; user-select:none; }
+.resp-index{ font-family:'IBM Plex Mono',monospace; font-size:0.72em; font-weight:600; color:var(--muted); width:22px; flex-shrink:0; }
+.resp-icon{
+  width:44px; height:44px; border-radius:12px; flex-shrink:0; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:1em;
+}
+.resp-label{ font-weight:700; font-size:1.02em; color:var(--ink); flex:1; }
+.resp-toggle{ color:var(--muted); font-size:0.85em; transition:transform .3s ease, color .18s; }
+.resp-card.open .resp-toggle{ transform:rotate(180deg); color:var(--accent); }
+.resp-body{ max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.4,0,.2,1); }
+.resp-card.open .resp-body{ max-height:700px; }
+.resp-items{
+  list-style:none; margin:0 24px 22px 84px; padding-top:14px; border-top:1px solid var(--border);
+  display:flex; flex-direction:column; gap:11px;
+}
+.resp-items li{ position:relative; font-size:0.93em; color:var(--ink-soft); padding-left:18px; line-height:1.6; }
+.resp-items li::before{ content:''; position:absolute; left:0; top:9px; width:5px; height:5px; border-radius:50%; background:var(--accent); }
+
+/* ── footer ── */
+.site-footer{
+  position:relative; border-top:1px solid var(--border); text-align:center;
+  padding:30px 20px; font-size:0.85em; color:var(--muted);
+}
+.site-footer a{ color:var(--muted); text-decoration:none; margin:0 10px; transition:color .18s; }
+.site-footer a:hover{ color:var(--accent); }
+.site-footer p + p{ margin-top:8px; font-size:0.85em; }
+
+/* ── back to top ── */
+#btt{
+  position:fixed; bottom:26px; right:26px; z-index:999; width:44px; height:44px;
+  background:var(--ink); border:none; border-radius:50%;
+  color:#fff; font-size:0.95em; cursor:pointer; display:none; align-items:center; justify-content:center;
+  transition:transform .18s, background .18s; box-shadow:var(--shadow-md);
+}
+#btt:hover{ background:var(--accent); transform:translateY(-2px); }
+#btt.vis{ display:flex; }
+
+/* ── reveal on scroll ── */
+.fi{ opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; }
+.fi.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  .fi{ opacity:1; transform:none; transition:none; }
 }
 
-table {
-  color: rgb(192, 192, 192);
-  font-size: 1.1rem;
-  text-align: left;
-}
-
-li {
-  color: rgb(192, 192, 192);
-  font-size: 1.1rem;
-}
-
-label {
-  color: rgb(192, 192, 192);
-  font-size: 1.1rem;
-}
-
-.btn {
-  background: #11cdd4;
-  background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
-  background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
-  background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
-  background-image: -o-linear-gradient(top, #11cdd4, #11999e);
-  background-image: linear-gradient(to bottom, #11cdd4, #11999e);
-  -webkit-border-radius: 8;
-  -moz-border-radius: 8;
-  border-radius: 8px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background: #30e3cb;
-  background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
-  background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
-  background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
-  background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
-  background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
-  text-decoration: none;
-}
-
-.copyright {
-  color: grey;
-  font-size: 0.75rem;
-  padding: 20px 0;
-}
-
-.SAP {
-  margin: 0;
-}
+:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }

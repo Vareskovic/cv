@@ -6,198 +6,66 @@
 <meta name="description" content="Interessen von Boris Vareskovic – Fußball und Fitness.">
 <title>Interessen — Boris Vareskovic</title>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%23101B26'/><circle cx='32' cy='32' r='24' fill='none' stroke='%23AE3F2E' stroke-width='3' stroke-dasharray='4 3'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='20' fill='%23EFE7D3'>BV</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314161A'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%23ffffff'>BV</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-  :root{
-    --ink:#101B26;
-    --ink-raised:#172433;
-    --ink-border:rgba(239,231,211,0.12);
-    --ink-border-br:rgba(239,231,211,0.22);
-    --paper:#EFE7D3;
-    --paper-border:#C8B98D;
-    --paper-text:#231F17;
-    --paper-muted:#6C6250;
-    --text:#F3EEDD;
-    --muted:#93A4B4;
-    --stamp:#B4432F;
-    --stamp-dim:rgba(180,67,47,0.16);
-    --seal:#2E7268;
-    --seal-dim:rgba(46,114,104,0.16);
-    --radius:14px;
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter',sans-serif; background:var(--ink); color:var(--text);
-    line-height:1.65; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column;
-  }
-  .mono{font-family:'IBM Plex Mono',monospace;}
-
-  .grid-tex{
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-    background-image:
-      linear-gradient(rgba(239,231,211,0.028) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(239,231,211,0.028) 1px, transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
-  }
-  .glow{position:fixed; z-index:0; pointer-events:none; border-radius:50%; filter:blur(110px); opacity:0.22;}
-  .glow-1{width:520px;height:520px;background:#8a3324;top:-160px;left:-120px;}
-  .glow-2{width:480px;height:480px;background:#1f5f56;bottom:-140px;right:-100px;}
-
-  nav{
-    position:fixed; top:0; left:0; right:0; z-index:1000; height:60px;
-    padding:0 32px; display:flex; align-items:center; justify-content:space-between;
-    background:rgba(16,27,38,0.86); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-    border-bottom:1px solid var(--ink-border);
-  }
-  .nav-logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);}
-  .nav-mark{
-    width:30px;height:30px;border-radius:50%; border:1.5px dashed var(--stamp);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces',serif; font-weight:700; font-size:0.72em; color:var(--paper); flex-shrink:0;
-  }
-  .nav-logo-text{font-family:'Fraunces',serif; font-weight:600; font-size:1em;}
-  .nav-back{
-    display:inline-flex; align-items:center; gap:8px; color:var(--muted); text-decoration:none;
-    font-family:'IBM Plex Mono',monospace; font-size:0.8em; font-weight:500;
-    padding:8px 14px; border-radius:8px; border:1px solid var(--ink-border-br);
-    transition:color .2s, background .2s, border-color .2s;
-  }
-  .nav-back:hover{color:var(--text); background:rgba(239,231,211,0.06); border-color:var(--ink-border-br);}
-  @media (max-width:500px){ nav{padding:0 16px;} }
-
-  .page{position:relative; z-index:1; flex:1; max-width:900px; margin:0 auto; width:100%; padding:118px 24px 80px;}
-
-  .doc-label{
-    font-family:'IBM Plex Mono',monospace; font-size:0.74em; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--muted); display:inline-flex; align-items:center; gap:10px; margin-bottom:14px;
-  }
-  .doc-label::before{content:'';width:22px;height:1px;background:var(--stamp);}
-
-  .section-head{margin-bottom:44px;}
-  .section-title{font-family:'Fraunces',serif; font-weight:600; font-size:2em; letter-spacing:-0.5px; color:var(--paper);}
-  .section-sub{color:var(--muted); font-size:0.96em; margin-top:10px; max-width:520px;}
-
-  .hobby-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(270px,1fr)); gap:14px;
-  }
-
-  .hobby-card{
-    background:var(--paper); color:var(--paper-text); border-radius:var(--radius);
-    border:1px solid var(--paper-border); box-shadow:0 18px 40px -24px rgba(0,0,0,0.55);
-    padding:34px 28px; text-align:center; position:relative;
-    display:flex; flex-direction:column; align-items:center; gap:13px;
-    transition:transform .25s, box-shadow .25s;
-  }
-  .hobby-card::before{
-    content:''; position:absolute; inset:6px; border:1px dashed rgba(35,31,23,0.14);
-    border-radius:9px; pointer-events:none;
-  }
-  .hobby-card:hover{ transform:translateY(-4px); }
-
-  .hobby-tag{
-    font-family:'IBM Plex Mono',monospace; font-size:0.68em; letter-spacing:1px; text-transform:uppercase;
-    color:var(--paper-muted); position:relative; z-index:1;
-  }
-
-  .hobby-icon{
-    width:64px; height:64px; border-radius:50%; flex-shrink:0;
-    border:1.5px dashed var(--stamp); display:flex; align-items:center; justify-content:center;
-    font-size:1.5em; color:var(--stamp); position:relative; z-index:1;
-    transition:background .25s;
-  }
-  .hobby-card:hover .hobby-icon{ background:var(--stamp-dim); }
-  .hobby-card.seal .hobby-icon{ border-color:var(--seal); color:var(--seal); }
-  .hobby-card.seal:hover .hobby-icon{ background:var(--seal-dim); }
-
-  .hobby-card h3{
-    font-family:'Fraunces',serif; font-weight:700; font-size:1.3em; letter-spacing:-0.3px; position:relative; z-index:1;
-  }
-  .hobby-card p{ font-size:0.9em; color:var(--paper-muted); max-width:230px; position:relative; z-index:1; }
-
-  .hobby-link{
-    display:inline-flex; align-items:center; gap:7px; margin-top:4px;
-    font-family:'IBM Plex Mono',monospace; font-size:0.78em; font-weight:600;
-    color:var(--stamp); background:var(--stamp-dim); border:1px solid rgba(180,67,47,0.3);
-    padding:8px 15px; border-radius:7px; text-decoration:none; position:relative; z-index:1;
-    transition:background .2s;
-  }
-  .hobby-link:hover{ background:rgba(180,67,47,0.26); }
-  .hobby-card.seal .hobby-link{ color:var(--seal); background:var(--seal-dim); border-color:rgba(46,114,104,0.32); }
-  .hobby-card.seal .hobby-link:hover{ background:rgba(46,114,104,0.26); }
-
-  footer{
-    position:relative; z-index:1; border-top:1px solid var(--ink-border); text-align:center;
-    padding:26px 20px; font-family:'IBM Plex Mono',monospace; font-size:0.76em; color:var(--muted);
-  }
-  footer a{ color:var(--muted); text-decoration:none; margin:0 8px; transition:color .2s; }
-  footer a:hover{ color:var(--paper); }
-
-  .fi{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
-  .fi.in{ opacity:1; transform:none; }
-
-  :focus-visible{ outline:2px solid var(--stamp); outline-offset:2px; }
-</style>
+<link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
-<div class="grid-tex" aria-hidden="true"></div>
-<div class="glow glow-1" aria-hidden="true"></div>
-<div class="glow glow-2" aria-hidden="true"></div>
-
-<nav>
-  <a class="nav-logo" href="index.html">
-    <span class="nav-mark">BV</span>
-    <span class="nav-logo-text">Boris Vareskovic</span>
-  </a>
-  <a class="nav-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Zurück</a>
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">BV</span>
+      <span class="brand-name">Boris Vareskovic</span>
+    </a>
+    <a class="nav-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Zurück</a>
+  </div>
 </nav>
 
 <div class="page">
-  <div class="section-head fi">
-    <span class="doc-label mono">Anhang · Persönliches</span>
-    <h1 class="section-title">Interessen</h1>
-    <p class="section-sub">Was mich neben der Arbeit bewegt.</p>
-  </div>
-
-  <div class="hobby-grid">
-
-    <div class="hobby-card fi">
-      <span class="hobby-tag">Sport</span>
-      <div class="hobby-icon"><i class="fa-solid fa-futbol"></i></div>
-      <h3>Fußball</h3>
-      <p>Aktiver Spieler mit eigenem FuPa-Profil.</p>
-      <a class="hobby-link" href="https://www.fupa.net/player/boris-vareskovic-955599" target="_blank" rel="noopener">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i> Spielerprofil ansehen
-      </a>
+  <div class="wrap">
+    <div class="page-header fi">
+      <span class="eyebrow mono">Anhang · Persönliches</span>
+      <h1 class="page-title">Interessen</h1>
+      <p class="page-lead">Was mich neben der Arbeit bewegt.</p>
     </div>
 
-    <div class="hobby-card seal fi">
-      <span class="hobby-tag">Training</span>
-      <div class="hobby-icon"><i class="fa-solid fa-dumbbell"></i></div>
-      <h3>Fitness</h3>
-      <p>Training &amp; gesunder Lebensstil – folge mir auf meiner Fitness-Seite.</p>
-      <a class="hobby-link" href="https://de-de.facebook.com/borisvareskovicfit/" target="_blank" rel="noopener">
-        <i class="fa-brands fa-facebook"></i> Fitness-Seite besuchen
-      </a>
-    </div>
+    <div class="interest-grid">
 
+      <div class="card interest-card fi">
+        <span class="interest-tag">Sport</span>
+        <div class="interest-icon"><i class="fa-solid fa-futbol"></i></div>
+        <h3>Fußball</h3>
+        <p>Aktiver Spieler mit eigenem FuPa-Profil.</p>
+        <a class="interest-link" href="https://www.fupa.net/player/boris-vareskovic-955599" target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Spielerprofil ansehen
+        </a>
+      </div>
+
+      <div class="card interest-card fi">
+        <span class="interest-tag">Training</span>
+        <div class="interest-icon"><i class="fa-solid fa-dumbbell"></i></div>
+        <h3>Fitness</h3>
+        <p>Training &amp; gesunder Lebensstil – folge mir auf meiner Fitness-Seite.</p>
+        <a class="interest-link" href="https://de-de.facebook.com/borisvareskovicfit/" target="_blank" rel="noopener">
+          <i class="fa-brands fa-facebook"></i> Fitness-Seite besuchen
+        </a>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<footer>
+<footer class="site-footer">
   <p>
-    <a href="mailto:"><i class="fa-solid fa-envelope"></i> E-Mail</a> ·
+    <a href="mailto:borisvareskovic@outlook.de"><i class="fa-solid fa-envelope"></i> E-Mail</a> ·
     <a href="https://de.linkedin.com/in/boris-vareskovic-2a3308231" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
   </p>
-  <p style="margin-top:8px">&copy; 2026 Boris Vareskovic</p>
+  <p>&copy; 2026 Boris Vareskovic</p>
 </footer>
 
 <script>

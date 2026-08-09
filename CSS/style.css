@@ -1,41 +1,9 @@
 /* ==========================================================================
    Boris Vareskovic — CV site
-   Clean, minimal, light design system shared across all pages.
+   Clean, dark design system shared across all pages.
    ========================================================================== */
 
 :root{
-  --bg:#FAFAF8;
-  --surface:#FFFFFF;
-  --surface-soft:#F4F4F2;
-  --border:#E7E6E1;
-  --border-strong:#D8D6CE;
-  --ink:#14161A;
-  --ink-soft:#42454C;
-  --muted:#7B7F86;
-  --accent:#2453E0;
-  --accent-hover:#1B41B8;
-  --accent-soft:rgba(36,83,224,0.08);
-  --accent-soft-strong:rgba(36,83,224,0.14);
-  --accent-line:rgba(36,83,224,0.28);
-  --accent2:#0E8F6F;
-  --accent2-hover:#0B7259;
-  --accent2-soft:rgba(14,143,111,0.08);
-  --accent2-soft-strong:rgba(14,143,111,0.15);
-  --accent2-line:rgba(14,143,111,0.28);
-  --gradient:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-  --ease:cubic-bezier(.16,1,.3,1);
-  --nav-bg:rgba(250,250,248,0.82);
-  --radius-lg:20px;
-  --radius-md:14px;
-  --radius-sm:9px;
-  --shadow-sm:0 1px 2px rgba(20,22,26,0.05);
-  --shadow-md:0 10px 30px -14px rgba(20,22,26,0.16);
-  --shadow-lg:0 24px 60px -24px rgba(20,22,26,0.20);
-  --maxw:1080px;
-  color-scheme:light;
-}
-
-:root[data-theme="dark"]{
   --bg:#0B0D10;
   --surface:#15181D;
   --surface-soft:#1C2027;
@@ -44,10 +12,26 @@
   --ink:#F3F4F6;
   --ink-soft:#C7CBD1;
   --muted:#868C96;
+  --accent:#2453E0;
+  --accent-hover:#1B41B8;
+  --accent-soft:rgba(36,83,224,0.14);
+  --accent-soft-strong:rgba(36,83,224,0.22);
+  --accent-line:rgba(36,83,224,0.4);
+  --accent2:#0E8F6F;
+  --accent2-hover:#0B7259;
+  --accent2-soft:rgba(14,143,111,0.14);
+  --accent2-soft-strong:rgba(14,143,111,0.22);
+  --accent2-line:rgba(14,143,111,0.4);
+  --gradient:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  --ease:cubic-bezier(.16,1,.3,1);
   --nav-bg:rgba(11,13,16,0.78);
+  --radius-lg:20px;
+  --radius-md:14px;
+  --radius-sm:9px;
   --shadow-sm:0 1px 2px rgba(0,0,0,0.3);
   --shadow-md:0 10px 30px -14px rgba(0,0,0,0.55);
   --shadow-lg:0 24px 60px -24px rgba(0,0,0,0.6);
+  --maxw:1080px;
   color-scheme:dark;
 }
 
@@ -75,13 +59,12 @@ a{ color:inherit; }
 
 /* ── ambient background aura ── */
 .aura{ position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
-.aura span{ position:absolute; border-radius:50%; filter:blur(95px); opacity:0.26; will-change:transform; }
+.aura span{ position:absolute; border-radius:50%; filter:blur(95px); opacity:0.4; will-change:transform; }
 .aura-a{ width:34vw; height:34vw; max-width:520px; max-height:520px; background:var(--accent); top:-10vw; left:-8vw; animation:auraFloat 20s ease-in-out infinite; }
 .aura-b{ width:30vw; height:30vw; max-width:460px; max-height:460px; background:var(--accent2); bottom:-8vw; right:-6vw; animation:auraFloat 24s ease-in-out infinite reverse; }
 .aura-c{ width:22vw; height:22vw; max-width:340px; max-height:340px; background:var(--accent); top:38vh; left:48vw; opacity:0.14; animation:auraFloat 28s ease-in-out infinite; }
 @keyframes auraFloat{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(3vw,-2vw) scale(1.08); } }
 @media (prefers-reduced-motion:reduce){ .aura span{ animation:none; } }
-:root[data-theme="dark"] .aura span{ opacity:0.4; }
 
 /* ── nav ── */
 .site-nav{
@@ -131,16 +114,6 @@ a{ color:inherit; }
 }
 .nav-toggle:hover{ border-color:var(--border-strong); }
 
-.theme-toggle{
-  background:none; border:1px solid var(--border); border-radius:8px; color:var(--ink-soft);
-  width:38px; height:38px; cursor:pointer; font-size:0.92em; flex-shrink:0;
-  display:inline-flex; align-items:center; justify-content:center; margin-left:8px;
-  transition:border-color .25s var(--ease), color .25s var(--ease), transform .3s var(--ease);
-}
-.theme-toggle:hover{ border-color:var(--border-strong); color:var(--accent); transform:rotate(-12deg); }
-.theme-toggle .fa-sun{ display:none; }
-:root[data-theme="dark"] .theme-toggle .fa-sun{ display:inline; }
-:root[data-theme="dark"] .theme-toggle .fa-moon{ display:none; }
 @media (max-width:780px){
   .nav-links{
     display:flex; flex-direction:column; align-items:stretch; gap:2px;
@@ -482,3 +455,38 @@ main{ position:relative; z-index:1; flex:1; }
 }
 
 :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+/* ── mobile tightening ── */
+@media (max-width:600px){
+  .hero{ padding:112px 0 44px; }
+  .page{ padding:112px 0 56px; }
+  .section{ padding:56px 0; }
+  .section-header{ margin-bottom:26px; }
+  .page-header{ margin-bottom:30px; }
+
+  .nav-toggle{ width:44px; height:44px; }
+  .nav-back{ padding:11px 16px; min-height:44px; }
+  .brand-name{ font-size:0.94em; }
+
+  .hero h1{ margin-bottom:14px; }
+  .hero-lead{ margin-bottom:20px; }
+  .hero-tags{ margin-bottom:22px; }
+  .hero-actions .btn{ flex:1 1 auto; justify-content:center; }
+
+  .about-card{ padding:24px 22px; }
+  .facts-card{ padding:22px 22px; gap:14px; }
+  .qual-card{ padding:20px 20px; gap:14px; }
+  .timeline{ padding-left:26px; }
+  .timeline-dot{ left:-26px; }
+  .timeline-card{ padding:16px 18px; }
+  .lang-card{ padding:16px 18px; }
+  .skill-bento{ grid-template-columns:repeat(2,1fr); gap:10px; }
+  .skill-tile{ padding:22px 12px 18px; }
+  .skill-ring{ width:70px; height:70px; }
+  .contact-card{ padding:18px 20px; }
+  .interest-card{ padding:28px 20px; }
+  .resp-header{ padding:16px 18px; gap:14px; }
+  .resp-items{ margin-left:0; }
+
+  #btt{ width:48px; height:48px; bottom:18px; right:18px; }
+}

@@ -6,6 +6,8 @@
 <meta name="description" content="Verantwortungsbereiche von Boris Vareskovic – Buchhaltung, IT, Vertrieb, Task Force.">
 <title>Verantwortungsbereiche — Boris Vareskovic</title>
 
+<script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314161A'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%23ffffff'>BV</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +27,9 @@
       <span class="brand-name">Boris Vareskovic</span>
     </a>
     <a class="nav-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Zurück</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Farbschema wechseln">
+      <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
+    </button>
   </div>
 </nav>
 
@@ -39,7 +44,7 @@
     <div class="resp-list">
 
       <div class="card resp-card fi">
-        <div class="resp-header" onclick="toggle(this)">
+        <div class="resp-header" onclick="toggleResp(this)">
           <span class="resp-index mono">01</span>
           <div class="resp-icon"><i class="fa-solid fa-chart-simple"></i></div>
           <span class="resp-label">Buchhaltung &amp; Finanzkontrolle</span>
@@ -58,7 +63,7 @@
       </div>
 
       <div class="card resp-card fi">
-        <div class="resp-header" onclick="toggle(this)">
+        <div class="resp-header" onclick="toggleResp(this)">
           <span class="resp-index mono">02</span>
           <div class="resp-icon"><i class="fa-solid fa-chart-line"></i></div>
           <span class="resp-label">Vertrieb &amp; Preisgestaltung</span>
@@ -74,7 +79,7 @@
       </div>
 
       <div class="card resp-card fi">
-        <div class="resp-header" onclick="toggle(this)">
+        <div class="resp-header" onclick="toggleResp(this)">
           <span class="resp-index mono">03</span>
           <div class="resp-icon"><i class="fa-solid fa-file-invoice"></i></div>
           <span class="resp-label">Leitung Rechnungsabteilung</span>
@@ -93,7 +98,7 @@
       </div>
 
       <div class="card resp-card fi">
-        <div class="resp-header" onclick="toggle(this)">
+        <div class="resp-header" onclick="toggleResp(this)">
           <span class="resp-index mono">04</span>
           <div class="resp-icon"><i class="fa-solid fa-computer"></i></div>
           <span class="resp-label">IT-Automatisierung &amp; Systemadministration</span>
@@ -112,7 +117,7 @@
       </div>
 
       <div class="card resp-card fi">
-        <div class="resp-header" onclick="toggle(this)">
+        <div class="resp-header" onclick="toggleResp(this)">
           <span class="resp-index mono">05</span>
           <div class="resp-icon"><i class="fa-solid fa-truck"></i></div>
           <span class="resp-label">Disposition &amp; Fahrerbetreuung</span>
@@ -127,7 +132,7 @@
       </div>
 
       <div class="card resp-card fi">
-        <div class="resp-header" onclick="toggle(this)">
+        <div class="resp-header" onclick="toggleResp(this)">
           <span class="resp-index mono">06</span>
           <div class="resp-icon"><i class="fa-solid fa-bolt"></i></div>
           <span class="resp-label">Task Force</span>
@@ -155,25 +160,7 @@
   <p>&copy; 2026 Boris Vareskovic</p>
 </footer>
 
-<script>
-  function toggle(header){
-    const card = header.closest('.resp-card');
-    const isOpen = card.classList.contains('open');
-    document.querySelectorAll('.resp-card.open').forEach(c => c.classList.remove('open'));
-    if(!isOpen) card.classList.add('open');
-  }
-
-  document.querySelectorAll('.fi').forEach((el,i)=>{
-    new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.style.transitionDelay=(i*60)+'ms';
-          e.target.classList.add('in');
-        }
-      });
-    },{threshold:0.1}).observe(el);
-  });
-</script>
+<script src="js/site.js"></script>
 
 </body>
 </html>

@@ -10,6 +10,8 @@
 <meta property="og:type" content="website">
 <title>Boris Vareskovic — Lebenslauf</title>
 
+<script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314161A'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%23ffffff'>BV</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +40,9 @@
       <a class="nav-link" href="hobbies.html">Interessen</a>
       <a class="nav-link nav-cta" href="#kontakt">Kontakt</a>
     </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Farbschema wechseln">
+      <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
+    </button>
   </div>
 </nav>
 
@@ -89,11 +94,11 @@
         <div class="card facts-card">
           <div class="fact-row">
             <span class="fact-label mono">Erfahrung</span>
-            <span class="fact-value">6+ Jahre</span>
+            <span class="fact-value"><span class="count-num" data-target="6">0</span>+ Jahre</span>
           </div>
           <div class="fact-row">
             <span class="fact-label mono">Sprachen</span>
-            <span class="fact-value">3</span>
+            <span class="fact-value"><span class="count-num" data-target="3">0</span></span>
           </div>
           <div class="fact-row">
             <span class="fact-label mono">Abschluss</span>
@@ -206,36 +211,67 @@
         <span class="eyebrow mono">Kompetenzen</span>
         <h2 class="section-title">Sprachen &amp; Fähigkeiten</h2>
       </div>
-      <div class="skill-list">
-        <div class="card skill-card fi">
-          <div class="skill-info"><h4>Deutsch</h4><p>Sehr gut <span class="level-chip">C1</span></p></div>
-          <div class="skill-track"><div class="skill-fill" data-p="90"></div></div>
-          <span class="skill-pct">90%</span>
+
+      <h3 class="subhead fi">Sprachen</h3>
+      <div class="lang-row">
+        <div class="card lang-card fi">
+          <span class="lang-flag">DE</span>
+          <div class="lang-info"><h4>Deutsch</h4><p>Sehr gut</p></div>
+          <span class="level-chip">C1</span>
         </div>
-        <div class="card skill-card fi">
-          <div class="skill-info"><h4>Englisch</h4><p>Gut <span class="level-chip">B2</span></p></div>
-          <div class="skill-track"><div class="skill-fill" data-p="75"></div></div>
-          <span class="skill-pct">75%</span>
+        <div class="card lang-card fi">
+          <span class="lang-flag">EN</span>
+          <div class="lang-info"><h4>Englisch</h4><p>Gut</p></div>
+          <span class="level-chip">B2</span>
         </div>
-        <div class="card skill-card fi">
-          <div class="skill-info"><h4>BKS-Sprachen</h4><p>Muttersprache <span class="level-chip">C2</span></p></div>
-          <div class="skill-track"><div class="skill-fill" data-p="100"></div></div>
-          <span class="skill-pct">100%</span>
+        <div class="card lang-card fi">
+          <span class="lang-flag">BKS</span>
+          <div class="lang-info"><h4>BKS-Sprachen</h4><p>Muttersprache</p></div>
+          <span class="level-chip">C2</span>
         </div>
-        <div class="card skill-card fi">
-          <div class="skill-info"><h4>MS Office</h4><p>Experte</p></div>
-          <div class="skill-track"><div class="skill-fill" data-p="95"></div></div>
-          <span class="skill-pct">95%</span>
+      </div>
+
+      <h3 class="subhead fi">Tools &amp; Fachkompetenz</h3>
+      <div class="skill-bento">
+        <div class="card skill-tile fi">
+          <div class="skill-ring">
+            <svg viewBox="0 0 72 72"><circle class="ring-track" cx="36" cy="36" r="30"></circle><circle class="ring-fill" cx="36" cy="36" r="30" data-p="95"></circle></svg>
+            <span class="ring-icon"><i class="fa-solid fa-table-cells-large"></i></span>
+          </div>
+          <h4>MS Office</h4>
+          <span class="skill-pct2 mono"><span class="count-num" data-target="95">0</span>%</span>
         </div>
-        <div class="card skill-card fi">
-          <div class="skill-info"><h4>Buchhaltung</h4><p>Experte</p></div>
-          <div class="skill-track"><div class="skill-fill" data-p="95"></div></div>
-          <span class="skill-pct">95%</span>
+        <div class="card skill-tile fi">
+          <div class="skill-ring">
+            <svg viewBox="0 0 72 72"><circle class="ring-track" cx="36" cy="36" r="30"></circle><circle class="ring-fill" cx="36" cy="36" r="30" data-p="95"></circle></svg>
+            <span class="ring-icon"><i class="fa-solid fa-calculator"></i></span>
+          </div>
+          <h4>Buchhaltung</h4>
+          <span class="skill-pct2 mono"><span class="count-num" data-target="95">0</span>%</span>
         </div>
-        <div class="card skill-card fi">
-          <div class="skill-info"><h4>SAP · Power BI · SQL</h4><p>Fortgeschritten</p></div>
-          <div class="skill-track"><div class="skill-fill" data-p="90"></div></div>
-          <span class="skill-pct">90%</span>
+        <div class="card skill-tile fi">
+          <div class="skill-ring">
+            <svg viewBox="0 0 72 72"><circle class="ring-track" cx="36" cy="36" r="30"></circle><circle class="ring-fill" cx="36" cy="36" r="30" data-p="90"></circle></svg>
+            <span class="ring-icon"><i class="fa-solid fa-cubes"></i></span>
+          </div>
+          <h4>SAP</h4>
+          <span class="skill-pct2 mono"><span class="count-num" data-target="90">0</span>%</span>
+        </div>
+        <div class="card skill-tile fi">
+          <div class="skill-ring">
+            <svg viewBox="0 0 72 72"><circle class="ring-track" cx="36" cy="36" r="30"></circle><circle class="ring-fill" cx="36" cy="36" r="30" data-p="90"></circle></svg>
+            <span class="ring-icon"><i class="fa-solid fa-chart-pie"></i></span>
+          </div>
+          <h4>Power BI</h4>
+          <span class="skill-pct2 mono"><span class="count-num" data-target="90">0</span>%</span>
+        </div>
+        <div class="card skill-tile fi">
+          <div class="skill-ring">
+            <svg viewBox="0 0 72 72"><circle class="ring-track" cx="36" cy="36" r="30"></circle><circle class="ring-fill" cx="36" cy="36" r="30" data-p="90"></circle></svg>
+            <span class="ring-icon"><i class="fa-solid fa-database"></i></span>
+          </div>
+          <h4>SQL</h4>
+          <span class="skill-pct2 mono"><span class="count-num" data-target="90">0</span>%</span>
         </div>
       </div>
     </section>
@@ -287,44 +323,7 @@
   <i class="fa-solid fa-chevron-up"></i>
 </button>
 
-<script>
-  function toggleNav(){ document.getElementById('nav-links').classList.toggle('open'); }
-
-  document.querySelectorAll('section[id]').forEach(s=>{
-    new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>a.classList.remove('active'));
-          const m=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-          if(m) m.classList.add('active');
-        }
-      });
-    },{threshold:0.35}).observe(s);
-  });
-
-  const btt=document.getElementById('btt');
-  window.addEventListener('scroll', ()=> btt.classList.toggle('vis', scrollY>350));
-
-  document.querySelectorAll('.skill-fill').forEach(f=>{
-    new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(!e.isIntersecting) return;
-        e.target.style.width = e.target.getAttribute('data-p') + '%';
-      });
-    },{threshold:0.5}).observe(f);
-  });
-
-  document.querySelectorAll('.fi').forEach((el,i)=>{
-    new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.style.transitionDelay=(i%4*60)+'ms';
-          e.target.classList.add('in');
-        }
-      });
-    },{threshold:0.1}).observe(el);
-  });
-</script>
+<script src="js/site.js"></script>
 
 </body>
 </html>

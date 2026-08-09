@@ -1,5 +1,5 @@
 // Shared behaviour for all pages: nav, scroll reveal, skill rings/counters,
-// responsibilities accordion, card cursor-glow, dark mode toggle.
+// responsibilities accordion, card cursor-glow.
 
 function toggleNav(){
   const links = document.getElementById('nav-links');
@@ -13,17 +13,6 @@ function toggleResp(header){
   document.querySelectorAll('.resp-card.open').forEach(c => c.classList.remove('open'));
   if(!isOpen) card.classList.add('open');
 }
-
-(function initTheme(){
-  const btn = document.getElementById('theme-toggle');
-  if(!btn) return;
-  btn.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') || 'light';
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try{ localStorage.setItem('theme', next); }catch(e){}
-  });
-})();
 
 document.querySelectorAll('section[id]').forEach(s=>{
   new IntersectionObserver(entries=>{

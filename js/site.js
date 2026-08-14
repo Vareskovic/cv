@@ -1,4 +1,4 @@
-// Shared behaviour for all pages: nav, scroll reveal, skill rings/counters,
+// Shared behaviour for all pages: nav, scroll reveal, counters,
 // responsibilities accordion, card cursor-glow.
 
 function toggleNav(){
@@ -52,12 +52,6 @@ document.querySelectorAll('.fi').forEach((el,i)=>{
         e.target.style.transitionDelay=(i%6*60)+'ms';
         e.target.classList.add('in');
 
-        e.target.querySelectorAll('.ring-fill').forEach(ring=>{
-          const p = parseFloat(ring.getAttribute('data-p')) || 0;
-          const circumference = 188.5;
-          const offset = circumference - (circumference * p / 100);
-          requestAnimationFrame(()=>{ ring.style.strokeDashoffset = offset; });
-        });
         e.target.querySelectorAll('.count-num').forEach(animateCount);
       }
     });

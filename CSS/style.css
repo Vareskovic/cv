@@ -160,12 +160,8 @@ a{ color:inherit; }
 @media (max-width:820px){ .hero-grid{ grid-template-columns:1fr; gap:40px; } }
 
 .hero h1{
-  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(2.4em,5.6vw,3.7em);
-  line-height:1.06; letter-spacing:-1.2px; color:var(--ink); margin-bottom:20px;
-}
-.hero h1 span{
-  background:var(--gradient); background-clip:text; -webkit-background-clip:text;
-  color:transparent; -webkit-text-fill-color:transparent;
+  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(2.2em,5.2vw,3.4em);
+  line-height:1.06; letter-spacing:-1.2px; color:var(--ink); margin-bottom:18px;
 }
 
 .hero-lead{ font-size:1.07em; color:var(--muted); max-width:520px; margin-bottom:26px; }

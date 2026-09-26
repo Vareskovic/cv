@@ -192,7 +192,14 @@ a{ color:inherit; }
 .portrait-photo{ position:relative; z-index:1; width:100%; line-height:0; }
 .portrait-photo img{
   width:100%; height:auto; display:block;
-  filter:drop-shadow(0 24px 32px rgba(20,22,26,0.16));
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 50%, rgba(0,0,0,0.6) 72%, transparent 96%),
+    linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:
+    linear-gradient(to bottom, #000 50%, rgba(0,0,0,0.6) 72%, transparent 96%),
+    linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-composite:intersect;
 }
 .portrait-badge{
   position:absolute; bottom:6%; left:50%; transform:translateX(-50%); z-index:2;
